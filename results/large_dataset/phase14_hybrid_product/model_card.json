@@ -1,0 +1,72 @@
+{
+  "model_version": "phase14_hybrid_v1",
+  "architecture": {
+    "model_a_classical": "XGBoost (Phase 11 frozen hyperparameters)",
+    "model_b_quantum_primary": "VQC (Phase 8B architecture, reused result -- not served live)",
+    "model_c_hybrid": "PCA-4 -> quantum embedding (4 qubits, 2 layers, Phase 12 architecture, frozen theta) concatenated with PCA-4 -> XGBoost"
+  },
+  "training_dataset_size": 66641,
+  "test_dataset_size": 200,
+  "feature_dimensions": {
+    "raw_classical_features": 11,
+    "pca_dimensions": 4,
+    "quantum_embedding_dimensions": 8
+  },
+  "n_qubits": 4,
+  "circuit_depth_layers": 2,
+  "backend": "statevector (exact, no shot noise) -- src.quantum.backends.StatevectorBackend",
+  "future_backend_path": "src.quantum.backends.IBMHardwareBackend (interface already defined, not yet wired up)",
+  "training_method": "Classical: 5-fold CV grid search (Phase 3/11 methodology). Quantum embedding weights: COBYLA + train-only CV on a cheap subset (Phase 12), reused verbatim here.",
+  "decision_threshold": 0.5,
+  "test_fingerprint": "96eac11a8394b87e",
+  "evaluation_metrics": {
+    "classical": {
+      "accuracy": 0.79,
+      "precision": 0.8064516129032258,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8217821782178217,
+      "f1": 0.7812499999999999,
+      "roc_auc": 0.8566856685668567,
+      "pr_auc": 0.8425609274202546,
+      "tn": 83,
+      "fp": 18,
+      "fn": 24,
+      "tp": 75
+    },
+    "hybrid": {
+      "accuracy": 0.79,
+      "precision": 0.8,
+      "sensitivity": 0.7676767676767676,
+      "recall": 0.7676767676767676,
+      "specificity": 0.8118811881188119,
+      "f1": 0.7835051546391752,
+      "roc_auc": 0.8368836883688369,
+      "pr_auc": 0.8302669965042084,
+      "tn": 82,
+      "fp": 19,
+      "fn": 23,
+      "tp": 76
+    },
+    "quantum_primary_reused": {
+      "accuracy": 0.595,
+      "precision": 0.6097560975609756,
+      "sensitivity": 0.5050505050505051,
+      "recall": 0.5050505050505051,
+      "specificity": 0.6831683168316832,
+      "f1": 0.5524861878453039,
+      "roc_auc": 0.6072107210721072,
+      "pr_auc": 0.6137231488150579,
+      "tn": 69,
+      "fp": 32,
+      "fn": 49,
+      "tp": 50
+    }
+  },
+  "known_limitations": [
+    "Phases 9-13 found no statistically significant improvement from any tested quantum component over the classical XGBoost backbone on this dataset.",
+    "The quantum embedding's weights were selected on a 2,000-row subset, not the full training pool, for computational tractability.",
+    "The quantum circuit runs on an exact statevector simulator; real QPU execution (shot noise, hardware error) is not yet evaluated.",
+    "This is a decision-support research prototype, not a validated clinical diagnostic tool."
+  ]
+}

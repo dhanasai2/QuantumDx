@@ -1,0 +1,695 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+
+% ---------- Colors ----------
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codeframe}{RGB}{200,200,200}
+\definecolor{headingblue}{RGB}{20,60,110}
+\definecolor{mustcolor}{RGB}{150,20,20}
+\definecolor{donecolor}{RGB}{20,110,40}
+
+% ---------- Section styling ----------
+\titleformat{\section}{\large\bfseries\color{headingblue}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{headingblue}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.6em}{}
+
+% ---------- Code listing style ----------
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  rulecolor=\color{codeframe},
+  breaklines=true,
+  columns=fullflexible,
+  showstringspaces=false,
+  xleftmargin=4pt, xrightmargin=4pt,
+  aboveskip=6pt, belowskip=6pt
+}
+
+\newcommand{\code}[1]{\texttt{\small #1}}
+\newcommand{\done}{\textcolor{donecolor}{\textbf{DONE}}}
+\newcommand{\pending}{\textcolor{mustcolor}{\textbf{NOT STARTED}}}
+
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-2.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{QuantumDx --- Project Context}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Compact "phase status line" macro: renders as a small aligned block
+% instead of one long \quad-separated line, avoiding margin overflow.
+\newcommand{\phasestatus}[5]{%
+\begin{quote}\small\raggedright
+\textbf{Status:} #1 \\
+\textbf{Code:} #2 \\
+\textbf{Docs:} #3 \\
+\textbf{Tests:} #4 \\
+\textbf{Results:} #5
+\end{quote}}
+
+\title{\textbf{QuantumDx --- Complete Project Context}\\[0.3em]
+\large Hybrid Quantum Machine Learning Platform for Early Cardiovascular Disease Detection\\[0.2em]
+\normalsize Smart India Hackathon 2026 --- Problem Statement SIH26139}
+\author{Handoff document for continuing project work across AI sessions}
+\date{Generated: Phase 5 complete, awaiting Phase 6 (September 2026)}
+
+\sloppy
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent This document is a complete, self-contained record of the QuantumDx project: what problem it solves, every design decision made, every phase completed so far (Phase 1 through Phase 5), the exact numerical results obtained, the engineering principles enforced throughout, the current repository structure, and the remaining phases still to be built. It is written so that a reader (human or AI assistant) with \emph{zero prior context} can read it once and be immediately productive continuing the project --- verifying claims against the repository, running the next phase, or reasoning about design trade-offs already settled. Every number quoted here comes from an actual executed run, not an estimate, unless explicitly marked otherwise.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =========================================================================
+\section{Project Overview}
+% =========================================================================
+
+\subsection{The problem statement}
+
+\textbf{SIH26139 --- Hybrid Quantum Machine Learning Platform for Early Disease Detection.} The problem statement (Smart India Hackathon 2026) asks for a platform that integrates classical preprocessing and feature engineering with quantum-enhanced learning models (QSVM, QNN, or VQC), applied to biomedical data, supporting data ingestion, hybrid model training, prediction, explainability, and performance evaluation against purely classical baselines. Central requirements: a hybrid quantum-classical architecture, classical preprocessing, feature engineering/selection, quantum-enhanced ML, prediction, explainability, performance evaluation, comparison with classical baselines (accuracy, sensitivity, specificity), computational efficiency, generalization, scalability, quantum simulator compatibility, near-term quantum hardware compatibility, and comprehensive documentation.
+
+\subsection{Our product decision}
+
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Disease:} Cardiovascular disease.
+  \item \textbf{Initial task:} Early cardiovascular disease risk detection (binary classification).
+  \item \textbf{Development dataset:} UCI Heart Disease dataset (Cleveland subset), used explicitly as a \emph{development/benchmark} dataset, not a claim about high-dimensional biomedical data in general. The architecture is deliberately designed so a larger cardiovascular dataset can be substituted later via configuration, not a rewrite.
+  \item \textbf{Project name:} QuantumDx.
+\end{itemize}
+
+\subsection{The governing documents}
+
+Two large planning documents were produced before any code was written, and both remain the source of truth for scope and philosophy:
+
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{\code{PRD.md}} --- the full Product Requirements Document. 43 sections covering executive summary, problem statement, product goals/non-goals, personas, functional and non-functional requirements, the complete ML pipeline, classical and quantum requirements, explainability, benchmarking, robustness, dashboard/API/architecture, a SIH26139 requirement-to-feature traceability matrix, and acceptance criteria. \textbf{Never modified after creation.}
+  \item \textbf{\code{MVP\_SPEC.md}} --- the MVP Specification and Implementation Plan. Defines the \emph{smallest complete} system satisfying SIH26139: the exact dataset schema, the 13-phase development plan (Phase 0 through Phase 12), project structure, engineering practices, and a real-hardware validation plan (Section~8.5, described in \S\ref{sec:ibm-plan} below). \textbf{Never modified after creation.}
+\end{itemize}
+
+Both documents establish, and every phase since has upheld, three non-negotiable rules:
+\begin{enumerate}[leftmargin=1.4em]
+  \item \textbf{Depth loses to completeness.} A working end-to-end chain beats a deep but partial one.
+  \item \textbf{Every stage must be demonstrable.} If it cannot be shown, it is not done.
+  \item \textbf{Honesty is a feature.} No claim of quantum advantage without a confidence interval and, eventually, a significance test. A null or negative result, measured rigorously, is a valid and reportable outcome.
+\end{enumerate}
+
+\subsection{The IBM Quantum hardware plan (already decided, not yet executed)}
+\label{sec:ibm-plan}
+
+The team has IBM Quantum cloud access (\code{qiskit-ibm-runtime==0.44.0} is already installed). The plan, fixed in \code{MVP\_SPEC.md} \S8.5 and unchanged since:
+
+\begin{itemize}[leftmargin=1.4em]
+  \item The \emph{full} classical-vs-quantum benchmark stays on the simulator, permanently. The full training kernel is $\approx$43{,}900 circuit evaluations $\approx$3--4 hours of QPU time, against a free-tier allowance on the order of 10 minutes/month --- roughly 20--40$\times$ over budget for a single run, before even considering repeated CV or multiple seeds.
+  \item A \textbf{separate, small, scoped hardware validation experiment} is planned for Phase 6: a fixed 30-train/10-test subsample ($\approx$735 circuits, $\approx$3--4 minutes of QPU time), with the identical small kernel computed three ways --- exact statevector simulator, a noisy simulator, and the real IBM device --- then compared via element-wise kernel divergence, diagonal-fidelity deviation (a ground-truth-free noise indicator, since $K(x,x)$ should be exactly 1), and kernel-concentration statistics.
+  \item This hardware run is executed \emph{once}, cached, and never queued live during a demo (queue times are unbounded).
+  \item Hardware results are auditable (device name, calibration timestamp, job IDs, QPU seconds) but explicitly \emph{not} claimed to be bit-reproducible, because device calibration drifts daily.
+\end{itemize}
+
+% =========================================================================
+\section{Engineering Principles Enforced Throughout}
+\label{sec:principles}
+% =========================================================================
+
+These principles were established early and have been mechanically enforced (via code structure and tests, not just stated) in every phase since. A reader picking up Phase 6 should preserve all of them.
+
+\subsection{Leakage safety}
+\begin{itemize}[leftmargin=1.4em]
+  \item The train/test split happens \emph{before} any statistic is ever computed (Phase 2), and is never re-created by a later phase.
+  \item Every fitted transformer (imputer, encoder, scaler, feature selector, PCA) is fit on the training partition only, and only ever \code{.transform()}-ed on test/validation data.
+  \item Cross-validation refits the \emph{entire} preprocessing chain inside every fold (Phase 3), using sklearn's own \code{GridSearchCV} machinery rather than a hand-rolled loop.
+  \item \textbf{Structural leakage guards}: tuning functions (\code{run\_grid\_search}, \code{run\_qsvm\_grid\_search}) have \emph{no test-set parameter in their signature at all} --- verified directly via \code{inspect.signature()} in tests, not just by convention.
+  \item \textbf{Behavioral leakage guards}: dedicated tests perturb an extreme, synthetic value into the test set and confirm training-derived statistics (imputer medians, scaler means, PCA axes, CV fold scores) do not change.
+  \item The locked test set is touched by exactly one function, exactly once, after model selection is complete.
+\end{itemize}
+
+\subsection{Reproducibility}
+\begin{itemize}[leftmargin=1.4em]
+  \item A fixed random seed (42) propagates through every stochastic component: the split, cross-validation folds, \code{mutual\_info\_classif}'s internal estimator, every classical model's \code{random\_state}, bootstrap resampling.
+  \item A deterministic \code{split\_id} (a short SHA-256-derived fingerprint of the split parameters) is computed once in Phase 2 and reproduced --- never re-derived --- by every subsequent phase. Its value for the default configuration is \code{e471025b07519a64}, and it appears verbatim in every phase's results and documentation.
+  \item Every experiment's run record captures library versions, configuration, seeds, and timings as JSON.
+  \item Immutable (\code{frozen=True}) configuration dataclasses (\code{PreprocessingConfig}, \code{QuantumConfig}) prevent one experiment's config from silently mutating and contaminating another's.
+\end{itemize}
+
+\subsection{Honesty / anti-overclaiming}
+\begin{itemize}[leftmargin=1.4em]
+  \item No document claims quantum advantage, quantum superiority, or clinical validity anywhere.
+  \item Every results document distinguishes \emph{CV variability} (mean/std/t-distribution CI across folds, computed on training data only) from \emph{final test uncertainty} (percentile bootstrap CI on the single locked-test evaluation) and never conflates the two.
+  \item Model-selection criterion is fixed \emph{before} results are observed (mean CV ROC-AUC, not accuracy) and is never changed retroactively to produce a better-looking result, even when a selected hyperparameter produces an ugly, degenerate outcome (this happened in Phase 5 --- see \S\ref{sec:phase5}).
+  \item Every phase's documentation has an explicit ``What this does NOT establish'' section.
+  \item Raw data immutability is checksum-verified (SHA-256) after every phase's code runs, not just claimed.
+\end{itemize}
+
+\subsection{Reuse, not duplication}
+\begin{itemize}[leftmargin=1.4em]
+  \item Phase 3 (classical) reuses Phase 2's preprocessing classes directly via thin sklearn-compatible adapter classes (\code{SharedFeatureTransformer}, \code{QuantumReadyTransformer}) rather than reimplementing preprocessing logic.
+  \item Phase 4 (quantum infrastructure) reuses Phase 2's \code{run\_preprocessing\_pipeline()} directly for its data contract --- no new split, no new PCA fit.
+  \item Phase 5 (QSVM) reuses Phase 3's scoring dictionary (\code{CV\_SCORING}), model-selection constant (\code{MODEL\_SELECTION\_METRIC}), and --- critically --- Phase 3's \emph{exact} \code{evaluate\_on\_test()} function for the final locked-test evaluation, unmodified. The same \code{ModelResult} dataclass is used for both classical and quantum models.
+  \item Only one package (\code{src/quantum/}) is allowed to import Qiskit, so an API-breaking Qiskit upgrade has a confined blast radius.
+\end{itemize}
+
+\subsection{Documentation-in-sync-with-code}
+Every phase produced a Markdown document in \code{docs/} that is explicitly declared to be \emph{derived from} the code and results, with a stated rule: if a number in the document ever disagrees with a fresh run of the code, the code's output is authoritative and the document must be corrected. Every non-trivial claim is paired with the specific test that verifies it (a ``Traceability'' table appears at the end of every phase document).
+
+% =========================================================================
+\section{Phase 1 --- Dataset Understanding and Validation}
+\label{sec:phase1}
+% =========================================================================
+
+\phasestatus{\done}{\code{src/data/inspect\_dataset.py}}{\code{docs/DATASET.md}}{\code{tests/test\_dataset.py} (27 tests)}{---}
+
+\subsection{What was built}
+A read-only inspection and structural-validation module for \code{data/raw/processed.cleveland.data}. It loads the raw, headerless, comma-separated UCI file, assigns the 14 documented column names, treats \code{"?"} as the missing-value marker, and produces a full data-quality report: shape, dtypes, missing-value counts, duplicate detection, numeric/categorical profiles, domain-violation checks against the documented UCI value ranges, class distribution, and zero-variance-column detection. \textbf{No imputation, encoding, scaling, or target binarization happens in Phase 1} --- it is inspection only.
+
+\subsection{Key verified facts about the dataset}
+
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+Source file & \code{data/raw/processed.cleveland.data} \\
+Rows / Columns & 303 / 14 (13 predictors + target \code{num}) \\
+SHA-256 checksum & \code{\footnotesize a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8} \\
+Missing values & \code{ca}: 4 cells; \code{thal}: 2 cells; all others: 0 \\
+Duplicate rows & 0 \\
+Raw target \code{num} distribution & 0$\to$164, 1$\to$55, 2$\to$36, 3$\to$35, 4$\to$13 \\
+Binary target preview (\code{num}$>$0) & 0 (no disease): 164 (54.1\%); 1 (at risk): 139 (45.9\%) \\
+Categorical domain violations & 0 (every observed value matches the documented UCI codes) \\
+\bottomrule
+\end{tabularx}
+
+\subsection{The 13 predictors and their semantic types}
+\begin{tabularx}{\textwidth}{@{}p{3.5cm}p{3.6cm}Y@{}}
+\toprule
+\textbf{Group} & \textbf{Features} & \textbf{Notes} \\
+\midrule
+Continuous numeric & age, trestbps, chol, thalach, oldpeak & Median-imputed later, then scaled \\
+Discrete numeric (ordinal count) & ca (0--3 vessels) & Kept numeric, not one-hot, to preserve order \\
+Ordinal categorical & slope (3 levels) & Mode-imputed, kept as an ordered code \\
+Binary categorical & sex, fbs, exang & Already 0/1; imputed only, never encoded/scaled \\
+Nominal categorical & cp, restecg, thal & One-hot encoded after imputation \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Important findings worth remembering}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{The UCI documentation itself is inconsistent}: \code{heart-disease.names} states missing values are marked \code{-9.0}, but the actual processed file uses \code{"?"}. This was verified empirically (\code{-9.0} never appears; \code{"?"} appears exactly 6 times) and the loader trusts the empirical evidence, not the stale documentation.
+  \item \textbf{\code{chol}=0 is a known undeclared missing-value sentinel at other UCI sites}, not Cleveland: verified that \code{chol}=0 occurs in 100\% of the 123 Switzerland records and 24.5\% of the 200 VA records, but \emph{zero} times in Cleveland. This directly motivated Phase 2's decision to declare sentinel codes per-column, per-dataset, in configuration rather than hardcoding them.
+  \item \textbf{The clinical-leakage concern about \code{ca}/\code{thal}}: both are results of specialist cardiac investigations (fluoroscopy, thallium stress test) typically ordered once disease is already suspected. \code{ca} in particular sits close to a direct read-out of the angiographic diagnosis. This was flagged in Phase 1 and became the basis for Phase 2/3's ``screening'' feature-set ablation (features minus \code{ca}/\code{thal}), which Phase 3 confirmed empirically matters (see \S\ref{sec:phase3}).
+  \item The inspection script was verified to \emph{generalize} correctly: running it against the Switzerland file independently rediscovered the \code{chol}=0 pattern and a 6.5\% minority-class imbalance warning, proving the logic is genuinely dataset-driven, not overfit to Cleveland's specific cleanliness.
+\end{itemize}
+
+% =========================================================================
+\section{Phase 2 --- Leakage-Proof Preprocessing \& Feature Pipeline}
+\label{sec:phase2}
+% =========================================================================
+
+\phasestatus{\done}{\code{src/preprocessing/\{config,pipeline,validation\}.py}}{\code{docs/PREPROCESSING.md}}{\code{tests/test\_preprocessing.py} (41 tests)}{---}
+
+\subsection{What was built}
+A pipeline that turns the raw dataset into \textbf{two} feature representations sharing \textbf{one} upstream stage, so the two branches can never silently diverge in how the data was cleaned:
+
+\begin{center}
+\begin{lstlisting}
+RAW DATA
+  -> TARGET CREATION (num -> target; target = 1 if num > 0 else 0; num preserved)
+  -> STRATIFIED TRAIN/TEST SPLIT (80/20, seed 42)   <- split BEFORE any fitting
+  -> PREPROCESSING (impute -> encode -> scale)       [fit on TRAIN only]
+  -> FEATURE SELECTION (SelectKBest, mutual_info)    [fit on TRAIN only]
+       |--------------------------|
+       v                          v
+  CLASSICAL-READY           PCA (4 comps) + range-normalize to [0,pi]  [fit on TRAIN only]
+  FEATURES (10 cols)                |
+                                     v
+                            QUANTUM-READY FEATURES (4 cols, in [0, pi])
+\end{lstlisting}
+\end{center}
+
+\subsection{Key configuration (\code{PreprocessingConfig}, defaults)}
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Field} & \textbf{Default} \\
+\midrule
+\code{random\_seed} & 42 \\
+\code{test\_size} / \code{stratify} & 0.20 / True \\
+\code{numeric\_impute\_strategy} & median \\
+\code{categorical\_impute\_strategy} & most\_frequent \\
+\code{scaler} & standard (also supports minmax, robust) \\
+\code{feature\_selection\_method} & mutual\_info (also supports f\_classif) \\
+\code{feature\_selection\_k} & 10 \\
+\code{pca\_n\_components} & \textbf{4} --- this fixes the quantum branch's qubit count for all later phases \\
+\code{quantum\_range} & $[0, \pi]$ \\
+\code{feature\_set} & full (also supports ``screening'': excludes ca, thal) \\
+\bottomrule
+\end{tabularx}
+
+\subsection{The locked split (referenced by every later phase)}
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+Train / Test rows & 242 / 61 \\
+\textbf{split\_id} & \textbf{\code{e471025b07519a64}} \\
+Train class balance & 0: 131 (54.1\%), 1: 111 (45.9\%) \\
+Test class balance & 0: 33 (54.1\%), 1: 28 (45.9\%) \\
+Features after impute+encode+scale (pre-selection) & 17 (full feature set) \\
+Selected features (top-10 by mutual information) & chol, thalach, ca, slope, sex, exang, cp\_2.0, cp\_4.0, thal\_6.0, thal\_7.0 \\
+PCA cumulative explained variance (4 components) & 82.0\% \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Design decisions worth remembering}
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{\code{MinMaxScaler(clip=True)} for the quantum range.} Discovered during development: a test-set PCA value can legitimately fall slightly outside the training-derived $[0,\pi]$ range (expected, since the scaler is fit on train only). \code{clip=True} guarantees the quantum-ready output is always bounded, without ever using test statistics to derive the bound.
+  \item \textbf{\code{SharedFeaturePipeline}} is a hand-written two-stage object (not a bare sklearn \code{Pipeline}), because \code{feature\_selection\_k} must be clipped against the \emph{actual} post-one-hot-encoding column count, which is only known after the encoder has been fit.
+  \item \textbf{The screening ablation} (\code{feature\_set="screening"}) is fully wired and tested but was \emph{not} run as an experiment in Phase 2 --- only prepared, per the phase's explicit scope. Phase 3 later ran it.
+  \item \textbf{The dedicated leakage test} constructs a synthetic extreme value (cholesterol = 999{,}999) in the test set and proves the training-fitted scaler mean, imputer median, and PCA axes are bit-identical whether or not that value exists, because the test set is never part of any \code{.fit()} call.
+\end{itemize}
+
+% =========================================================================
+\section{Phase 3 --- Classical ML Baseline \& Leakage-Safe Evaluation}
+\label{sec:phase3}
+% =========================================================================
+
+\phasestatus{\done}{\code{src/classical/\{models,tuning,evaluation,train\_baselines\}.py}}{\code{docs/CLASSICAL\_BASELINE.md}}{\code{tests/test\_classical.py} (20 tests)}{\code{results/classical/**}}
+
+\subsection{Purpose}
+Establish a rigorous, fairly-tuned classical benchmark that later quantum models must be compared against. \textbf{Explicitly not} an attempt to show classical ML is weak.
+
+\subsection{The four required models}
+\begin{tabularx}{\textwidth}{@{}p{2.3cm}p{4.6cm}Y@{}}
+\toprule
+\textbf{Model} & \textbf{Library} & \textbf{Tuned parameter(s)} \\
+\midrule
+Logistic Regression & {\footnotesize\texttt{sklearn.linear\_\allowbreak model.\allowbreak LogisticRegression}} & C $\in \{0.001,\ldots,100\}$ (6 values) \\
+RBF-Kernel SVM & {\footnotesize\texttt{sklearn.svm.\allowbreak SVC(kernel='rbf')}} & C (4), gamma (4) --- 16 combos \\
+Random Forest & {\footnotesize\texttt{sklearn.\allowbreak ensemble.\allowbreak RandomForestClassifier}} & n\_estimators, max\_depth, min\_samples\_split, max\_features (24 combos) \\
+XGBoost & {\footnotesize\texttt{xgboost.\allowbreak XGBClassifier}} (v3.2.0) & n\_estimators, max\_depth, learning\_rate, subsample, colsample (48 combos) \\
+\bottomrule
+\end{tabularx}
+
+\textbf{A real sklearn-version bug was found and fixed, not hidden.} Installed \code{scikit-learn==1.8.0} deprecates the \code{penalty} keyword on \code{LogisticRegression} in favor of a unified \code{l1\_ratio} API; combining \code{penalty='l1'} with \code{solver='liblinear'} emitted an ``inconsistent values'' warning suggesting the l1 request might not be honored correctly. The fix: tune \code{C} only, with the standard L2 penalty via the \code{lbfgs} solver --- documented in code and in \code{CLASSICAL\_BASELINE.md} \S7.2, not silently patched over.
+
+\subsection{Leakage-safe cross-validation architecture}
+Two thin sklearn-compatible adapter classes wrap Phase 2's preprocessing so it can be dropped into \code{GridSearchCV}:
+\begin{itemize}[leftmargin=1.4em]
+  \item \code{SharedFeatureTransformer} --- delegates to Phase 2's \code{SharedFeaturePipeline}.
+  \item \code{QuantumReadyTransformer} --- delegates to Phase 2's \code{build\_quantum\_pipeline} (PCA + range-normalize).
+\end{itemize}
+Both are placed as the first step(s) of an sklearn \code{Pipeline} together with the classifier, and the \emph{whole pipeline} (preprocessing included) is handed to \code{GridSearchCV(cv=StratifiedKFold(5, shuffle=True, seed=42))}. sklearn's own cross-validation machinery refits preprocessing fresh inside every fold. Model selection uses \textbf{mean CV ROC-AUC} (\code{MODEL\_SELECTION\_METRIC = "roc\_auc"}), never accuracy.
+
+\subsection{The three experiments and their real results}
+
+\textbf{Experiment 1 --- full feature set, classical-ready (10 selected features):}
+\begin{center}
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Model} & \textbf{CV ROC-AUC} & \textbf{Test ROC-AUC} & \textbf{Test Sens.} & \textbf{Test Spec.} \\
+\midrule
+Logistic Regression & 0.9019 $\pm$ 0.0130 & 0.9481 & 0.9286 & 0.8485 \\
+RBF-Kernel SVM & 0.9055 $\pm$ 0.0189 & 0.9405 & 0.9286 & 0.8182 \\
+Random Forest & 0.8894 $\pm$ 0.0193 & 0.9470 & 0.8214 & 0.9394 \\
+XGBoost & 0.8871 $\pm$ 0.0216 & 0.9405 & 0.8571 & 0.8485 \\
+\bottomrule
+\end{tabular}
+\end{center}
+By the CV criterion, RBF-SVM ranks first (0.9055), narrowly ahead of Logistic Regression (0.9019) --- \emph{their 95\% CIs overlap substantially, this is not a decisive win}. On the single locked test set, Logistic Regression scores highest (0.9481). This CV-vs-test disagreement is reported honestly as the reason CV, not the single 61-row test score, is trusted as the primary model-selection evidence.
+
+\textbf{Experiment 2 --- screening (11 features, \code{ca}/\code{thal} excluded), classical-ready:} Every single one of the four models' CV ROC-AUC \emph{dropped} when \code{ca}/\code{thal} were removed, consistently, by roughly 5 percentage points (mean across models: 0.896 $\to$ 0.845). This uniform effect across four architecturally different models is strong evidence that \code{ca}/\code{thal} genuinely carry substantial predictive signal beyond the other 11 features --- confirming the Phase 1 clinical-leakage concern was well-founded. \code{ca}/\code{thal} were never removed from the primary dataset; this is a config-only ablation.
+
+\textbf{Experiment 3 --- full feature set, quantum-ready (4 PCA components):} This is the benchmark a future quantum model must be compared against fairly, because it uses the identical 4-dimensional representation a quantum model will see.
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Model} & \textbf{CV ROC-AUC (4-dim)} & \textbf{Test ROC-AUC} \\
+\midrule
+Logistic Regression & 0.8610 $\pm$ 0.0336 & 0.9210 \\
+RBF-Kernel SVM & 0.8604 $\pm$ 0.0377 & 0.9242 \\
+Random Forest & 0.8486 $\pm$ 0.0482 & 0.9167 \\
+XGBoost & 0.8616 $\pm$ 0.0367 & 0.9275 \\
+\midrule
+\textbf{Mean} & \textbf{0.8579} & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+Compressing to 4 PCA components (82.0\% retained variance) costs $\approx$3.8 ROC-AUC points on average versus the full 10-feature representation --- a real, expected, disclosed cost of dimensionality reduction.
+
+\textbf{Class-weighting side-check (Experiment 1's tuned hyperparameters, re-evaluated with \code{class\_weight='balanced'} / \code{scale\_pos\_weight}):} negligible effect on ROC-AUC (all four models changed by $<$0.002, well inside CV noise), with the expected small sensitivity-up/specificity-down trade-off. \textbf{Conclusion: class weighting is not used}, since the dataset is near-balanced (54.1\%/45.9\%) and weighting demonstrably does not help --- checked empirically, not assumed.
+
+\subsection{Sanity check}
+Every classical ROC-AUC lands well below 1.0 (0.887--0.906 CV, 0.94--0.95 test) --- plausible for this literature-standard dataset and \emph{not} suspiciously perfect, which is itself a basic sanity check against leakage.
+
+% =========================================================================
+\section{Phase 4 --- Quantum Data Pipeline \& Fidelity Kernel (Infrastructure)}
+\label{sec:phase4}
+% =========================================================================
+
+\phasestatus{\done}{\code{src/quantum/\{config,data\_contract,feature\_maps,backends,kernel,sanity\_experiment\}.py}}{\code{docs/QUANTUM\_PIPELINE.md}}{\code{tests/test\_quantum.py} (53 Phase-4 tests)}{\code{results/quantum/sanity/}}
+
+\subsection{Purpose and scope}
+Build the infrastructure that turns an already-preprocessed patient record into a quantum kernel value --- deterministically, reproducibly, without touching the test set in any way that matters. \textbf{Explicitly not} a benchmark: no QSVM was trained, no accuracy/sensitivity/specificity was reported, nothing was executed on real IBM hardware.
+
+\subsection{Critical environment decision: no \code{qiskit-aer}, no \code{qiskit-machine-learning}}
+The installed \code{qiskit} version is \textbf{2.2.3} (a major, recent version). Installing \code{qiskit-aer} or \code{qiskit-machine-learning} would have pulled in \code{numpy>=2.0} --- a major version jump from the \code{numpy==1.26.4} that Phases 1--3's tested pipeline (pandas, scikit-learn, xgboost) runs on, verified via \code{pip install --dry-run}. \textbf{Decision: use only core Qiskit.} The exact statevector simulator, \code{qiskit.quantum\_info.Statevector.from\_instruction()}, needs no Aer at all --- at 4--6 qubits a statevector has 16--64 complex amplitudes, trivially cheap regardless of backend. This was verified by re-running the full Phase 1--3 test suite (68 tests) after adding Phase 4 code and confirming zero regressions and an unchanged \code{numpy} version.
+
+\textbf{A real API-deprecation issue was found and worked around, not hidden.} \code{qiskit==2.2.3} deprecates the class-based \code{ZZFeatureMap}/\code{ZFeatureMap}/\code{PauliFeatureMap} (removal planned for Qiskit 3.0) in favor of function-based replacements: \code{zz\_feature\_map}, \code{z\_feature\_map}, \code{pauli\_feature\_map}. This implementation uses the function-based API throughout.
+
+\subsection{The quantum data contract}
+\code{load\_quantum\_dataset()} calls Phase 2's \code{run\_preprocessing\_pipeline()} directly --- the same function Phase 3's Experiment 3 used. \textbf{No new split is ever created.} Returns \code{X\_train\_quantum} (242$\times$4), \code{X\_test\_quantum} (61$\times$4), \code{y\_train}, \code{y\_test}, with \code{split\_id} reproduced (not re-derived) as \code{e471025b07519a64}. \code{n\_qubits} is derived from \code{PreprocessingConfig.pca\_n\_components} (never hardcoded), so the quantum pipeline can never silently disagree with Phase 2.
+
+\subsection{The feature map}
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+Feature map & \code{zz\_feature\_map} (default; \code{z\_feature\_map}, \code{pauli\_feature\_map} also supported) \\
+Qubits & 4 (= \code{pca\_n\_components}) \\
+Repetitions & 2 \\
+Entanglement & linear (circular, full also supported) \\
+Encoding & Angle encoding, one classical feature per qubit \\
+Trainable quantum parameters & \textbf{Zero} --- the map is a fixed template; only the 4 data values are bound in \\
+Free parameters (data) & 4 \\
+Logical circuit depth (decomposed) & 19 \\
+Gate counts (decomposed) & \{u: 22, cx: 12\} \\
+\bottomrule
+\end{tabularx}
+\textbf{Why \code{zz\_feature\_map}}: entangling (\code{RZZ}-family) terms give the kernel access to pairwise feature correlations, unlike \code{z\_feature\_map} (no entanglement at all, essentially a product kernel). \textbf{Why linear entanglement}: fewest two-qubit gates, cheapest to simulate, and most compatible with a real device's limited connectivity (relevant for Phase 6, even though Phase 4 does not execute on hardware). \textbf{This configuration was deliberately not optimized or swept} --- a defensible standard starting point, not a validated best choice.
+
+\subsection{Backend abstraction}
+\begin{center}
+\begin{lstlisting}
+QuantumBackend (Protocol: compute_statevector(), capabilities())
+  +-- StatevectorBackend      IMPLEMENTED  -- core Qiskit only, exact, deterministic
+  +-- NoisySimulatorBackend   interface only -- raises NotImplementedError; a Phase 5/6 decision
+  +-- IBMHardwareBackend      interface only -- raises NotImplementedError; scoped to Phase 6
+\end{lstlisting}
+\end{center}
+Backend selection is purely config-driven (\code{QuantumConfig.backend\_name}); \code{kernel.py} never branches on the backend name itself.
+
+\subsection{The fidelity kernel}
+\begin{gather*}
+K(x_i, x_j) = |\langle\phi(x_i)|\phi(x_j)\rangle|^2 \\
+|\phi(x)\rangle = U_\phi(x)|0000\rangle
+\end{gather*}
+\begin{sloppypar}
+Implemented efficiently: \code{compute\_statevectors(X, feature\_map, backend)} embeds every row \emph{once} (a statevector depends only on its own row), giving $O(n)$ circuit evaluations; \code{kernel\_matrix\_from\_statevectors(...)} assembles the matrix from cheap inner products, exploiting symmetry (upper triangle only) when applicable, but \textbf{the diagonal is always computed explicitly, never hardcoded to 1.0} --- a measured deviation from exactly 1.0 is itself a useful floating-point correctness signal.
+\end{sloppypar}
+
+\subsection{Sanity experiment (20 train / 10 test subsample, seed 42) --- real results}
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Item} & \textbf{Value} \\
+\midrule
+\code{K\_train\_train} / \code{K\_test\_train} / \code{K\_test\_test} shapes & (20,20) / (10,20) / (10,10) \\
+Min / Max kernel value & 3.6e-05 / 1.0 \\
+Diagonal deviation from 1.0 & 3.55e-15 (machine precision) \\
+Reproducibility & Bit-identical recompute, max diff = 0.0 \\
+Split ID & \code{e471025b07519a64} (matches Phase 2/3) \\
+\bottomrule
+\end{tabularx}
+Explicitly labelled \code{"status": "sanity\_check\_only\_not\_a\_benchmark"} in its own JSON output.
+
+% =========================================================================
+\section{Phase 5 --- Full-Scale QSVM Experiment}
+\label{sec:phase5}
+% =========================================================================
+
+\phasestatus{\done}{\code{src/quantum/\{qsvm,qsvm\_experiment\}.py}}{\code{docs/QUANTUM\_QSVM.md}}{21 new tests in \code{tests/test\_quantum.py} (74 total quantum tests)}{\code{results/quantum/phase5/}}
+
+\subsection{Purpose}
+Train the first real QSVM: \code{sklearn.svm.SVC(kernel='precomputed')} fed the Phase 4 fidelity kernel, computed at full scale on all 242 training and 61 test records, tuned leakage-safely, evaluated once on the locked test set, and compared descriptively (no significance test yet) against Phase 3's Experiment 3.
+
+\subsection{Computational cost --- measured before committing to the design}
+\begin{tabularx}{\textwidth}{Y r}
+\toprule
+\textbf{Step} & \textbf{Measured time} \\
+\midrule
+242 training-row statevectors & 0.449 s \\
+61 test-row statevectors & 0.085 s \\
+\code{K\_train\_train} assembly (242$\times$242, 29{,}161 pairs) & 0.091 s \\
+\code{K\_test\_train} assembly (61$\times$242, 14{,}762 pairs) & 0.036 s \\
+\textbf{Total kernel computation} & \textbf{0.662 s} \\
+\code{GridSearchCV} (5 C values $\times$ 5 folds = 25 fits) & $\approx$0.4 s \\
+\bottomrule
+\end{tabularx}
+This measurement is exactly why fine-grained mid-computation checkpointing was \emph{not} built: restartability is implemented at the level of caching the two final matrices to disk (keyed by feature-map config + \code{split\_id}), which is more than sufficient given sub-second real cost. Train and test statevectors are each computed \emph{exactly once} and reused for both matrices --- \code{compute\_kernel\_matrix\_cached()} from Phase 4 was deliberately \emph{not} used naively (it would have recomputed the 242 training statevectors a second time).
+
+\subsection{A key methodological question, resolved and verified}
+Is it leakage-safe to tune \code{C} by slicing the \emph{one} precomputed 242$\times$242 kernel per CV fold, rather than recomputing a fold-specific kernel? \textbf{Yes} --- because $K(x_i,x_j)$ is a fixed function of two feature vectors with zero fitted/learned state (the feature map is a template, not a model). This was \emph{empirically verified}, not just argued: a test compares \code{sklearn.model\_selection.cross\_val\_score} on the full precomputed kernel against a hand-written loop that manually slices \code{K[train\_idx][:,train\_idx]} / \code{K[val\_idx][:,train\_idx]} per fold --- the scores match exactly.
+
+\textbf{One disclosed, bounded simplification}: the 4-dimensional PCA representation was fit \emph{once} on all 242 training rows (the single, locked Phase 2/4 contract), not refit per CV fold the way Phase 3's classical preprocessing was. This is a mild, inherited, explicitly-disclosed simplification upstream of Phase 5 itself, expected to have negligible practical impact at this sample size, and consistent with Phase 5's explicit instruction to reuse the locked representation unchanged.
+
+\subsection{Hyperparameter tuning --- full CV grid table (real run)}
+\begin{center}
+\small
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+\textbf{C} & \textbf{CV ROC-AUC} & \textbf{CV Accuracy} & \textbf{CV Sensitivity} & \textbf{CV Specificity} & \textbf{Rank} \\
+\midrule
+\textbf{0.01} & \textbf{0.6945 $\pm$ 0.0281} & 0.5413 & \textbf{0.0000} & \textbf{1.0000} & \textbf{1 (selected)} \\
+0.1 & 0.6945 $\pm$ 0.0285 & 0.5413 & 0.0000 & 1.0000 & 2 \\
+1.0 & 0.6942 $\pm$ 0.0306 & 0.6403 & 0.5755 & 0.6943 & 3 \\
+10.0 & 0.6629 $\pm$ 0.0737 & 0.6403 & 0.6032 & 0.6709 & 4 \\
+100.0 & 0.6461 $\pm$ 0.0949 & 0.6406 & 0.5858 & 0.6869 & 5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{A finding reported precisely, not smoothed over}: the selected \code{C=0.01} has the (barely) highest CV ROC-AUC, tied within noise against C=0.1 and C=1.0, but \textbf{CV sensitivity = 0.0 and specificity = 1.0 at that C} --- the model predicts the majority class for every validation patient, in every fold. ROC-AUC (threshold-independent) can still register moderately above chance from ranking quality alone, even while the 0.5-threshold prediction has collapsed to one class. \textbf{This was not ``fixed'' by picking a different C} --- the selection criterion was fixed \emph{before} this result was observed (inherited from Phase 3 for consistency), and switching it post-hoc would itself be a form of outcome-chasing.
+
+\subsection{Final locked-test evaluation (touched exactly once)}
+\begin{center}
+\begin{tabular}{lrl}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{95\% Bootstrap CI} \\
+\midrule
+Accuracy & 0.6721 & [0.557, 0.787] \\
+\textbf{Sensitivity} & \textbf{0.7500} & [0.594, 0.909] \\
+\textbf{Specificity} & \textbf{0.6061} & [0.437, 0.774] \\
+Precision / F1 & 0.6176 / 0.6774 & --- \\
+\textbf{ROC-AUC} & \textbf{0.7798} & [0.661, 0.888] \\
+PR-AUC & 0.6839 & [0.527, 0.875] \\
+\bottomrule
+\end{tabular}
+\end{center}
+Confusion matrix: TN=20, FP=13, FN=7, TP=21 (n=61).
+
+\textbf{A second finding reported plainly}: the final model, refit on all 242 rows, does \emph{not} show the CV folds' degenerate all-negative behavior --- sensitivity is a substantive 0.75. This CV-vs-final-refit discrepancy is documented as an open, unexplained observation (a plausible but \emph{unconfirmed} read: more training data shifts which points become support vectors), flagged explicitly for Phase 6 investigation rather than explained away.
+
+\subsection{Descriptive comparison with Phase 3 (no significance test performed, by design)}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Sensitivity} & \textbf{Specificity} & \textbf{ROC-AUC} \\
+\midrule
+Logistic Regression & 0.869 & 0.857 & 0.879 & 0.921 \\
+RBF-SVM & 0.869 & 0.893 & 0.848 & 0.924 \\
+Random Forest & 0.869 & 0.857 & 0.879 & 0.917 \\
+XGBoost & 0.836 & 0.857 & 0.818 & 0.928 \\
+\textbf{QSVM (fidelity kernel)} & \textbf{0.672} & \textbf{0.750} & \textbf{0.606} & \textbf{0.780} \\
+\bottomrule
+\end{tabular}
+\end{center}
+All five rows use the identical 4-dimensional representation and identical locked split. \textbf{On every metric measured, the classical models outperform the QSVM on this dataset, at this qubit count, with this feature map.} Stated as a direct numeric fact. \textbf{What this does and does not establish} (verbatim from \code{QUANTUM\_QSVM.md} \S10):
+
+\emph{Establishes:} the full pipeline works correctly end to end at scale; leakage-safe C-tuning on a precomputed quantum kernel is sound and verified; on this specific configuration, classical wins numerically.
+
+\emph{Does NOT establish:} that quantum kernels are inferior in general, or under a different feature map/qubit count; that the CV-tie-but-different-sensitivity pattern is understood; that the CV-vs-final-test discrepancy has a confirmed cause; anything about statistical significance (not tested); anything about real hardware (pure simulation).
+
+% =========================================================================
+\section{Current Repository Structure}
+% =========================================================================
+
+\begin{lstlisting}
+QuantumDx/
+|-- PRD.md                          # Product Requirements Document (43 sections, never modified)
+|-- MVP_SPEC.md                     # MVP spec + 13-phase plan (never modified)
+|-- conftest.py                     # puts repo root on sys.path for pytest
+|-- configs/
+|   |-- preprocessing.yaml          # Phase 2 config (mirrors PreprocessingConfig)
+|   `-- quantum.yaml                # Phase 4 config (mirrors QuantumConfig)
+|-- data/
+|   `-- raw/                        # UCI Heart Disease files; NEVER modified; checksum-verified
+|-- src/
+|   |-- data/
+|   |   `-- inspect_dataset.py      # Phase 1
+|   |-- preprocessing/
+|   |   |-- config.py               # Phase 2
+|   |   |-- pipeline.py             # Phase 2 (SharedFeaturePipeline, run_preprocessing_pipeline)
+|   |   `-- validation.py           # Phase 2
+|   |-- classical/
+|   |   |-- models.py               # Phase 3 (4-model registry)
+|   |   |-- tuning.py               # Phase 3 (sklearn adapters, CV_SCORING, MODEL_SELECTION_METRIC)
+|   |   |-- evaluation.py           # Phase 3 (metrics, CIs, ModelResult, plots)
+|   |   `-- train_baselines.py      # Phase 3 orchestrator
+|   `-- quantum/                    # ONLY package that imports Qiskit
+|       |-- config.py               # Phase 4 (QuantumConfig)
+|       |-- data_contract.py        # Phase 4 (load_quantum_dataset)
+|       |-- feature_maps.py         # Phase 4 (zz/z/pauli_feature_map)
+|       |-- backends.py             # Phase 4 (StatevectorBackend + stubs)
+|       |-- kernel.py               # Phase 4 (fidelity kernel + diagnostics + cache)
+|       |-- sanity_experiment.py    # Phase 4 orchestrator (small subsample)
+|       |-- qsvm.py                 # Phase 5 (SVC precomputed wrapper + CV)
+|       `-- qsvm_experiment.py      # Phase 5 orchestrator (full 242/61 scale)
+|-- tests/
+|   |-- test_dataset.py             # 27 tests (Phase 1)
+|   |-- test_preprocessing.py       # 41 tests (Phase 2)
+|   |-- test_classical.py           # 20 tests (Phase 3)
+|   `-- test_quantum.py             # 74 tests (Phase 4: 53, Phase 5: 21)
+|-- results/
+|   |-- classical/                  # Phase 3: 3 experiments, CSVs, JSON, 15 figures
+|   `-- quantum/
+|       |-- sanity/                 # Phase 4 sanity report + kernel matrices
+|       `-- phase5/                 # Phase 5 kernels, CV grid, final metrics, comparison, figures
+`-- docs/
+    |-- DATASET.md                  # Phase 1
+    |-- PREPROCESSING.md            # Phase 2
+    |-- CLASSICAL_BASELINE.md       # Phase 3
+    |-- QUANTUM_PIPELINE.md         # Phase 4
+    |-- QUANTUM_QSVM.md             # Phase 5
+    `-- latex/PROJECT_CONTEXT.tex   # THIS DOCUMENT
+\end{lstlisting}
+
+\textbf{Total test count as of Phase 5 completion: 162 tests, all passing, zero regressions across every phase.}
+
+\subsection{Environment snapshot}
+\begin{tabularx}{\textwidth}{@{}p{4.4cm}Y@{}}
+\toprule
+\textbf{Component} & \textbf{Version} \\
+\midrule
+Python & 3.11.9 (Windows-10-10.0.26200) \\
+numpy & 1.26.4 (deliberately kept below 2.0 --- see Phase 4) \\
+pandas & 2.3.3 \\
+scikit-learn & 1.8.0 \\
+scipy & 1.16.3 \\
+xgboost & 3.2.0 \\
+matplotlib & 3.10.1 \\
+qiskit & 2.2.3 \\
+qiskit-ibm-runtime & 0.44.0 (pre-installed, not yet wired up) \\
+qiskit-aer / qiskit-machine-learning & \textbf{not installed, deliberately} \\
+\bottomrule
+\end{tabularx}
+
+% =========================================================================
+\section{How to Run Everything (command reference)}
+% =========================================================================
+
+\begin{lstlisting}
+# Full test suite (all phases) -- ~35-60s, run this first to confirm the
+# environment is healthy before doing anything else
+python -m pytest -q
+
+# Phase-by-phase test suites
+python -m pytest tests/test_dataset.py -v        # Phase 1, 27 tests
+python -m pytest tests/test_preprocessing.py -v  # Phase 2, 41 tests
+python -m pytest tests/test_classical.py -v      # Phase 3, 20 tests
+python -m pytest tests/test_quantum.py -v        # Phase 4+5, 74 tests
+
+# Re-run the inspection / demonstration scripts (idempotent, safe)
+python -m src.data.inspect_dataset
+python -m src.preprocessing.pipeline
+python -m src.classical.train_baselines      # ~9 minutes (3 experiments x 4 models)
+python -m src.quantum.sanity_experiment       # <5 seconds
+python -m src.quantum.qsvm_experiment         # <2 seconds (cache hit), ~1s cold
+\end{lstlisting}
+
+Before doing anything destructive, verify raw-data integrity:
+\begin{lstlisting}
+python -c "import hashlib; print(hashlib.sha256(open('data/raw/processed.cleveland.data','rb').read()).hexdigest())"
+# must print: a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8
+\end{lstlisting}
+
+% =========================================================================
+\section{Future Phases}
+% =========================================================================
+
+\subsection{Phase 6 --- Scoped IBM Quantum Hardware Validation (next, not started)}
+\pending
+
+Per the plan fixed in \code{MVP\_SPEC.md} \S8.5 (\S\ref{sec:ibm-plan} above) and restated at the start of Phase 5:
+
+\begin{enumerate}[leftmargin=1.4em]
+  \item \textbf{Verify the IBM Quantum account/plan details first} --- do not assume: exact free-tier quota, session-vs-batch mode availability, which real device(s) are accessible, current queue times, and the pinned \code{qiskit-ibm-runtime} primitive API (\code{SamplerV2} interface) for the installed version (0.44.0).
+  \item \textbf{Build \code{IBMHardwareBackend}} (currently a \code{NotImplementedError} stub in \code{src/quantum/backends.py}) implementing the same \code{QuantumBackend} Protocol used by \code{StatevectorBackend} --- so \code{kernel.py} needs zero changes.
+  \item \textbf{Run the scoped validation experiment}: a fixed, seeded 30-train/10-test subsample of the same locked split ($\approx$735 circuits, $\approx$3--4 minutes of QPU time). Compute the identical kernel submatrix three ways: exact \code{StatevectorBackend}, a noisy simulator (may require finally installing \code{qiskit-aer} --- re-check the numpy 2.0 compatibility question first, since Phases 1--3 may tolerate it now, or may not; verify, do not assume), and the real IBM device.
+  \item \textbf{Report}: element-wise kernel divergence (mean/max $|\Delta K|$) between simulator and hardware; diagonal-fidelity deviation on hardware (should be exactly 1, will not be --- a ground-truth-free noise indicator); kernel-concentration statistics per backend; job provenance (device name, calibration timestamp, job IDs, QPU seconds).
+  \item \textbf{Do not} draw an accuracy/performance conclusion from the 10-point test subsample --- explicitly a divergence measurement, not a benchmark.
+  \item \textbf{Never queue live during a demo.} Run once, cache to disk, serve from cache thereafter (mirrors the restartable-cache pattern already established in Phase 5).
+  \item Credentials via a git-ignored \code{.env} (with a committed \code{.env.example}); never commit secrets.
+\end{enumerate}
+
+\textbf{Two concrete, open questions from Phase 5 worth investigating alongside or before Phase 6:}
+\begin{itemize}[leftmargin=1.4em]
+  \item Why did \code{C=0.01}/\code{0.1} produce a degenerate (sensitivity=0) classifier in every CV fold, yet the full-242-row refit at the same C did not? (Phase 5, \S\ref{sec:phase5})
+  \item Is the QSVM's low off-diagonal kernel mean ($\approx$0.09 in \code{K\_train\_train}) an early sign of kernel concentration, and would a feature-map sweep (different \code{reps}, entanglement, or \code{pauli\_feature\_map}) change the classical-vs-quantum gap observed in Phase 5?
+\end{itemize}
+
+\subsection{Later phases (per \code{MVP\_SPEC.md}'s 13-phase plan, not yet started)}
+\pending
+
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{VQC/QNN} --- the second quantum model family named in SIH26139. Explicitly the \emph{one pre-authorized droppable item} in the MVP plan if time runs short; QSVM alone already satisfies the problem statement's ``such as QSVM, QNN, or VQC'' language.
+  \item \textbf{Statistical significance testing} (McNemar for accuracy, DeLong or paired bootstrap for AUC) comparing QSVM vs. the Phase 3 classical baselines properly --- explicitly deferred out of Phase 5 by instruction, and the natural next step once Phase 6's hardware context exists.
+  \item \textbf{Explainability} --- SHAP for classical models; permutation importance + KernelSHAP (model-agnostic) for the QSVM, since quantum models expose no native feature attributions; a PCA loading map translating the 4 quantum components back to clinical features (already computed once in Phase 2, not yet surfaced in a dedicated explainability module).
+  \item \textbf{Robustness / generalization suite} --- repeated CV variance (already partially done via bootstrap CIs), noise-injection degradation curves, subgroup fairness slices (by sex, age band), and a cross-site check against the Hungarian/Switzerland/VA UCI files (available in \code{data/raw/} but never used for training, only for the Phase 1 generalization check of the inspection script itself).
+  \item \textbf{FastAPI backend} --- 9 endpoints as scoped in \code{MVP\_SPEC.md} \S14, deliberately excluding a \code{POST /train} endpoint (training stays CLI-driven; the API only serves stored results and predictions).
+  \item \textbf{Dashboard} --- React (or a Streamlit fallback, pre-authorized if time is short) with the 7 pages specified in \code{PRD.md}: Home, Dataset Analysis, Patient Prediction, Model Comparison, Explainability, Quantum Circuit/Model Info, Experiment Results.
+  \item \textbf{Final SIH demo preparation} --- code freeze, a rehearsed 10-minute run sheet (already drafted in \code{MVP\_SPEC.md} \S25.2), an offline fallback recording, and the acceptance checklist in \code{MVP\_SPEC.md} \S19.
+\end{itemize}
+
+% =========================================================================
+\section{Key Numbers Quick-Reference}
+% =========================================================================
+
+\begin{tabularx}{\textwidth}{@{}p{5.6cm}Y@{}}
+\toprule
+\textbf{Quantity} & \textbf{Value} \\
+\midrule
+Dataset & UCI Heart Disease, Cleveland, 303 rows, 14 columns \\
+Raw file SHA-256 & \code{\footnotesize a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8} \\
+Locked split\_id & \code{e471025b07519a64} \\
+Train / Test & 242 / 61 (seed 42, stratified 80/20) \\
+Selected classical features & 10 (of 17 encoded, from 13 raw) \\
+Quantum features / qubits & 4 (= \code{PreprocessingConfig.pca\_n\_components}) \\
+Quantum encoding range & $[0, \pi]$ \\
+Feature map & \code{zz\_feature\_map}, reps=2, linear entanglement \\
+Best classical model (Exp.\ 1, CV) & RBF-SVM, ROC-AUC 0.9055 $\pm$ 0.019 \\
+Best classical model (Exp.\ 1, test) & Logistic Regression, ROC-AUC 0.9481 \\
+Classical quantum-ready baseline (Exp.\ 3, mean CV) & ROC-AUC 0.858 \\
+QSVM (Phase 5, test) & ROC-AUC 0.7798 [CI 0.661, 0.888] \\
+Total tests passing & 162 / 162 \\
+Phases complete & 1, 2, 3, 4, 5 \\
+Next phase & 6 (scoped IBM hardware validation) \\
+\bottomrule
+\end{tabularx}
+
+\vspace{1em}
+\noindent\textit{This document was generated after Phase 5's completion and review. It should be regenerated or amended after each future phase to remain a reliable handoff artifact.}
+
+\end{document}

@@ -1,0 +1,113 @@
+{
+  "best_classical_vs_baseline_qsvm": {
+    "a": "logistic_regression",
+    "b": "baseline",
+    "delong": {
+      "auc_a": 0.8489848984898489,
+      "auc_b": 0.737923792379238,
+      "delta": 0.11106110611061093,
+      "var_delta": 0.000634056660093492,
+      "ci_low": 0.06170826880883058,
+      "ci_high": 0.1604139434123913,
+      "z": 4.410602914862736,
+      "p_value": 1.0308319878138406e-05
+    },
+    "bootstrap": {
+      "metric": "roc_auc",
+      "observed_delta": 0.11106110611061115,
+      "ci_low": 0.05958859942370474,
+      "ci_high": 0.1641188849536536,
+      "ci_includes_zero": false,
+      "bootstrap_p_value": 0.0,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 134,
+        "a_correct_b_wrong": 22,
+        "a_wrong_b_correct": 7,
+        "both_wrong": 37
+      },
+      "n_discordant": 29,
+      "test": "exact binomial McNemar",
+      "p_value": 0.008130058646202087
+    },
+    "delong_p_holm": 3.092495963441522e-05,
+    "delong_significant_holm": true
+  },
+  "best_classical_vs_mi_adaptive_qsvm": {
+    "a": "logistic_regression",
+    "b": "mi_adaptive",
+    "delong": {
+      "auc_a": 0.8489848984898489,
+      "auc_b": 0.7665766576657665,
+      "delta": 0.08240824082408238,
+      "var_delta": 0.0006278371978959013,
+      "ci_low": 0.03329805102789962,
+      "ci_high": 0.13151843062026514,
+      "z": 3.288873138443038,
+      "p_value": 0.0010058935158616666
+    },
+    "bootstrap": {
+      "metric": "roc_auc",
+      "observed_delta": 0.08240824082408249,
+      "ci_low": 0.03251445901523995,
+      "ci_high": 0.13474578600727988,
+      "ci_includes_zero": false,
+      "bootstrap_p_value": 0.002,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 136,
+        "a_correct_b_wrong": 20,
+        "a_wrong_b_correct": 10,
+        "both_wrong": 34
+      },
+      "n_discordant": 30,
+      "test": "exact binomial McNemar",
+      "p_value": 0.09873714670538905
+    },
+    "delong_p_holm": 0.0020117870317233333,
+    "delong_significant_holm": true
+  },
+  "mi_adaptive_vs_baseline_qsvm": {
+    "a": "mi_adaptive",
+    "b": "baseline",
+    "delong": {
+      "auc_a": 0.7665766576657665,
+      "auc_b": 0.737923792379238,
+      "delta": 0.02865286528652855,
+      "var_delta": 0.0005831333494099762,
+      "ci_low": -0.018676647163230135,
+      "ci_high": 0.07598237773628724,
+      "z": 1.1865447393967445,
+      "p_value": 0.23540724424769932
+    },
+    "bootstrap": {
+      "metric": "roc_auc",
+      "observed_delta": 0.02865286528652866,
+      "ci_low": -0.01983728291073791,
+      "ci_high": 0.07805283010956532,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.25,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 131,
+        "a_correct_b_wrong": 15,
+        "a_wrong_b_correct": 10,
+        "both_wrong": 44
+      },
+      "n_discordant": 25,
+      "test": "exact binomial McNemar",
+      "p_value": 0.42435622215270996
+    },
+    "delong_p_holm": 0.23540724424769932,
+    "delong_significant_holm": false
+  }
+}

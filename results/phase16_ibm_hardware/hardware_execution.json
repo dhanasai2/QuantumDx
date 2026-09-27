@@ -1,0 +1,16 @@
+{
+  "job_id": null,
+  "backend": "statevector_mock",
+  "status": "MOCK_COMPLETED",
+  "num_qubits": 4,
+  "shots": 256,
+  "circuit_depth": 6,
+  "gate_counts": {
+    "ry": 8,
+    "measure": 4,
+    "cx": 3,
+    "barrier": 1
+  },
+  "execution_timestamp": "2026-09-25T07:20:36Z",
+  "hardware_execution": false
+}

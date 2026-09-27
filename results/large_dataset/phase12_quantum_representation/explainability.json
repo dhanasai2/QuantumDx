@@ -1,0 +1,113 @@
+{
+  "quantum_observables": [
+    "quantum_expZ_qubit0",
+    "quantum_expZ_qubit1",
+    "quantum_expZ_qubit2",
+    "quantum_expZ_qubit3",
+    "quantum_expZZ_qubit0_qubit1",
+    "quantum_expZZ_qubit1_qubit2",
+    "quantum_expZZ_qubit2_qubit3",
+    "quantum_expZZ_qubit3_qubit0"
+  ],
+  "quantum_observable_definition": "Each quantum_expZ_qubit{i} is the exact expectation value of Pauli-Z on qubit i; each quantum_expZZ_qubit{i}_qubit{j} is the exact expectation value of the two-qubit Pauli ZZ correlator on qubits i,j, after the trainable circuit. No clinical meaning is claimed for any individual value beyond this literal mathematical definition.",
+  "quantum_theta_primary_seed": [
+    -0.05500647859649181,
+    1.018749879942295,
+    1.5491382617462213,
+    0.016738940398154677,
+    0.8801958328849835,
+    0.890619123728449,
+    0.9019317824827555,
+    1.0760548047360083,
+    0.06600977113044437,
+    0.9867080905696886,
+    0.9624931340237979,
+    0.4078492684287132,
+    0.05624825426500243,
+    -0.0677724517594267,
+    -0.07387528045366179,
+    -0.07355937192439517
+  ],
+  "control_phi_primary_seed": [
+    1.9309861753301059,
+    1.322903480140491,
+    1.1626696612777172,
+    -0.4068813973692893,
+    1.7111250300847873,
+    -0.8529975732139473,
+    -0.6500162865887046,
+    1.8384891372996588
+  ],
+  "logistic_regression_coefficients": {
+    "pca_only_logreg": {
+      "pca_0": 3.8345964268766486,
+      "pca_1": -0.5820776230731463,
+      "pca_2": 0.6833634617868071,
+      "pca_3": -0.06327761994333385
+    },
+    "quantum_logreg": {
+      "pca_0": 1.6658159439976379,
+      "pca_1": -0.6125866385646845,
+      "pca_2": 0.43855960352427487,
+      "pca_3": 0.33685811663491444,
+      "quantum_expZ_qubit0": -4.391388388651359,
+      "quantum_expZ_qubit1": 1.5979791358641016,
+      "quantum_expZ_qubit2": 0.829871586718084,
+      "quantum_expZ_qubit3": -0.443207274819998,
+      "quantum_expZZ_qubit0_qubit1": 3.3855886704251708,
+      "quantum_expZZ_qubit1_qubit2": -1.0373522301776545,
+      "quantum_expZZ_qubit2_qubit3": 1.0985197044116999,
+      "quantum_expZZ_qubit3_qubit0": -0.08681631278299831
+    },
+    "control_logreg": {
+      "pca_0": 2.9175258070940786,
+      "pca_1": -0.4478318347096178,
+      "pca_2": 2.217029431579086,
+      "pca_3": 1.994235598136828,
+      "control_0": -0.7439653375773049,
+      "control_1": 0.897846928773159,
+      "control_2": 2.4690643787099837,
+      "control_3": -0.4631265049769362,
+      "control_4": -0.2587326371051036,
+      "control_5": -0.30605548883996464,
+      "control_6": -0.274431825459269,
+      "control_7": 0.12603490274018217
+    }
+  },
+  "xgboost_feature_importances": {
+    "pca_only": {
+      "pca_0": 0.750056803226471,
+      "pca_1": 0.12427784502506256,
+      "pca_2": 0.07139088958501816,
+      "pca_3": 0.05427445471286774
+    },
+    "quantum": {
+      "pca_0": 0.5763907432556152,
+      "pca_1": 0.04004737734794617,
+      "pca_2": 0.024748805910348892,
+      "pca_3": 0.021681291982531548,
+      "quantum_expZ_qubit0": 0.09827658534049988,
+      "quantum_expZ_qubit1": 0.01701011136174202,
+      "quantum_expZ_qubit2": 0.012520493939518929,
+      "quantum_expZ_qubit3": 0.03455158323049545,
+      "quantum_expZZ_qubit0_qubit1": 0.015077502466738224,
+      "quantum_expZZ_qubit1_qubit2": 0.02861759066581726,
+      "quantum_expZZ_qubit2_qubit3": 0.0491316057741642,
+      "quantum_expZZ_qubit3_qubit0": 0.08194629102945328
+    },
+    "control": {
+      "pca_0": 0.5862502455711365,
+      "pca_1": 0.09203222393989563,
+      "pca_2": 0.04605283588171005,
+      "pca_3": 0.0363275483250618,
+      "control_0": 0.024379612877964973,
+      "control_1": 0.01720188930630684,
+      "control_2": 0.040472034364938736,
+      "control_3": 0.020822880789637566,
+      "control_4": 0.017782893031835556,
+      "control_5": 0.05065128952264786,
+      "control_6": 0.05116276815533638,
+      "control_7": 0.01686370186507702
+    }
+  }
+}

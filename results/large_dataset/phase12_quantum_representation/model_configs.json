@@ -1,0 +1,65 @@
+{
+  "quantum_representation": {
+    "n_qubits": 4,
+    "n_layers": 2,
+    "seed": 42,
+    "n_trainable_params": 16,
+    "output_dim": 8,
+    "entangling_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "observables": [
+      "quantum_expZ_qubit0",
+      "quantum_expZ_qubit1",
+      "quantum_expZ_qubit2",
+      "quantum_expZ_qubit3",
+      "quantum_expZZ_qubit0_qubit1",
+      "quantum_expZZ_qubit1_qubit2",
+      "quantum_expZZ_qubit2_qubit3",
+      "quantum_expZZ_qubit3_qubit0"
+    ],
+    "encoding": "RY(x_i) angle encoding, re-uploaded every layer",
+    "trainable_single_qubit": "RY(theta_i) per qubit per layer",
+    "trainable_entanglement": "RZZ(theta_ij) per circular-adjacent pair per layer (TRAINABLE interaction strength)",
+    "estimator": "StatevectorEstimator(default_precision=0.0) + EstimatorQNN(default_precision=0.0) -- EXACT, no shot noise"
+  },
+  "matched_control": {
+    "input_dim": 4,
+    "output_dim": 8,
+    "seed": 42,
+    "n_trainable_params": 8,
+    "family": "Random Fourier Features (Rahimi & Recht 2007): cos(W.x + b + phi)",
+    "fixed": "W (random projection directions), b (baseline phase offsets) -- drawn once per seed",
+    "trainable": "phi (K phase-shift parameters), selected via the SAME COBYLA+CV procedure as the quantum block"
+  },
+  "xgb_frozen_params": {
+    "n_estimators": 300,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8
+  },
+  "primary_seed": 42,
+  "dev_seeds": [
+    42,
+    123,
+    2024,
+    7,
+    99
+  ]
+}

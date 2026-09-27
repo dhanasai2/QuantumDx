@@ -1,0 +1,6 @@
+Model,model_key,roc_auc,pr_auc,sensitivity,specificity,accuracy,precision,f1,tn,fp,fn,tp,best_params,provenance,train_seconds
+Logistic Regression,logistic_regression,0.84998499849985,0.8501484898717979,0.7272727272727273,0.801980198019802,0.765,0.782608695652174,0.7539267015706806,81,20,27,72,"{""C"": 1.0}",reproduced_training_stage_d,38.051
+RBF-Kernel SVM,rbf_svm,0.8405840584058405,0.838132481814923,0.7272727272727273,0.8217821782178217,0.775,0.8,0.761904761904762,83,18,27,72,"{""C"": 10.0, ""gamma"": 0.01}",reproduced_training_stage_d,532.549
+Random Forest,random_forest,0.8535853585358536,0.8499697988393898,0.7171717171717171,0.8613861386138614,0.79,0.8352941176470589,0.7717391304347826,87,14,28,71,"{""max_depth"": 5, ""max_features"": ""sqrt"", ""min_samples_split"": 2, ""n_estimators"": 300}",reproduced_training_stage_d,472.173
+XGBoost,xgboost,0.8612861286128612,0.8421536469361101,0.7575757575757576,0.8316831683168316,0.795,0.8152173913043478,0.7853403141361256,84,17,24,75,"{""colsample_bytree"": 0.8, ""learning_rate"": 0.05, ""max_depth"": 4, ""n_estimators"": 100, ""subsample"": 0.8}",reproduced_training_stage_d,331.634
+QSVM (fidelity kernel),qsvm,0.7994799479947995,0.8000141874350389,0.7575757575757576,0.7623762376237624,0.76,0.7575757575757576,0.7575757575757576,77,24,24,75,"{""C"": 1.0}",reproduced_training_stage_d,1780.922

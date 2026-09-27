@@ -1,0 +1,149 @@
+{
+  "status": "sanity_check_only_not_a_benchmark",
+  "dataset": {
+    "split_id": "e471025b07519a64",
+    "preprocess_hash": "b4de1f8051bf0d49",
+    "n_train_full": 242,
+    "n_test_full": 61,
+    "n_quantum_features": 4,
+    "quantum_range": [
+      0.0,
+      3.141592653589793
+    ]
+  },
+  "sanity_subsample": {
+    "n_train_sampled": 20,
+    "n_test_sampled": 10,
+    "seed": 42,
+    "train_indices_within_locked_train_split": [
+      24,
+      6,
+      152,
+      209,
+      237,
+      199,
+      190,
+      150,
+      9,
+      113,
+      45,
+      208,
+      226,
+      170,
+      82,
+      161,
+      231,
+      15,
+      66,
+      127
+    ],
+    "test_indices_within_locked_test_split": [
+      33,
+      9,
+      44,
+      12,
+      20,
+      26,
+      57,
+      50,
+      51,
+      42
+    ]
+  },
+  "feature_map": {
+    "name": "zz_feature_map",
+    "n_qubits": 4,
+    "reps": 2,
+    "entanglement": "linear",
+    "paulis": [
+      "Z",
+      "ZZ"
+    ],
+    "num_parameters": 4,
+    "depth_logical": 19,
+    "gate_counts": {
+      "u": 22,
+      "cx": 12
+    }
+  },
+  "backend": {
+    "name": "statevector",
+    "implemented": true,
+    "exact": true,
+    "shots": null,
+    "noise_model": null,
+    "requires": "core qiskit only (no qiskit-aer)"
+  },
+  "kernel_matrices": {
+    "K_train_train": {
+      "diagnostics": {
+        "shape": [
+          20,
+          20
+        ],
+        "min_value": 3.607880384828432e-05,
+        "max_value": 0.9999999999999978,
+        "mean_value": 0.11988942482154244,
+        "is_square": true,
+        "is_symmetric": true,
+        "diagonal_mean": 0.999999999999997,
+        "diagonal_max_abs_deviation_from_one": 3.552713678800501e-15,
+        "offdiag_mean": 0.07356781560162376,
+        "offdiag_std": 0.08904868398397393,
+        "within_valid_fidelity_range": true
+      }
+    },
+    "K_test_train": {
+      "diagnostics": {
+        "shape": [
+          10,
+          20
+        ],
+        "min_value": 0.0002868049374680803,
+        "max_value": 0.9715264146425433,
+        "mean_value": 0.08196701135423919,
+        "is_square": false,
+        "is_symmetric": null,
+        "diagonal_mean": null,
+        "diagonal_max_abs_deviation_from_one": null,
+        "offdiag_mean": null,
+        "offdiag_std": null,
+        "within_valid_fidelity_range": true
+      }
+    },
+    "K_test_test": {
+      "diagnostics": {
+        "shape": [
+          10,
+          10
+        ],
+        "min_value": 0.00036367997376053775,
+        "max_value": 0.9999999999999982,
+        "mean_value": 0.20182465539066388,
+        "is_square": true,
+        "is_symmetric": true,
+        "diagonal_mean": 0.9999999999999971,
+        "diagonal_max_abs_deviation_from_one": 3.3306690738754696e-15,
+        "offdiag_mean": 0.11313850598962685,
+        "offdiag_std": 0.13271240472932963,
+        "within_valid_fidelity_range": true
+      }
+    }
+  },
+  "reproducibility": {
+    "K_train_train_bitwise_identical_on_recompute": true,
+    "max_abs_difference_on_recompute": 0.0
+  },
+  "leakage_check": {
+    "K_train_train_unaffected_by_subsequently_computing_test_kernels": true,
+    "no_shared_rows_between_train_and_test_subsamples": true,
+    "kernel_functions_accept_no_label_argument": true
+  },
+  "budget_warnings": [],
+  "software_versions": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "qiskit": "2.2.3"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "experiment_name": "phase5_qsvm_full_scale",
+  "split_id": "e471025b07519a64",
+  "n_train": 242,
+  "n_test": 61,
+  "random_seed": 42,
+  "quantum_config": {
+    "backend_name": "statevector",
+    "feature_map_name": "zz_feature_map",
+    "reps": 2,
+    "entanglement": "linear",
+    "paulis": [
+      "Z",
+      "ZZ"
+    ],
+    "random_seed": 42,
+    "max_train_samples": 300,
+    "kernel_cache_dir": "results/quantum/cache/kernels"
+  },
+  "preprocessing_config": {
+    "random_seed": 42,
+    "test_size": 0.2,
+    "stratify": true,
+    "numeric_impute_strategy": "median",
+    "categorical_impute_strategy": "most_frequent",
+    "scaler": "standard",
+    "feature_selection_method": "mutual_info",
+    "feature_selection_k": 10,
+    "pca_n_components": 4,
+    "quantum_range_low": 0.0,
+    "quantum_range_high": 3.141592653589793,
+    "feature_set": "full"
+  },
+  "feature_map_report": {
+    "name": "zz_feature_map",
+    "n_qubits": 4,
+    "reps": 2,
+    "entanglement": "linear",
+    "paulis": [
+      "Z",
+      "ZZ"
+    ],
+    "num_parameters": 4,
+    "depth_logical": 19,
+    "gate_counts": {
+      "u": 22,
+      "cx": 12
+    }
+  },
+  "backend": {
+    "name": "statevector",
+    "implemented": true,
+    "exact": true,
+    "shots": null,
+    "noise_model": null,
+    "requires": "core qiskit only (no qiskit-aer)"
+  },
+  "cv_configuration": {
+    "folds": 5,
+    "shuffle": true,
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "selection_metric": "roc_auc",
+    "scoring_metrics": [
+      "roc_auc",
+      "average_precision",
+      "accuracy",
+      "recall",
+      "precision",
+      "specificity",
+      "f1"
+    ]
+  },
+  "kernel_diagnostics": {
+    "K_train_train": {
+      "shape": [
+        242,
+        242
+      ],
+      "min_value": 2.123608180163395e-06,
+      "max_value": 0.9999999999999982,
+      "mean_value": 0.09406308605862433,
+      "is_square": true,
+      "is_symmetric": true,
+      "diagonal_mean": 0.9999999999999972,
+      "diagonal_max_abs_deviation_from_one": 3.9968028886505635e-15,
+      "offdiag_mean": 0.0903040117269174,
+      "offdiag_std": 0.1271828480039884,
+      "within_valid_fidelity_range": true
+    },
+    "K_test_train": {
+      "shape": [
+        61,
+        242
+      ],
+      "min_value": 2.5109462608395346e-06,
+      "max_value": 0.9962625526781581,
+      "mean_value": 0.09257580241377039,
+      "is_square": false,
+      "is_symmetric": null,
+      "diagonal_mean": null,
+      "diagonal_max_abs_deviation_from_one": null,
+      "offdiag_mean": null,
+      "offdiag_std": null,
+      "within_valid_fidelity_range": true
+    }
+  },
+  "kernel_computation_timing": {
+    "cache_hit": true
+  },
+  "kernel_cache_files": {
+    "train": "results\\quantum\\phase5\\kernels\\K_train_train_zz_feature_map_q4_r2_linear_e471025b07519a64.npy",
+    "test": "results\\quantum\\phase5\\kernels\\K_test_train_zz_feature_map_q4_r2_linear_e471025b07519a64.npy"
+  },
+  "software_versions": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.16.3",
+    "qiskit": "2.2.3"
+  },
+  "status": "descriptive_comparison_only_no_significance_testing"
+}

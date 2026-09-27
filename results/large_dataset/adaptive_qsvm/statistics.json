@@ -1,0 +1,82 @@
+{
+  "delong": {
+    "auc_a": 0.8192819281928193,
+    "auc_b": 0.7994799479947995,
+    "delta": 0.01980198019801982,
+    "var_delta": 0.00021001441710980905,
+    "ci_low": -0.008601571253856952,
+    "ci_high": 0.04820553164989659,
+    "z": 1.3664195506132637,
+    "p_value": 0.171807315843596
+  },
+  "bootstrap_roc_auc": {
+    "metric": "roc_auc",
+    "observed_delta": 0.01980198019801982,
+    "ci_low": -0.007320412375476417,
+    "ci_high": 0.04924257345843123,
+    "ci_includes_zero": true,
+    "bootstrap_p_value": 0.185,
+    "n_resamples_used": 2000,
+    "seed": 42
+  },
+  "bootstrap_pr_auc": {
+    "metric": "pr_auc",
+    "observed_delta": 0.023902245336861694,
+    "ci_low": -0.02229301755916874,
+    "ci_high": 0.07306251459066676,
+    "ci_includes_zero": true,
+    "bootstrap_p_value": 0.359,
+    "n_resamples_used": 2000,
+    "seed": 42
+  },
+  "mcnemar": {
+    "contingency": {
+      "both_correct": 145,
+      "a_correct_b_wrong": 8,
+      "a_wrong_b_correct": 7,
+      "both_wrong": 40
+    },
+    "n_discordant": 15,
+    "test": "exact binomial McNemar",
+    "p_value": 1.0
+  },
+  "single_model_cis": {
+    "baseline_qsvm": {
+      "roc_auc": {
+        "metric": "roc_auc",
+        "point_estimate": 0.7994799479947995,
+        "ci_low": 0.7326839713241917,
+        "ci_high": 0.8602517876385061,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "pr_auc": {
+        "metric": "pr_auc",
+        "point_estimate": 0.8000141874350389,
+        "ci_low": 0.713482010530449,
+        "ci_high": 0.8720670613205709,
+        "n_resamples_used": 2000,
+        "seed": 42
+      }
+    },
+    "adaptive_qsvm": {
+      "roc_auc": {
+        "metric": "roc_auc",
+        "point_estimate": 0.8192819281928193,
+        "ci_low": 0.7580380420266629,
+        "ci_high": 0.8776635359920513,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "pr_auc": {
+        "metric": "pr_auc",
+        "point_estimate": 0.8239164327719006,
+        "ci_low": 0.7462273443480583,
+        "ci_high": 0.890776578664964,
+        "n_resamples_used": 2000,
+        "seed": 42
+      }
+    }
+  },
+  "delta_definition": "Adaptive QSVM - Baseline QSVM (positive = adaptive better)"
+}

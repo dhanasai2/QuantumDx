@@ -1,0 +1,50 @@
+{
+  "quantum_config": {
+    "n_qubits": 6,
+    "n_layers": 1,
+    "seed": 42,
+    "n_circuit_params": 12,
+    "n_readout_params": 7,
+    "n_trainable_params": 19,
+    "input_features": [
+      "pca_0",
+      "pca_1",
+      "pca_2",
+      "pca_3",
+      "xgb_oof_proba",
+      "xgb_margin"
+    ],
+    "encoding": "RY(x_i) angle encoding",
+    "trainable_rotation": "RY(theta_i) per qubit",
+    "trainable_entanglement": "RZZ(theta_ij), circular connectivity",
+    "readout": "trainable linear combination of <Z_i> -> ONE aggregate quantum refinement score",
+    "estimator": "StatevectorEstimator(default_precision=0.0) + EstimatorQNN(default_precision=0.0) -- EXACT, no shots"
+  },
+  "control_config": {
+    "input_dim": 6,
+    "n_features": 6,
+    "seed": 42,
+    "n_trainable_params": 13,
+    "family": "Random Fourier Features: cos(W.x + b + phi) -> trainable linear readout -> 1 aggregate score"
+  },
+  "xgb_frozen_params": {
+    "n_estimators": 300,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8
+  },
+  "oof_folds": 5,
+  "inner_cv_folds": 3,
+  "optimizer_maxiter": 25,
+  "theta_selection_subsample_size": 1600,
+  "primary_seed": 42,
+  "stability_seeds": [
+    42,
+    123,
+    2024,
+    7,
+    99
+  ],
+  "meta_learner": "LogisticRegression(max_iter=1000, random_state=42)"
+}

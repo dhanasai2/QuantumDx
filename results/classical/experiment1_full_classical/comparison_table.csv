@@ -1,0 +1,5 @@
+Model,Feature space,Accuracy,Sensitivity,Specificity,Precision,F1,ROC-AUC,PR-AUC,Training time (s),Inference time (ms/record)
+Logistic Regression,classical,0.8852,0.9286,0.8485,0.8387,0.8814,0.9481,0.9297,0.0714,0.2945
+RBF-Kernel SVM,classical,0.8689,0.9286,0.8182,0.8125,0.8667,0.9405,0.9226,0.1041,0.646
+Random Forest,classical,0.8852,0.8214,0.9394,0.92,0.8679,0.947,0.9451,0.555,0.757
+XGBoost,classical,0.8525,0.8571,0.8485,0.8276,0.8421,0.9405,0.9344,0.1987,0.2053

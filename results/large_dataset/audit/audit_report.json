@@ -1,0 +1,140 @@
+{
+  "source_file": "D:\\QuantumDx\\data\\external\\cardio_train.csv",
+  "shape": {
+    "rows": 70000,
+    "columns": 16
+  },
+  "dtypes": {
+    "id": "int64",
+    "age": "int64",
+    "gender": "int64",
+    "height": "int64",
+    "weight": "float64",
+    "ap_hi": "int64",
+    "ap_lo": "int64",
+    "cholesterol": "int64",
+    "gluc": "int64",
+    "smoke": "int64",
+    "alco": "int64",
+    "active": "int64",
+    "cardio": "int64",
+    "age_years": "float64",
+    "gender_male": "int32",
+    "target": "int32"
+  },
+  "missing_values": {},
+  "duplicate_rows_excluding_id": 24,
+  "duplicate_id_values": 0,
+  "target": {
+    "counts": {
+      "0": 35021,
+      "1": 34979
+    },
+    "positive_rate": 0.4997
+  },
+  "numeric_summary": {
+    "age_years": {
+      "count": 70000.0,
+      "mean": 53.3028495942114,
+      "std": 6.754966919209859,
+      "min": 29.56331279945243,
+      "25%": 48.36139630390144,
+      "50%": 53.94387405886379,
+      "75%": 58.390143737166326,
+      "max": 64.92265571526352
+    },
+    "height": {
+      "count": 70000.0,
+      "mean": 164.35922857142856,
+      "std": 8.210126364538038,
+      "min": 55.0,
+      "25%": 159.0,
+      "50%": 165.0,
+      "75%": 170.0,
+      "max": 250.0
+    },
+    "weight": {
+      "count": 70000.0,
+      "mean": 74.20569,
+      "std": 14.39575667851138,
+      "min": 10.0,
+      "25%": 65.0,
+      "50%": 72.0,
+      "75%": 82.0,
+      "max": 200.0
+    },
+    "ap_hi": {
+      "count": 70000.0,
+      "mean": 128.8172857142857,
+      "std": 154.01141945609137,
+      "min": -150.0,
+      "25%": 120.0,
+      "50%": 120.0,
+      "75%": 140.0,
+      "max": 16020.0
+    },
+    "ap_lo": {
+      "count": 70000.0,
+      "mean": 96.63041428571428,
+      "std": 188.47253029639026,
+      "min": -70.0,
+      "25%": 80.0,
+      "50%": 80.0,
+      "75%": 90.0,
+      "max": 11000.0
+    }
+  },
+  "categorical_summary": {
+    "gender": {
+      "1": 45530,
+      "2": 24470
+    },
+    "cholesterol": {
+      "1": 52385,
+      "2": 9549,
+      "3": 8066
+    },
+    "gluc": {
+      "1": 59479,
+      "2": 5190,
+      "3": 5331
+    },
+    "smoke": {
+      "0": 63831,
+      "1": 6169
+    },
+    "alco": {
+      "0": 66236,
+      "1": 3764
+    },
+    "active": {
+      "0": 13739,
+      "1": 56261
+    }
+  },
+  "zero_variance_columns": [],
+  "cleaning_flags": {
+    "n_total": 70000,
+    "ap_hi_implausible": 228,
+    "ap_lo_implausible": 1012,
+    "ap_hi_below_ap_lo": 1234,
+    "height_implausible": 30,
+    "weight_implausible": 7,
+    "any_flag_count": 1359,
+    "any_flag_percent": 1.9414285714285713,
+    "clean_count": 68641,
+    "clean_percent": 98.05857142857143
+  },
+  "target_rate_by_cleaning_flag": {
+    "target_rate_flagged": 0.7505518763796909,
+    "target_rate_clean": 0.4947334683352515,
+    "n_flagged": 1359,
+    "n_clean": 68641
+  },
+  "known_dataset_specific_notes": [
+    "age is stored in DAYS, not years (age_years derived: age/365.25).",
+    "gender in {1,2}: documented (assumed, not independently verifiable) convention is 1=women, 2=men; gender_male derived accordingly.",
+    "cholesterol and gluc are ORDINAL 3-level categories (1/2/3), NOT the same measurement as Cleveland's continuous mg/dL chol.",
+    "This dataset has no analog to Cleveland's cp/restecg/thal/slope/ca/exang/oldpeak/fbs/trestbps -- it is an independent feature space, not a reformatting of Cleveland."
+  ]
+}

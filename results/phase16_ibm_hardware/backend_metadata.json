@@ -1,0 +1,37 @@
+{
+  "circuit_depths": [
+    6,
+    6,
+    6,
+    6
+  ],
+  "gate_counts": [
+    {
+      "ry": 8,
+      "measure": 4,
+      "cx": 3,
+      "barrier": 1
+    },
+    {
+      "ry": 8,
+      "measure": 4,
+      "cx": 3,
+      "barrier": 1
+    },
+    {
+      "ry": 8,
+      "measure": 4,
+      "cx": 3,
+      "barrier": 1
+    },
+    {
+      "ry": 8,
+      "measure": 4,
+      "cx": 3,
+      "barrier": 1
+    }
+  ],
+  "num_qubits": 4,
+  "shots": 256,
+  "n_circuits": 4
+}

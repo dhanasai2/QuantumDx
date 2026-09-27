@@ -1,0 +1,39 @@
+{
+  "n_qubits": 4,
+  "n_layers": 2,
+  "seed": 42,
+  "n_trainable_params": 16,
+  "output_dim": 8,
+  "entangling_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      0
+    ]
+  ],
+  "observables": [
+    "quantum_expZ_qubit0",
+    "quantum_expZ_qubit1",
+    "quantum_expZ_qubit2",
+    "quantum_expZ_qubit3",
+    "quantum_expZZ_qubit0_qubit1",
+    "quantum_expZZ_qubit1_qubit2",
+    "quantum_expZZ_qubit2_qubit3",
+    "quantum_expZZ_qubit3_qubit0"
+  ],
+  "encoding": "RY(x_i) angle encoding, re-uploaded every layer",
+  "trainable_single_qubit": "RY(theta_i) per qubit per layer",
+  "trainable_entanglement": "RZZ(theta_ij) per circular-adjacent pair per layer (TRAINABLE interaction strength)",
+  "estimator": "StatevectorEstimator(default_precision=0.0) + EstimatorQNN(default_precision=0.0) -- EXACT, no shot noise"
+}

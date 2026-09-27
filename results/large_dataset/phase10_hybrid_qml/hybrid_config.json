@@ -1,0 +1,20 @@
+{
+  "n_qubits": 4,
+  "reps": 1,
+  "optimizer_maxiter": 40,
+  "inner_cv_folds": 3,
+  "lr_C": 1.0,
+  "seed": 42,
+  "n_trainable_params": 4,
+  "encoding": "RY(x_i) angle encoding, re-uploaded each rep",
+  "ansatz": "RY(theta_i) trainable rotation + linear CNOT entanglement",
+  "observables": [
+    "Z on qubit 0 (identity elsewhere), EXACT expectation value",
+    "Z on qubit 1 (identity elsewhere), EXACT expectation value",
+    "Z on qubit 2 (identity elsewhere), EXACT expectation value",
+    "Z on qubit 3 (identity elsewhere), EXACT expectation value"
+  ],
+  "estimator": "StatevectorEstimator(default_precision=0.0) -- EXACT, no shot noise",
+  "optimizer": "COBYLA (outer loop over quantum-layer weights, train-only CV objective)",
+  "final_classifier": "sklearn.linear_model.LogisticRegression on [classical PCA features, quantum expectation features]"
+}

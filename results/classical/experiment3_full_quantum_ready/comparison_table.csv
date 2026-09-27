@@ -1,0 +1,5 @@
+Model,Feature space,Accuracy,Sensitivity,Specificity,Precision,F1,ROC-AUC,PR-AUC,Training time (s),Inference time (ms/record)
+Logistic Regression,quantum_ready,0.8689,0.8571,0.8788,0.8571,0.8571,0.921,0.9033,0.079,0.9175
+RBF-Kernel SVM,quantum_ready,0.8689,0.8929,0.8485,0.8333,0.8621,0.9242,0.909,0.1144,0.4883
+Random Forest,quantum_ready,0.8689,0.8571,0.8788,0.8571,0.8571,0.9167,0.9046,0.274,0.4549
+XGBoost,quantum_ready,0.8361,0.8571,0.8182,0.8,0.8276,0.9275,0.8963,0.1262,0.2476

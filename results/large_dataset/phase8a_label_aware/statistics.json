@@ -1,0 +1,151 @@
+{
+  "comparisons_vs_baseline": {
+    "mi_adaptive": {
+      "delong": {
+        "auc_a": 0.7665766576657665,
+        "auc_b": 0.737923792379238,
+        "delta": 0.02865286528652855,
+        "var_delta": 0.0005831333494099762,
+        "ci_low": -0.018676647163230135,
+        "ci_high": 0.07598237773628724,
+        "z": 1.1865447393967445,
+        "p_value": 0.23540724424769932
+      },
+      "bootstrap_roc_auc": {
+        "metric": "roc_auc",
+        "observed_delta": 0.02865286528652866,
+        "ci_low": -0.01983728291073791,
+        "ci_high": 0.07805283010956532,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.25,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "bootstrap_pr_auc": {
+        "metric": "pr_auc",
+        "observed_delta": 0.009481099961304973,
+        "ci_low": -0.07142561691538198,
+        "ci_high": 0.0777266385970824,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.837,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "mcnemar": {
+        "contingency": {
+          "both_correct": 131,
+          "a_correct_b_wrong": 15,
+          "a_wrong_b_correct": 10,
+          "both_wrong": 44
+        },
+        "n_discordant": 25,
+        "test": "exact binomial McNemar",
+        "p_value": 0.42435622215270996
+      },
+      "delong_p_holm": 0.47081448849539864,
+      "delong_significant_holm": false
+    },
+    "label_aware": {
+      "delong": {
+        "auc_a": 0.7474747474747475,
+        "auc_b": 0.737923792379238,
+        "delta": 0.009550955095509517,
+        "var_delta": 0.0007128628450322146,
+        "ci_low": -0.04277908660134097,
+        "ci_high": 0.061880996792360005,
+        "z": 0.3577204870884827,
+        "p_value": 0.720552499829918
+      },
+      "bootstrap_roc_auc": {
+        "metric": "roc_auc",
+        "observed_delta": 0.009550955095509628,
+        "ci_low": -0.04317937524436842,
+        "ci_high": 0.06488223994608423,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.683,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "bootstrap_pr_auc": {
+        "metric": "pr_auc",
+        "observed_delta": 0.03766317027051391,
+        "ci_low": -0.04624494848212312,
+        "ci_high": 0.10941028287519124,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.43,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "mcnemar": {
+        "contingency": {
+          "both_correct": 122,
+          "a_correct_b_wrong": 14,
+          "a_wrong_b_correct": 19,
+          "both_wrong": 45
+        },
+        "n_discordant": 33,
+        "test": "exact binomial McNemar",
+        "p_value": 0.48685024166479707
+      },
+      "delong_p_holm": 0.720552499829918,
+      "delong_significant_holm": false
+    }
+  },
+  "single_model_cis": {
+    "baseline": {
+      "roc_auc": {
+        "metric": "roc_auc",
+        "point_estimate": 0.7379237923792379,
+        "ci_low": 0.6613633115191219,
+        "ci_high": 0.8106340852130325,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "pr_auc": {
+        "metric": "pr_auc",
+        "point_estimate": 0.6920218055129652,
+        "ci_low": 0.5931579685493668,
+        "ci_high": 0.8027453816956688,
+        "n_resamples_used": 2000,
+        "seed": 42
+      }
+    },
+    "mi_adaptive": {
+      "roc_auc": {
+        "metric": "roc_auc",
+        "point_estimate": 0.7665766576657665,
+        "ci_low": 0.6917241494788919,
+        "ci_high": 0.8338404115758146,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "pr_auc": {
+        "metric": "pr_auc",
+        "point_estimate": 0.7015029054742702,
+        "ci_low": 0.5994305696834829,
+        "ci_high": 0.8036157034526971,
+        "n_resamples_used": 2000,
+        "seed": 42
+      }
+    },
+    "label_aware": {
+      "roc_auc": {
+        "metric": "roc_auc",
+        "point_estimate": 0.7474747474747475,
+        "ci_low": 0.6756946480201189,
+        "ci_high": 0.8151395066693176,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "pr_auc": {
+        "metric": "pr_auc",
+        "point_estimate": 0.7296849757834791,
+        "ci_low": 0.6345699974934677,
+        "ci_high": 0.8184706767420445,
+        "n_resamples_used": 2000,
+        "seed": 42
+      }
+    }
+  },
+  "delta_definition": "Variant - Baseline (positive = variant better)"
+}

@@ -1,0 +1,13 @@
+stage,n_train,classical_model,both_correct,a_correct_b_wrong,a_wrong_b_correct,both_wrong,n_discordant,test,p_value
+A,1000,logistic_regression,130,26,10,34,36,exact binomial McNemar,0.011330984183587134
+A,1000,rbf_svm,129,23,11,37,34,exact binomial McNemar,0.05761267291381955
+A,1000,random_forest,132,27,8,33,35,exact binomial McNemar,0.0018782254774123432
+A,1000,xgboost,130,27,10,33,37,exact binomial McNemar,0.007632078602910042
+B,5000,logistic_regression,137,15,11,37,26,exact binomial McNemar,0.557197093963623
+B,5000,rbf_svm,138,14,10,38,24,exact binomial McNemar,0.5412561893463135
+B,5000,random_forest,142,17,6,35,23,exact binomial McNemar,0.03468966484069824
+B,5000,xgboost,142,15,6,37,21,exact binomial McNemar,0.0783538818359375
+C,10000,logistic_regression,139,14,11,36,25,exact binomial McNemar,0.6900379657745361
+C,10000,rbf_svm,140,15,10,35,25,exact binomial McNemar,0.42435622215270996
+C,10000,random_forest,140,17,10,33,27,exact binomial McNemar,0.24778856337070465
+C,10000,xgboost,143,16,7,34,23,exact binomial McNemar,0.0931396484375

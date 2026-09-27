@@ -1,0 +1,120 @@
+{
+  "experiment": "large_dataset_qsvm_scaling",
+  "dataset": "data/external/cardio_train.csv (Kaggle Cardiovascular Disease, 70,000 records)",
+  "provenance_note": "Values transcribed from the console output of the actual measured runs listed in reproduction_commands below. This file is a consolidation of measured results, not itself the generating artifact -- re-running the commands regenerates these numbers.",
+  "reproduction_commands": {
+    "audit": "python -m src.large_dataset.audit",
+    "stage_classical": "src.large_dataset.experiment.run_stage_classical(n, stage_df, split, feature_groups, PreprocessingConfig())",
+    "stage_qsvm": "src.large_dataset.experiment.run_stage_qsvm(n, stage_df, split, feature_groups, PreprocessingConfig(), QuantumConfig())"
+  },
+  "fixed_design": {
+    "modeling_pool_rows": 68641,
+    "excluded_flagged_rows": 1359,
+    "training_pool_rows": 66641,
+    "test_set_classical_rows": 2000,
+    "test_set_quantum_rows": 200,
+    "test_sets_fixed_across_all_stages": true,
+    "training_subsets_nested": true,
+    "seed": 42,
+    "n_qubits": 4,
+    "feature_map": "zz_feature_map, reps=2, linear entanglement",
+    "pca_components": 4,
+    "cv_folds": 5,
+    "c_grid": [0.01, 0.1, 1.0, 10.0, 100.0]
+  },
+  "stages": {
+    "A": {
+      "n_train": 1000,
+      "qsvm": {
+        "roc_auc": 0.7391, "sensitivity": 0.7172, "specificity": 0.6832,
+        "accuracy": 0.7000, "best_C": 1.0
+      },
+      "classical_best": {"model": "RBF-Kernel SVM", "roc_auc": 0.7948},
+      "classical_all": {
+        "logistic_regression": {"roc_auc": 0.7895, "sensitivity": 0.6775, "specificity": 0.7765, "accuracy": 0.7275},
+        "rbf_svm": {"roc_auc": 0.7948, "sensitivity": 0.7058, "specificity": 0.7507, "accuracy": 0.7285},
+        "random_forest": {"roc_auc": 0.7938, "sensitivity": 0.6886, "specificity": 0.7784, "accuracy": 0.7340},
+        "xgboost": {"roc_auc": 0.7917, "sensitivity": 0.7058, "specificity": 0.7547, "accuracy": 0.7305}
+      },
+      "classical_minus_qsvm_roc_auc_gap": 0.0557,
+      "timing": {
+        "kernel_train_train_assembly_s": 0.0563,
+        "kernel_test_train_assembly_s": 0.0169,
+        "kernel_total_s": 5.016,
+        "cv_tuning_s": 10.820,
+        "qsvm_total_wall_s": 38.78,
+        "classical_total_wall_s": 275.21
+      },
+      "kernel_memory_mb": 8.0,
+      "kernel_pairs": 499500,
+      "kernel_offdiag_mean": 0.10568,
+      "kernel_offdiag_std": 0.13891
+    },
+    "B": {
+      "n_train": 5000,
+      "qsvm": {
+        "roc_auc": 0.7715, "sensitivity": 0.7374, "specificity": 0.7426,
+        "accuracy": 0.7400, "best_C": 1.0
+      },
+      "classical_best": {"model": "XGBoost", "roc_auc": 0.8014},
+      "classical_all": {
+        "logistic_regression": {"roc_auc": 0.7962, "sensitivity": 0.6845, "specificity": 0.7715, "accuracy": 0.7285},
+        "rbf_svm": {"roc_auc": 0.7944, "sensitivity": 0.7179, "specificity": 0.7428, "accuracy": 0.7305},
+        "random_forest": {"roc_auc": 0.7956, "sensitivity": 0.6754, "specificity": 0.7923, "accuracy": 0.7345},
+        "xgboost": {"roc_auc": 0.8014, "sensitivity": 0.7037, "specificity": 0.7685, "accuracy": 0.7365}
+      },
+      "classical_minus_qsvm_roc_auc_gap": 0.0299,
+      "timing": {
+        "kernel_train_train_assembly_s": 0.8064,
+        "kernel_test_train_assembly_s": 0.0340,
+        "kernel_total_s": 10.821,
+        "cv_tuning_s": 168.198,
+        "qsvm_total_wall_s": 195.20,
+        "classical_total_wall_s": 990.90
+      },
+      "kernel_memory_mb": 200.0,
+      "kernel_pairs": 12497500,
+      "kernel_offdiag_mean": 0.10023,
+      "kernel_offdiag_std": 0.12999
+    },
+    "C": {
+      "n_train": 10000,
+      "qsvm": {
+        "roc_auc": 0.8013, "pr_auc": 0.8002, "sensitivity": 0.7475, "specificity": 0.7525,
+        "accuracy": 0.7500, "precision": 0.7475, "f1": 0.7475, "best_C": 1.0,
+        "inference_ms_per_record": 0.0504
+      },
+      "classical_best": {"model": "XGBoost", "roc_auc": 0.8040},
+      "classical_all": {
+        "logistic_regression": {"roc_auc": 0.7969, "pr_auc": 0.7739, "sensitivity": 0.6845, "specificity": 0.7715, "accuracy": 0.7285, "precision": 0.7456, "f1": 0.7138, "fit_time_s": 0.527},
+        "rbf_svm": {"roc_auc": 0.7986, "pr_auc": 0.7766, "sensitivity": 0.7240, "specificity": 0.7478, "accuracy": 0.7360, "precision": 0.7374, "f1": 0.7306, "fit_time_s": 14.515},
+        "random_forest": {"roc_auc": 0.7979, "pr_auc": 0.7790, "sensitivity": 0.6886, "specificity": 0.7864, "accuracy": 0.7380, "precision": 0.7592, "f1": 0.7222, "fit_time_s": 2.179},
+        "xgboost": {"roc_auc": 0.8040, "pr_auc": 0.7767, "sensitivity": 0.7169, "specificity": 0.7676, "accuracy": 0.7425, "precision": 0.7511, "f1": 0.7336, "fit_time_s": 0.646}
+      },
+      "classical_minus_qsvm_roc_auc_gap": 0.0027,
+      "timing": {
+        "kernel_train_statevectors_s": 13.806,
+        "kernel_test_statevectors_s": 0.271,
+        "kernel_train_train_assembly_s": 2.658,
+        "kernel_test_train_assembly_s": 0.0650,
+        "kernel_total_s": 16.800,
+        "cv_tuning_s": 414.489,
+        "qsvm_total_wall_s": 449.28,
+        "classical_total_wall_s": 2897.52
+      },
+      "kernel_memory_mb": 800.0,
+      "kernel_pairs": 49995000,
+      "kernel_diagnostics": {
+        "is_symmetric": true,
+        "diagonal_mean": 0.9999999999999971,
+        "diagonal_max_abs_deviation_from_one": 4.6629367034256575e-15,
+        "min_value": 1.5779556665858525e-09,
+        "max_value": 0.9999999999999991,
+        "within_valid_fidelity_range": true,
+        "offdiag_mean": 0.16550,
+        "offdiag_std": 0.19315
+      }
+    }
+  },
+  "scope_statement": "Three measured points. NOT a demonstrated trend, NOT evidence of quantum advantage, NOT a claim that more data improves QSVM. No statistical significance testing performed. Cleveland (Phase 1-5) remains the untouched historical benchmark and is NOT comparable to these numbers -- different dataset, different feature space, different population."
+}

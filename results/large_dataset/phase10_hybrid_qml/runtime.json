@@ -1,0 +1,6 @@
+{
+  "split_seconds": 0.17830339999636635,
+  "preprocessing_and_pca_seconds": 0.18651150004006922,
+  "hybrid_training_seconds": 285.0477765999967,
+  "hybrid_inference_seconds": 0.6701707000029273
+}

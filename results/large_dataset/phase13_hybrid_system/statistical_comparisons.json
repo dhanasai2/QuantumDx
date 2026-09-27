@@ -1,0 +1,143 @@
+{
+  "quantum_hybrid_vs_xgboost_alone": {
+    "a": "quantum_hybrid",
+    "b": "xgboost_alone",
+    "delong": {
+      "auc_a": 0.8564856485648565,
+      "auc_b": 0.8566856685668568,
+      "delta": -0.00020002000200025627,
+      "var_delta": 2.416687394939023e-07,
+      "ci_low": -0.0011635346676981283,
+      "ci_high": 0.0007634946636976157,
+      "z": -0.40687704511916667,
+      "p_value": 0.6840982962471391
+    },
+    "bootstrap_roc_auc": {
+      "metric": "roc_auc",
+      "observed_delta": -0.00020002000200014525,
+      "ci_low": -0.0014006023082310886,
+      "ci_high": 0.0010004001600639801,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.799,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "bootstrap_pr_auc": {
+      "metric": "pr_auc",
+      "observed_delta": -0.0017213970762974817,
+      "ci_low": -0.006431280018254942,
+      "ci_high": 0.0014490452580753815,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.4,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 158,
+        "a_correct_b_wrong": 0,
+        "a_wrong_b_correct": 0,
+        "both_wrong": 42
+      },
+      "n_discordant": 0,
+      "test": "exact binomial McNemar",
+      "p_value": 1.0
+    },
+    "delong_p_holm": 1.0,
+    "delong_significant_holm": false
+  },
+  "quantum_hybrid_vs_rff_control": {
+    "a": "quantum_hybrid",
+    "b": "rff_control_hybrid",
+    "delong": {
+      "auc_a": 0.8564856485648565,
+      "auc_b": 0.8564856485648565,
+      "delta": 0.0,
+      "var_delta": 2.0609060381491465e-06,
+      "ci_low": -0.002813696088576345,
+      "ci_high": 0.002813696088576345,
+      "z": 0.0,
+      "p_value": 1.0
+    },
+    "bootstrap_roc_auc": {
+      "metric": "roc_auc",
+      "observed_delta": 0.0,
+      "ci_low": -0.003703397911886708,
+      "ci_high": 0.0029186795491142918,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.919,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "bootstrap_pr_auc": {
+      "metric": "pr_auc",
+      "observed_delta": 0.0003430057484141713,
+      "ci_low": -0.009405714385177446,
+      "ci_high": 0.009439749747821066,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.881,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 158,
+        "a_correct_b_wrong": 0,
+        "a_wrong_b_correct": 0,
+        "both_wrong": 42
+      },
+      "n_discordant": 0,
+      "test": "exact binomial McNemar",
+      "p_value": 1.0
+    },
+    "delong_p_holm": 1.0,
+    "delong_significant_holm": false
+  },
+  "quantum_hybrid_vs_noop_control": {
+    "a": "quantum_hybrid",
+    "b": "noop_control_hybrid",
+    "delong": {
+      "auc_a": 0.8564856485648565,
+      "auc_b": 0.8574857485748575,
+      "delta": -0.0010001000100009483,
+      "var_delta": 1.070891718656531e-06,
+      "ci_low": -0.0030283471445093206,
+      "ci_high": 0.001028147124507424,
+      "z": -0.9664305533532188,
+      "p_value": 0.3338287816489083
+    },
+    "bootstrap_roc_auc": {
+      "metric": "roc_auc",
+      "observed_delta": -0.0010001000100009483,
+      "ci_low": -0.003435184154890311,
+      "ci_high": 0.0011010101900203572,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.391,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "bootstrap_pr_auc": {
+      "metric": "pr_auc",
+      "observed_delta": -0.0037232865465103293,
+      "ci_low": -0.01129189206887753,
+      "ci_high": 0.0014551507148915783,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.221,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 158,
+        "a_correct_b_wrong": 0,
+        "a_wrong_b_correct": 0,
+        "both_wrong": 42
+      },
+      "n_discordant": 0,
+      "test": "exact binomial McNemar",
+      "p_value": 1.0
+    },
+    "delong_p_holm": 1.0,
+    "delong_significant_holm": false
+  }
+}

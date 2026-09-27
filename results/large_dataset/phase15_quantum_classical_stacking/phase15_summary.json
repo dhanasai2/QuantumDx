@@ -1,0 +1,115 @@
+{
+  "n_train_full": 66641,
+  "comparison_set": {
+    "n": 200,
+    "fingerprint": "96eac11a8394b87e",
+    "matches_expected": true
+  },
+  "cv_evaluation": {
+    "xgboost_alone": {
+      "roc_auc_mean": 0.8011900427834533,
+      "pr_auc_mean": 0.7833258019513606,
+      "sensitivity_mean": 0.6881710646041855,
+      "specificity_mean": 0.7796620723124064,
+      "accuracy_mean": 0.73439783746044,
+      "f1_mean": 0.7193780099693848,
+      "roc_auc_std": 0.006465378790079748,
+      "pr_auc_std": 0.006035785854318901,
+      "sensitivity_std": 0.007889106018308088,
+      "specificity_std": 0.0033482533568522394,
+      "accuracy_std": 0.005088161455526704,
+      "f1_std": 0.0061269929734604,
+      "per_fold_roc_auc": [
+        0.7983356109432458,
+        0.7983416740241126,
+        0.8004167687971145,
+        0.813679482810511,
+        0.7951766773422824
+      ]
+    },
+    "quantum_stack": {
+      "roc_auc_mean": 0.8011996542477888,
+      "pr_auc_mean": 0.7833034769152675,
+      "sensitivity_mean": 0.6911131331513497,
+      "specificity_mean": 0.7771080417405585,
+      "accuracy_mean": 0.7345628787188969,
+      "f1_mean": 0.7203590729437181,
+      "roc_auc_std": 0.00647439171754573,
+      "pr_auc_std": 0.006109681544036079,
+      "sensitivity_std": 0.008506314972786,
+      "specificity_std": 0.00398523548136167,
+      "accuracy_std": 0.004765694672779437,
+      "f1_std": 0.005940330632814542,
+      "per_fold_roc_auc": [
+        0.7983451469570658,
+        0.7983716600641076,
+        0.8003974462118228,
+        0.8137095251517453,
+        0.7951744928542017
+      ]
+    },
+    "control_stack": {
+      "roc_auc_mean": 0.8012124377124042,
+      "pr_auc_mean": 0.7832797307597101,
+      "sensitivity_mean": 0.6899302396117682,
+      "specificity_mean": 0.7788008640569888,
+      "accuracy_mean": 0.7348329923911947,
+      "f1_mean": 0.7202578080310984,
+      "roc_auc_std": 0.006450804131330212,
+      "pr_auc_std": 0.005880920503911698,
+      "sensitivity_std": 0.005101135049567983,
+      "specificity_std": 0.012330584553899043,
+      "accuracy_std": 0.00534026681954771,
+      "f1_std": 0.004153919266640538,
+      "per_fold_roc_auc": [
+        0.7983171581372821,
+        0.7984008241060105,
+        0.8004347851936569,
+        0.8136782441832487,
+        0.795231176941823
+      ]
+    }
+  },
+  "acceptance_gate": {
+    "criterion_1_beats_baseline_mean_cv": true,
+    "criterion_2_fold_consistency": {
+      "passed": false,
+      "n_folds_quantum_stack_won": 3,
+      "n_folds_total": 5
+    },
+    "criterion_4_beats_matched_control": false,
+    "criterion_5_practical_significance": false,
+    "delta_vs_baseline": 9.611464335534947e-06,
+    "delta_vs_control": -1.2783464615417905e-05,
+    "gate_passed": false
+  },
+  "stability_check": null,
+  "prediction_complementarity": {
+    "pearson_corr_p_xgb_vs_p_quantum": 0.4195944963272481,
+    "pearson_p_value": 0.0,
+    "spearman_corr_p_xgb_vs_p_quantum": 0.41990891991362544,
+    "spearman_p_value": 0.0,
+    "pearson_corr_p_xgb_vs_p_control": 0.5962988025287403,
+    "prediction_disagreement_rate_at_0.5": 0.43678816344292554,
+    "pearson_corr_residual_vs_p_quantum": 0.0015295320715742224,
+    "pearson_corr_residual_vs_p_control": 0.0005697916427510978,
+    "partial_corr_p_quantum_vs_y_given_p_xgb": 0.0023662742545553683,
+    "partial_corr_p_control_vs_y_given_p_xgb": 0.0018044741893563179,
+    "interpretation": "High correlation between p_xgb and p_quantum/p_control would mean the auxiliary predictor is mostly re-deriving XGBoost's own decision, leaving little room for a meta-learner to gain anything. A partial correlation with y (after removing what p_xgb already explains) that is close to the control's own partial correlation would mean quantum is not doing anything a generic nonlinear auxiliary predictor could not also do. Correlation alone is NOT evidence of usefulness -- Section 8's CV comparison (whether the meta-learner can actually exploit it) is the acceptance test; this analysis is diagnostic context for interpreting that result."
+  },
+  "test_evaluation": null,
+  "statistics": null,
+  "runtime": {
+    "split_seconds": 0.15696789999492466,
+    "oof_generation_seconds": 2409.52035050001,
+    "nested_cv_evaluation_seconds": 0.7058481000130996
+  },
+  "decision": "C_NO_QUANTUM_CONTRIBUTION",
+  "decision_text": "The quantum stack did not beat XGBoost alone in cross-validation by more than measurement noise, and/or did not beat the matched classical control, and/or was not consistent across folds. No quantum predictive contribution was demonstrated. Test set was not touched.",
+  "quantum_experimentation_should_stop": true,
+  "decision_materiality_thresholds": {
+    "roc_auc_delta": 0.001,
+    "partial_corr_gap": 0.01,
+    "note": "The initial automated decision function flagged this run as Outcome B purely because delta_vs_baseline was numerically > 0 (9.6e-6, four orders of magnitude below the ~0.0065 CV fold-to-fold ROC-AUC std) -- indistinguishable from noise. The decision function was corrected to require a materially sized edge before reporting Outcome B, and the decision was re-derived here from the already-persisted, genuinely out-of-fold predictions (oof_predictions.csv) -- no new quantum computation was performed."
+  }
+}

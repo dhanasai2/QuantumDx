@@ -1,0 +1,149 @@
+{
+  "n_train": 2000,
+  "comparison_set": {
+    "n": 200,
+    "fingerprint": "96eac11a8394b87e",
+    "matches_expected": true
+  },
+  "vqc_config": {
+    "n_qubits": 4,
+    "feature_map_reps": 1,
+    "ansatz_reps": 2,
+    "optimizer_maxiter": 50,
+    "shots": 512,
+    "seed": 42,
+    "feature_map": "zz_feature_map (project's own build_feature_map, linear entanglement)",
+    "ansatz": "real_amplitudes (linear entanglement)",
+    "optimizer": "COBYLA",
+    "readout": "SamplerQNN default (parity interpretation), StatevectorSampler (finite-shot)"
+  },
+  "n_trainable_params": 12,
+  "baseline_metrics": {
+    "accuracy": 0.705,
+    "precision": 0.696078431372549,
+    "sensitivity": 0.7171717171717171,
+    "recall": 0.7171717171717171,
+    "specificity": 0.693069306930693,
+    "f1": 0.7064676616915423,
+    "roc_auc": 0.7379237923792379,
+    "pr_auc": 0.6920218055129652,
+    "tn": 70,
+    "fp": 31,
+    "fn": 28,
+    "tp": 71
+  },
+  "vqc_metrics": {
+    "accuracy": 0.595,
+    "precision": 0.6097560975609756,
+    "sensitivity": 0.5050505050505051,
+    "recall": 0.5050505050505051,
+    "specificity": 0.6831683168316832,
+    "f1": 0.5524861878453039,
+    "roc_auc": 0.6072107210721072,
+    "pr_auc": 0.6137231488150579,
+    "tn": 69,
+    "fp": 32,
+    "fn": 49,
+    "tp": 50
+  },
+  "statistics": {
+    "delong": {
+      "auc_a": 0.6072107210721072,
+      "auc_b": 0.737923792379238,
+      "delta": -0.13071307130713083,
+      "var_delta": 0.001528447682415272,
+      "ci_low": -0.20733858162571622,
+      "ci_high": -0.05408756098854543,
+      "z": -3.3434415119119034,
+      "p_value": 0.0008274613468366443
+    },
+    "bootstrap_roc_auc": {
+      "metric": "roc_auc",
+      "observed_delta": -0.13071307130713072,
+      "ci_low": -0.20615426580158022,
+      "ci_high": -0.052466559708294266,
+      "ci_includes_zero": false,
+      "bootstrap_p_value": 0.002,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "bootstrap_pr_auc": {
+      "metric": "pr_auc",
+      "observed_delta": -0.07829865669790737,
+      "ci_low": -0.17415919178917671,
+      "ci_high": 0.007863165834473832,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.079,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 103,
+        "a_correct_b_wrong": 16,
+        "a_wrong_b_correct": 38,
+        "both_wrong": 43
+      },
+      "n_discordant": 54,
+      "test": "exact binomial McNemar",
+      "p_value": 0.003838265880326096
+    },
+    "single_model_cis": {
+      "baseline_qsvm": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.7379237923792379,
+          "ci_low": 0.6613633115191219,
+          "ci_high": 0.8106340852130325,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.6920218055129652,
+          "ci_low": 0.5931579685493668,
+          "ci_high": 0.8027453816956688,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      },
+      "vqc": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.6072107210721072,
+          "ci_low": 0.5291739816526062,
+          "ci_high": 0.6835916270380434,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.6137231488150579,
+          "ci_low": 0.5174015163831036,
+          "ci_high": 0.7134367433269929,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      }
+    },
+    "delta_definition": "VQC - Baseline QSVM (positive = VQC better)"
+  },
+  "runtime": {
+    "split_seconds": 0.2129177000024356,
+    "preprocessing_and_pca_seconds": 0.1608169000246562,
+    "vqc_training_seconds": 437.4086209000088,
+    "vqc_inference_seconds": 0.822005000023637,
+    "process_rss_mb": {
+      "before_training": 222.957568,
+      "after_training": 353.21856
+    }
+  },
+  "decision": {
+    "outcome": "C",
+    "outcome_text": "VQC is clearly worse than baseline QSVM (statistically supported).",
+    "delta_roc_auc": -0.13071307130713083,
+    "delong_p_value": 0.0008274613468366443,
+    "bootstrap_ci_includes_zero": false,
+    "rule": "A: delta>0.02 AND significant. C: delta<-0.02 AND significant. B: otherwise (inconclusive)."
+  }
+}

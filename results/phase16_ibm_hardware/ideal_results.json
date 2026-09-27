@@ -1,0 +1,55 @@
+{
+  "expectation_values": [
+    [
+      -0.19551963600565048,
+      -0.07133737463899695,
+      0.04654624469128599,
+      0.003211667837345944
+    ],
+    [
+      -0.20884814903759177,
+      -0.09066564868626087,
+      0.08551852830329301,
+      0.006355000293472607
+    ],
+    [
+      -0.6149727103042624,
+      -0.2975332528947804,
+      0.28119392050572234,
+      0.120671219423365
+    ],
+    [
+      -0.3734871180660331,
+      0.05847509624765679,
+      -0.057611635849373344,
+      -0.013228061002098834
+    ]
+  ],
+  "circuit_config": {
+    "n_qubits": 4,
+    "reps": 1,
+    "optimizer_maxiter": 40,
+    "inner_cv_folds": 3,
+    "lr_C": 1.0,
+    "seed": 42,
+    "n_trainable_params": 4,
+    "encoding": "RY(x_i) angle encoding, re-uploaded each rep",
+    "ansatz": "RY(theta_i) trainable rotation + linear CNOT entanglement",
+    "observables": [
+      "Z on qubit 0 (identity elsewhere), EXACT expectation value",
+      "Z on qubit 1 (identity elsewhere), EXACT expectation value",
+      "Z on qubit 2 (identity elsewhere), EXACT expectation value",
+      "Z on qubit 3 (identity elsewhere), EXACT expectation value"
+    ],
+    "estimator": "StatevectorEstimator(default_precision=0.0) -- EXACT, no shot noise",
+    "optimizer": "COBYLA (outer loop over quantum-layer weights, train-only CV objective)",
+    "final_classifier": "sklearn.linear_model.LogisticRegression on [classical PCA features, quantum expectation features]"
+  },
+  "theta": [
+    0.5937248174886446,
+    -0.36605079894552517,
+    1.4387624105758972,
+    -0.09032612084794747
+  ],
+  "source": "Phase 10's frozen, already-trained theta -- not re-optimized"
+}

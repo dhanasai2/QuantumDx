@@ -1,0 +1,12 @@
+{
+  "n_qubits": 4,
+  "feature_map_reps": 1,
+  "ansatz_reps": 2,
+  "optimizer_maxiter": 50,
+  "shots": 512,
+  "seed": 42,
+  "feature_map": "zz_feature_map (project's own build_feature_map, linear entanglement)",
+  "ansatz": "real_amplitudes (linear entanglement)",
+  "optimizer": "COBYLA",
+  "readout": "SamplerQNN default (parity interpretation), StatevectorSampler (finite-shot)"
+}

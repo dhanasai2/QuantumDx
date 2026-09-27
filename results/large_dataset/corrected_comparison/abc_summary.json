@@ -1,0 +1,38 @@
+[
+  {
+    "stage": "A",
+    "n": 1000,
+    "qsvm_roc_auc": 0.7390739073907391,
+    "best_classical": "logistic_regression",
+    "best_classical_roc_auc": 0.8452845284528452,
+    "gap_best_vs_qsvm": 0.1062106210621061,
+    "gap_ci_low": 0.05502193721531354,
+    "gap_ci_high": 0.16190797483766242,
+    "gap_boot_p": 0.0,
+    "gap_mcnemar_p": 0.011330984183587134
+  },
+  {
+    "stage": "B",
+    "n": 5000,
+    "qsvm_roc_auc": 0.7714771477147715,
+    "best_classical": "logistic_regression",
+    "best_classical_roc_auc": 0.8502850285028503,
+    "gap_best_vs_qsvm": 0.07880788078807877,
+    "gap_ci_low": 0.035953721407410016,
+    "gap_ci_high": 0.12640626650660267,
+    "gap_boot_p": 0.001,
+    "gap_mcnemar_p": 0.557197093963623
+  },
+  {
+    "stage": "C",
+    "n": 10000,
+    "qsvm_roc_auc": 0.8012801280128012,
+    "best_classical": "xgboost",
+    "best_classical_roc_auc": 0.8515851585158516,
+    "gap_best_vs_qsvm": 0.05030503050305035,
+    "gap_ci_low": 0.012155592402773571,
+    "gap_ci_high": 0.0889547062423499,
+    "gap_boot_p": 0.012,
+    "gap_mcnemar_p": 0.0931396484375
+  }
+]

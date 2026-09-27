@@ -1,0 +1,11 @@
+fastapi>=0.115
+uvicorn[standard]>=0.34
+pydantic>=2.10
+python-multipart>=0.0.9
+pandas
+numpy
+scikit-learn
+xgboost
+qiskit
+qiskit-machine-learning
+joblib

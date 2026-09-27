@@ -1,0 +1,17 @@
+# Central configuration for the Phase 4 quantum pipeline.
+# Every field here maps 1:1 to src/quantum/config.py::QuantumConfig.
+# n_qubits is NOT configured here -- it is derived at run time from
+# PreprocessingConfig.pca_n_components (configs/preprocessing.yaml), so the
+# quantum pipeline can never silently disagree with Phase 2's actual output.
+
+backend_name: statevector        # statevector | noisy_simulator (not implemented) | ibm_hardware (not implemented)
+
+feature_map_name: zz_feature_map  # zz_feature_map | z_feature_map | pauli_feature_map
+reps: 2
+entanglement: linear              # linear | circular | full
+paulis: [Z, ZZ]                   # only used when feature_map_name = pauli_feature_map
+
+random_seed: 42                   # matches PreprocessingConfig.random_seed by convention
+
+max_train_samples: 300            # O(N^2) kernel-cost guard, not exercised by the Phase 4 sanity experiment
+kernel_cache_dir: results/quantum/cache/kernels

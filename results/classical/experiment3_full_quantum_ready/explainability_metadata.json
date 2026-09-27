@@ -1,0 +1,104 @@
+{
+  "logistic_regression": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "ca",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_4.0",
+      "thal_6.0",
+      "thal_7.0"
+    ],
+    "model_input_feature_names": [
+      "PC1",
+      "PC2",
+      "PC3",
+      "PC4"
+    ],
+    "note": "Model was trained on PCA-reduced components, not the raw selected features listed above -- coefficients/importances below refer to principal components (PC1..PCn), which are linear combinations of selected_feature_names. A component-to-feature loading map is a later-phase (explainability) concern, not computed here.",
+    "coefficients": {
+      "PC1": -2.3255647224492053,
+      "PC2": 0.5912054571370948,
+      "PC3": 1.1148421697095352,
+      "PC4": 0.27892685278907386
+    }
+  },
+  "rbf_svm": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "ca",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_4.0",
+      "thal_6.0",
+      "thal_7.0"
+    ],
+    "model_input_feature_names": [
+      "PC1",
+      "PC2",
+      "PC3",
+      "PC4"
+    ],
+    "note": "Model was trained on PCA-reduced components, not the raw selected features listed above -- coefficients/importances below refer to principal components (PC1..PCn), which are linear combinations of selected_feature_names. A component-to-feature loading map is a later-phase (explainability) concern, not computed here."
+  },
+  "random_forest": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "ca",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_4.0",
+      "thal_6.0",
+      "thal_7.0"
+    ],
+    "model_input_feature_names": [
+      "PC1",
+      "PC2",
+      "PC3",
+      "PC4"
+    ],
+    "note": "Model was trained on PCA-reduced components, not the raw selected features listed above -- coefficients/importances below refer to principal components (PC1..PCn), which are linear combinations of selected_feature_names. A component-to-feature loading map is a later-phase (explainability) concern, not computed here.",
+    "feature_importances": {
+      "PC1": 0.5723873907149929,
+      "PC2": 0.14528337687911322,
+      "PC3": 0.16821998076982247,
+      "PC4": 0.11410925163607134
+    }
+  },
+  "xgboost": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "ca",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_4.0",
+      "thal_6.0",
+      "thal_7.0"
+    ],
+    "model_input_feature_names": [
+      "PC1",
+      "PC2",
+      "PC3",
+      "PC4"
+    ],
+    "note": "Model was trained on PCA-reduced components, not the raw selected features listed above -- coefficients/importances below refer to principal components (PC1..PCn), which are linear combinations of selected_feature_names. A component-to-feature loading map is a later-phase (explainability) concern, not computed here.",
+    "feature_importances": {
+      "PC1": 0.5479387044906616,
+      "PC2": 0.16700898110866547,
+      "PC3": 0.16104380786418915,
+      "PC4": 0.12400849163532257
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "example_patient_id": 59314,
+  "interface_predicted_risk": 0.3823,
+  "batch_pipeline_predicted_risk": 0.3823,
+  "agrees_with_batch_pipeline": true,
+  "example_output": {
+    "classical_backbone_risk": 0.3929,
+    "quantum_refinement_raw_score": 0.0225,
+    "quantum_refinement_adjustment": -0.0106,
+    "final_calibrated_risk": 0.3823,
+    "risk_category": "moderate",
+    "model_version": "phase13_hybrid_v1",
+    "inference_latency_ms": 38.25,
+    "explanation": "Classical model estimated risk: 0.39. Hybrid refinement adjusted risk: -0.01. Final calibrated risk: 0.38."
+  }
+}

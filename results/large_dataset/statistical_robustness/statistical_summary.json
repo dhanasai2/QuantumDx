@@ -1,0 +1,28 @@
+{
+  "data_integrity": {
+    "fingerprint": "96eac11a8394b87e",
+    "fingerprint_matches_expected": true,
+    "n": 200,
+    "positive_rate": 0.495,
+    "ids_identical_across_stages": true,
+    "y_true_identical_across_stages": true,
+    "threshold": 0.5
+  },
+  "n_primary_comparisons": 12,
+  "holm_correction_family": "12 DeLong p-values (4 classical models x 3 stages), corrected once as a single family",
+  "significant_after_holm_delong": 12,
+  "significant_after_holm_bootstrap": 12,
+  "gap_analysis": {
+    "A_to_B_pct": 25.8003766478345,
+    "B_to_C_pct": 36.167512690355146,
+    "A_to_C_pct": 52.63653483992468,
+    "gap_A": 0.10621062106210633,
+    "gap_B": 0.07880788078807865,
+    "gap_C": 0.05030503050305035
+  },
+  "alpha": 0.05,
+  "bootstrap_config": {
+    "n_resamples": 2000,
+    "seed": 42
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "split_seconds": 0.12874899996677414,
+  "classical_total_seconds": 13733.555480699928,
+  "classical_per_model_seconds": {
+    "logistic_regression": 98.38435860001482,
+    "random_forest": 12243.74105709995,
+    "xgboost": 1349.410386200063
+  },
+  "preprocessing_and_pca_seconds": 4.607156399986707,
+  "control_fit_seconds": 0.11964090005494654,
+  "hybrid_total_seconds": 801.6467617000453,
+  "hybrid_timing": {
+    "theta_selection_subset_n": 2000,
+    "theta_selection_seconds": 372.87571289995685,
+    "theta_selection_n_evals": 40,
+    "full_batch_quantum_forward_seconds": 428.16437550005503,
+    "final_lr_fit_seconds": 0.2075751000083983,
+    "full_train_n": 66641,
+    "quantum_feature_stats": {
+      "min": -0.9999997927135231,
+      "max": 0.999797214192816,
+      "mean": [
+        -0.1990471842926316,
+        -0.053357533799053954,
+        0.04437444506983538,
+        0.016187623686328166
+      ],
+      "std": [
+        0.2801115081465642,
+        0.1596530095032396,
+        0.1411226879889386,
+        0.07657265635276421
+      ]
+    }
+  }
+}

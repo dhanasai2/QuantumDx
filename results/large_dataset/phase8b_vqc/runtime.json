@@ -1,0 +1,10 @@
+{
+  "split_seconds": 0.2129177000024356,
+  "preprocessing_and_pca_seconds": 0.1608169000246562,
+  "vqc_training_seconds": 437.4086209000088,
+  "vqc_inference_seconds": 0.822005000023637,
+  "process_rss_mb": {
+    "before_training": 222.957568,
+    "after_training": 353.21856
+  }
+}

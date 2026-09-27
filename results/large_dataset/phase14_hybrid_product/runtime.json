@@ -1,0 +1,7 @@
+{
+  "split_seconds": 0.18721180001739413,
+  "preprocessing_seconds": 6.458293300005607,
+  "classical_fit_seconds": 3.308291800087318,
+  "quantum_full_batch_forward_seconds": 1188.6873785000062,
+  "fusion_fit_seconds": 3.344974000006914
+}

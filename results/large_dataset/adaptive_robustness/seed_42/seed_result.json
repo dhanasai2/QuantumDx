@@ -1,0 +1,137 @@
+{
+  "seed": 42,
+  "provenance": "reused_from_stage_d_and_adaptive_qsvm",
+  "baseline_metrics": {
+    "accuracy": 0.76,
+    "precision": 0.7575757575757576,
+    "sensitivity": 0.7575757575757576,
+    "recall": 0.7575757575757576,
+    "specificity": 0.7623762376237624,
+    "f1": 0.7575757575757576,
+    "roc_auc": 0.7994799479947995,
+    "pr_auc": 0.8000141874350389,
+    "tn": 77,
+    "fp": 24,
+    "fn": 24,
+    "tp": 75
+  },
+  "adaptive_metrics": {
+    "accuracy": 0.765,
+    "precision": 0.782608695652174,
+    "sensitivity": 0.7272727272727273,
+    "recall": 0.7272727272727273,
+    "specificity": 0.801980198019802,
+    "f1": 0.7539267015706806,
+    "roc_auc": 0.8192819281928193,
+    "pr_auc": 0.8239164327719006,
+    "tn": 81,
+    "fp": 20,
+    "fn": 27,
+    "tp": 72
+  },
+  "adaptive_map_config": {
+    "n_qubits": 4,
+    "reps": 2,
+    "n_pairs": 3,
+    "mutual_information_matrix": [
+      [
+        -Infinity,
+        0.21075187130693118,
+        0.07186466469920116,
+        0.09262373010674585
+      ],
+      [
+        0.21075187130693118,
+        -Infinity,
+        0.7810927167339781,
+        0.04626902739452898
+      ],
+      [
+        0.07186466469920116,
+        0.7810927167339781,
+        -Infinity,
+        0.04315864490468968
+      ],
+      [
+        0.09262373010674585,
+        0.04626902739452898,
+        0.04315864490468968,
+        -Infinity
+      ]
+    ],
+    "baseline_pairs_linear_chain": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "selected_adaptive_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "random_state": 42,
+    "n_train_used": 20000
+  },
+  "statistics": {
+    "delong": {
+      "auc_a": 0.8192819281928193,
+      "auc_b": 0.7994799479947995,
+      "delta": 0.01980198019801982,
+      "var_delta": 0.00021001441710980905,
+      "ci_low": -0.008601571253856952,
+      "ci_high": 0.04820553164989659,
+      "z": 1.3664195506132637,
+      "p_value": 0.171807315843596
+    },
+    "bootstrap_roc_auc": {
+      "metric": "roc_auc",
+      "observed_delta": 0.01980198019801982,
+      "ci_low": -0.007320412375476417,
+      "ci_high": 0.04924257345843123,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.185,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "bootstrap_pr_auc": {
+      "metric": "pr_auc",
+      "observed_delta": 0.023902245336861694,
+      "ci_low": -0.02229301755916874,
+      "ci_high": 0.07306251459066676,
+      "ci_includes_zero": true,
+      "bootstrap_p_value": 0.359,
+      "n_resamples_used": 2000,
+      "seed": 42
+    },
+    "mcnemar": {
+      "contingency": {
+        "both_correct": 145,
+        "a_correct_b_wrong": 8,
+        "a_wrong_b_correct": 7,
+        "both_wrong": 40
+      },
+      "n_discordant": 15,
+      "test": "exact binomial McNemar",
+      "p_value": 1.0
+    }
+  },
+  "runtime": {}
+}

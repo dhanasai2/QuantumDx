@@ -1,0 +1,702 @@
+{
+  "stage_size": 20000,
+  "comparison_set": {
+    "n": 200,
+    "fingerprint": "96eac11a8394b87e",
+    "matches_expected": true,
+    "positive_rate": 0.495
+  },
+  "nesting_verified": {
+    "1000": true,
+    "5000": true,
+    "10000": true,
+    "20000": true
+  },
+  "computational_budget_deviations": {
+    "rbf_svm_grid_narrowed": {
+      "applied": true,
+      "original_grid": {
+        "C": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "gamma": [
+          "scale",
+          0.01,
+          0.1,
+          1.0
+        ]
+      },
+      "narrowed_to": {
+        "C": [
+          10.0
+        ],
+        "gamma": [
+          0.01
+        ]
+      },
+      "source_of_frozen_params": "results/large_dataset/corrected_comparison/stage_10000/corrected_comparison.json -> best_params.rbf_svm (Stage C's own full, unmodified 4x4 grid search result)",
+      "reason": "Full 16-combination grid at n_train=20,000 measured (isolated single-fit benchmark, one representative combo on one real 16,000-row fold) at 68.8s per fit; extrapolated across 80 grid/fold fits plus each fit's internal 5-fold Platt probability calibration implies a multi-hour-to-multi-day budget. A first attempt at the full grid was stopped after 4h08m of continuous CPU-bound execution with no completion in sight. LR, RF, and XGB retain their full, unmodified grids -- only RBF-SVM was narrowed.",
+      "caveat": "RBF-SVM's Stage D runtime/result is NOT under the same search budget as Stage A/B/C (1 combination here vs. 16 there); do not compare wall time or treat this as a fresh hyperparameter search at n=20,000."
+    }
+  },
+  "metrics_200row": {
+    "logistic_regression": {
+      "accuracy": 0.765,
+      "precision": 0.782608695652174,
+      "sensitivity": 0.7272727272727273,
+      "recall": 0.7272727272727273,
+      "specificity": 0.801980198019802,
+      "f1": 0.7539267015706806,
+      "roc_auc": 0.84998499849985,
+      "pr_auc": 0.8501484898717979,
+      "tn": 81,
+      "fp": 20,
+      "fn": 27,
+      "tp": 72
+    },
+    "rbf_svm": {
+      "accuracy": 0.775,
+      "precision": 0.8,
+      "sensitivity": 0.7272727272727273,
+      "recall": 0.7272727272727273,
+      "specificity": 0.8217821782178217,
+      "f1": 0.761904761904762,
+      "roc_auc": 0.8405840584058405,
+      "pr_auc": 0.838132481814923,
+      "tn": 83,
+      "fp": 18,
+      "fn": 27,
+      "tp": 72
+    },
+    "random_forest": {
+      "accuracy": 0.79,
+      "precision": 0.8352941176470589,
+      "sensitivity": 0.7171717171717171,
+      "recall": 0.7171717171717171,
+      "specificity": 0.8613861386138614,
+      "f1": 0.7717391304347826,
+      "roc_auc": 0.8535853585358536,
+      "pr_auc": 0.8499697988393898,
+      "tn": 87,
+      "fp": 14,
+      "fn": 28,
+      "tp": 71
+    },
+    "xgboost": {
+      "accuracy": 0.795,
+      "precision": 0.8152173913043478,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8316831683168316,
+      "f1": 0.7853403141361256,
+      "roc_auc": 0.8612861286128612,
+      "pr_auc": 0.8421536469361101,
+      "tn": 84,
+      "fp": 17,
+      "fn": 24,
+      "tp": 75
+    },
+    "qsvm": {
+      "accuracy": 0.76,
+      "precision": 0.7575757575757576,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.7623762376237624,
+      "f1": 0.7575757575757576,
+      "roc_auc": 0.7994799479947995,
+      "pr_auc": 0.8000141874350389,
+      "tn": 77,
+      "fp": 24,
+      "fn": 24,
+      "tp": 75
+    }
+  },
+  "metrics_2000row_classical": {
+    "logistic_regression": {
+      "accuracy": 0.73,
+      "precision": 0.7486157253599114,
+      "sensitivity": 0.6835187057633973,
+      "recall": 0.6835187057633973,
+      "specificity": 0.7754698318496538,
+      "f1": 0.7145877378435518,
+      "roc_auc": 0.7975575044580394,
+      "pr_auc": 0.7741435658311855,
+      "tn": 784,
+      "fp": 227,
+      "fn": 313,
+      "tp": 676
+    },
+    "rbf_svm": {
+      "accuracy": 0.7345,
+      "precision": 0.7457081545064378,
+      "sensitivity": 0.7027300303336703,
+      "recall": 0.7027300303336703,
+      "specificity": 0.7655786350148368,
+      "f1": 0.7235814679854243,
+      "roc_auc": 0.7981875806972644,
+      "pr_auc": 0.777660329590683,
+      "tn": 774,
+      "fp": 237,
+      "fn": 294,
+      "tp": 695
+    },
+    "random_forest": {
+      "accuracy": 0.736,
+      "precision": 0.7677119628339141,
+      "sensitivity": 0.6683518705763397,
+      "recall": 0.6683518705763397,
+      "specificity": 0.8021760633036598,
+      "f1": 0.7145945945945946,
+      "roc_auc": 0.7996002516304472,
+      "pr_auc": 0.7754395548057433,
+      "tn": 811,
+      "fp": 200,
+      "fn": 328,
+      "tp": 661
+    },
+    "xgboost": {
+      "accuracy": 0.741,
+      "precision": 0.7568157033805889,
+      "sensitivity": 0.7017189079878665,
+      "recall": 0.7017189079878665,
+      "specificity": 0.7794263105835806,
+      "f1": 0.7282266526757607,
+      "roc_auc": 0.808373813231401,
+      "pr_auc": 0.7828337394393597,
+      "tn": 788,
+      "fp": 223,
+      "fn": 295,
+      "tp": 694
+    }
+  },
+  "best_params": {
+    "logistic_regression": {
+      "C": 1.0
+    },
+    "rbf_svm": {
+      "C": 10.0,
+      "gamma": 0.01
+    },
+    "random_forest": {
+      "max_depth": 5,
+      "max_features": "sqrt",
+      "min_samples_split": 2,
+      "n_estimators": 300
+    },
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "n_estimators": 100,
+      "subsample": 0.8
+    },
+    "qsvm": {
+      "C": 1.0
+    }
+  },
+  "statistics": {
+    "single_model_cis": {
+      "logistic_regression": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.84998499849985,
+          "ci_low": 0.7958936630141725,
+          "ci_high": 0.8985502344877344,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.8501484898717979,
+          "ci_low": 0.7825029581471492,
+          "ci_high": 0.9045740661211222,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "sensitivity": {
+          "point_estimate": 0.7272727272727273,
+          "ci_low": 0.6363399621212121,
+          "ci_high": 0.8163451966152314,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "specificity": {
+          "point_estimate": 0.801980198019802,
+          "ci_low": 0.7252551020408163,
+          "ci_high": 0.8764283442866228,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "accuracy": {
+          "point_estimate": 0.765,
+          "ci_low": 0.705,
+          "ci_high": 0.82,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "precision": {
+          "point_estimate": 0.782608695652174,
+          "ci_low": 0.6930298082999788,
+          "ci_high": 0.8620689655172413,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "f1": {
+          "point_estimate": 0.7539267015706806,
+          "ci_low": 0.6785662071846282,
+          "ci_high": 0.8173183497536946,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      },
+      "rbf_svm": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.8405840584058405,
+          "ci_low": 0.7829707163182027,
+          "ci_high": 0.8934485999520779,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.838132481814923,
+          "ci_low": 0.7649837098758547,
+          "ci_high": 0.8982532926738792,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "sensitivity": {
+          "point_estimate": 0.7272727272727273,
+          "ci_low": 0.6363636363636364,
+          "ci_high": 0.8163265306122449,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "specificity": {
+          "point_estimate": 0.8217821782178217,
+          "ci_low": 0.7448979591836735,
+          "ci_high": 0.8958333333333334,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "accuracy": {
+          "point_estimate": 0.775,
+          "ci_low": 0.715,
+          "ci_high": 0.83,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "precision": {
+          "point_estimate": 0.8,
+          "ci_low": 0.7113344788087056,
+          "ci_high": 0.8800238095238094,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "f1": {
+          "point_estimate": 0.761904761904762,
+          "ci_low": 0.6881651941647832,
+          "ci_high": 0.8247422680412371,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      },
+      "random_forest": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.8535853585358536,
+          "ci_low": 0.7989873737373737,
+          "ci_high": 0.9033177466401984,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.8499697988393898,
+          "ci_low": 0.7802506902906408,
+          "ci_high": 0.9065884270693014,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "sensitivity": {
+          "point_estimate": 0.7171717171717171,
+          "ci_low": 0.625,
+          "ci_high": 0.80734827099506,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "specificity": {
+          "point_estimate": 0.8613861386138614,
+          "ci_low": 0.7904642857142857,
+          "ci_high": 0.9263230323515209,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "accuracy": {
+          "point_estimate": 0.79,
+          "ci_low": 0.735,
+          "ci_high": 0.845,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "precision": {
+          "point_estimate": 0.8352941176470589,
+          "ci_low": 0.75,
+          "ci_high": 0.9111111111111111,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "f1": {
+          "point_estimate": 0.7717391304347826,
+          "ci_low": 0.6987951807228916,
+          "ci_high": 0.8342245989304812,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      },
+      "xgboost": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.8612861286128612,
+          "ci_low": 0.8064154590949144,
+          "ci_high": 0.9108958055297414,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.8421536469361101,
+          "ci_low": 0.7612721434338777,
+          "ci_high": 0.9092880243820618,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "sensitivity": {
+          "point_estimate": 0.7575757575757576,
+          "ci_low": 0.6702074468085106,
+          "ci_high": 0.8404255319148937,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "specificity": {
+          "point_estimate": 0.8316831683168316,
+          "ci_low": 0.7575615972812234,
+          "ci_high": 0.9032413151364763,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "accuracy": {
+          "point_estimate": 0.795,
+          "ci_low": 0.74,
+          "ci_high": 0.85,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "precision": {
+          "point_estimate": 0.8152173913043478,
+          "ci_low": 0.7303370786516854,
+          "ci_high": 0.8921568627450981,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "f1": {
+          "point_estimate": 0.7853403141361256,
+          "ci_low": 0.7142664092664092,
+          "ci_high": 0.84375,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      },
+      "qsvm": {
+        "roc_auc": {
+          "metric": "roc_auc",
+          "point_estimate": 0.7994799479947995,
+          "ci_low": 0.7326839713241917,
+          "ci_high": 0.8602517876385061,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "pr_auc": {
+          "metric": "pr_auc",
+          "point_estimate": 0.8000141874350389,
+          "ci_low": 0.713482010530449,
+          "ci_high": 0.8720670613205709,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "sensitivity": {
+          "point_estimate": 0.7575757575757576,
+          "ci_low": 0.673014705882353,
+          "ci_high": 0.8400227272727271,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "specificity": {
+          "point_estimate": 0.7623762376237624,
+          "ci_low": 0.6777777777777778,
+          "ci_high": 0.8404376208897485,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "accuracy": {
+          "point_estimate": 0.76,
+          "ci_low": 0.7,
+          "ci_high": 0.8151249999999992,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "precision": {
+          "point_estimate": 0.7575757575757576,
+          "ci_low": 0.6699029126213593,
+          "ci_high": 0.8353252262443438,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "f1": {
+          "point_estimate": 0.7575757575757576,
+          "ci_low": 0.6853854987894966,
+          "ci_high": 0.8186711099952066,
+          "n_resamples_used": 2000,
+          "seed": 42
+        }
+      }
+    },
+    "paired_vs_qsvm": {
+      "logistic_regression": {
+        "bootstrap_roc_auc": {
+          "metric": "roc_auc",
+          "observed_delta": 0.0505050505050505,
+          "ci_low": 0.015624999999999997,
+          "ci_high": 0.09083692033183742,
+          "ci_includes_zero": false,
+          "bootstrap_p_value": 0.008,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "bootstrap_pr_auc": {
+          "metric": "pr_auc",
+          "observed_delta": 0.05013430243675898,
+          "ci_low": -0.00045616130995218806,
+          "ci_high": 0.11009471793585965,
+          "ci_includes_zero": true,
+          "bootstrap_p_value": 0.055,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "mcnemar": {
+          "contingency": {
+            "both_correct": 142,
+            "a_correct_b_wrong": 11,
+            "a_wrong_b_correct": 10,
+            "both_wrong": 37
+          },
+          "n_discordant": 21,
+          "test": "exact binomial McNemar",
+          "p_value": 1.0
+        },
+        "delong": {
+          "auc_a": 0.8499849984998498,
+          "auc_b": 0.7994799479947995,
+          "delta": 0.050505050505050275,
+          "var_delta": 0.0003691588811458651,
+          "ci_low": 0.01284726724294949,
+          "ci_high": 0.08816283376715106,
+          "z": 2.6286220656779267,
+          "p_value": 0.0085731580971935
+        }
+      },
+      "rbf_svm": {
+        "bootstrap_roc_auc": {
+          "metric": "roc_auc",
+          "observed_delta": 0.041104110411041006,
+          "ci_low": 0.008722929916481523,
+          "ci_high": 0.07823523554925879,
+          "ci_includes_zero": false,
+          "bootstrap_p_value": 0.014,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "bootstrap_pr_auc": {
+          "metric": "pr_auc",
+          "observed_delta": 0.03811829437988401,
+          "ci_low": -0.011358199612077999,
+          "ci_high": 0.09659838989669989,
+          "ci_includes_zero": true,
+          "bootstrap_p_value": 0.132,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "mcnemar": {
+          "contingency": {
+            "both_correct": 145,
+            "a_correct_b_wrong": 10,
+            "a_wrong_b_correct": 7,
+            "both_wrong": 38
+          },
+          "n_discordant": 17,
+          "test": "exact binomial McNemar",
+          "p_value": 0.629058837890625
+        },
+        "delong": {
+          "auc_a": 0.8405840584058406,
+          "auc_b": 0.7994799479947995,
+          "delta": 0.04110411041104112,
+          "var_delta": 0.00031951472423949684,
+          "ci_low": 0.0060698035708670675,
+          "ci_high": 0.07613841725121517,
+          "z": 2.2995338937266165,
+          "p_value": 0.021474641022091845
+        }
+      },
+      "random_forest": {
+        "bootstrap_roc_auc": {
+          "metric": "roc_auc",
+          "observed_delta": 0.05410541054105411,
+          "ci_low": 0.02220815765085647,
+          "ci_high": 0.0901413401812612,
+          "ci_includes_zero": false,
+          "bootstrap_p_value": 0.002,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "bootstrap_pr_auc": {
+          "metric": "pr_auc",
+          "observed_delta": 0.0499556114043509,
+          "ci_low": 0.0035715269317446595,
+          "ci_high": 0.10444063143243792,
+          "ci_includes_zero": false,
+          "bootstrap_p_value": 0.034,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "mcnemar": {
+          "contingency": {
+            "both_correct": 145,
+            "a_correct_b_wrong": 13,
+            "a_wrong_b_correct": 7,
+            "both_wrong": 35
+          },
+          "n_discordant": 20,
+          "test": "exact binomial McNemar",
+          "p_value": 0.26317596435546875
+        },
+        "delong": {
+          "auc_a": 0.8535853585358535,
+          "auc_b": 0.7994799479947995,
+          "delta": 0.054105410541054,
+          "var_delta": 0.00031531956688263035,
+          "ci_low": 0.019301859981682448,
+          "ci_high": 0.08890896110042555,
+          "z": 3.0469493578914464,
+          "p_value": 0.0023117665417407007
+        }
+      },
+      "xgboost": {
+        "bootstrap_roc_auc": {
+          "metric": "roc_auc",
+          "observed_delta": 0.06180618061806176,
+          "ci_low": 0.027773954892736916,
+          "ci_high": 0.10019669507067633,
+          "ci_includes_zero": false,
+          "bootstrap_p_value": 0.001,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "bootstrap_pr_auc": {
+          "metric": "pr_auc",
+          "observed_delta": 0.04213945950107112,
+          "ci_low": -0.012115246130214315,
+          "ci_high": 0.10429120782881374,
+          "ci_includes_zero": true,
+          "bootstrap_p_value": 0.12,
+          "n_resamples_used": 2000,
+          "seed": 42
+        },
+        "mcnemar": {
+          "contingency": {
+            "both_correct": 147,
+            "a_correct_b_wrong": 12,
+            "a_wrong_b_correct": 5,
+            "both_wrong": 36
+          },
+          "n_discordant": 17,
+          "test": "exact binomial McNemar",
+          "p_value": 0.143463134765625
+        },
+        "delong": {
+          "auc_a": 0.8612861286128612,
+          "auc_b": 0.7994799479947995,
+          "delta": 0.06180618061806176,
+          "var_delta": 0.0003471913000942285,
+          "ci_low": 0.025286034366776906,
+          "ci_high": 0.09832632686934661,
+          "z": 3.3170154138995733,
+          "p_value": 0.0009098459676735171
+        }
+      }
+    }
+  },
+  "runtime": {
+    "data_loading_and_split_seconds": 0.2814270000089891,
+    "classical_total_seconds": 1459.3379168999963,
+    "classical_per_model_seconds": {
+      "logistic_regression": 38.0507488999865,
+      "rbf_svm": 532.5485107000568,
+      "random_forest": 472.172914499999,
+      "xgboost": 331.6343274000101
+    },
+    "qsvm_total_seconds": 1806.0571705000475,
+    "kernel_timing": {
+      "n_train": 20000,
+      "n_test": 200,
+      "preprocessing_and_pca_seconds": 1.2125503999996,
+      "train_statevectors_seconds": 37.26903869997477,
+      "test_statevectors_seconds": 0.3203209000057541,
+      "K_train_train_assembly_seconds": 9.219348500017077,
+      "K_test_train_assembly_seconds": 0.10630829998990521,
+      "total_kernel_seconds": 46.91501639998751,
+      "cv_tuning_seconds": 1734.0069876000052,
+      "final_inference_seconds": 0.08800119999796152,
+      "qsvm_total_wall_seconds": 1781.0100051999907,
+      "K_train_train_shape": [
+        20000,
+        20000
+      ],
+      "K_train_train_dtype": "float32",
+      "K_train_train_memory_mb": 1600.0,
+      "kernel_block_size": 2000,
+      "memory_optimization": "blockwise assembly + float32 storage (see kernel.py docstring); verified numerically equivalent to the float64 reference before use (tests/test_quantum.py::test_blockwise_kernel_*)",
+      "process_rss_mb": {
+        "before_kernel_assembly": 254.394368,
+        "after_train_train_kernel": 1857.429504,
+        "after_cv_tuning": 1666.228224
+      }
+    }
+  },
+  "kernel_diagnostics": {
+    "shape": [
+      20000,
+      20000
+    ],
+    "min_value": 4.421448623892488e-11,
+    "max_value": 1.0,
+    "mean_value": 0.13081271946430206,
+    "is_square": true,
+    "is_symmetric": true,
+    "diagonal_mean": 1.0,
+    "diagonal_max_abs_deviation_from_one": 0.0,
+    "offdiag_mean": 0.13076959550380707,
+    "offdiag_std": 0.1612604260444641,
+    "within_valid_fidelity_range": true
+  },
+  "holm_16_comparison_family": {
+    "n_comparisons": 16,
+    "significant_after_holm_delong": 10,
+    "significant_after_holm_bootstrap": 11,
+    "csv_path": "D:\\QuantumDx\\results\\large_dataset\\statistical_robustness\\stage_d_extension\\auc_comparisons_16.csv"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "mean_absolute_deviation": 0.04467676915675399,
+  "max_absolute_deviation": 0.128483719423365,
+  "per_qubit_mean_absolute_deviation": [
+    0.011320105198428,
+    0.04077065435003508,
+    0.051713235587268,
+    0.07490308149128488
+  ],
+  "per_sample_mean_absolute_deviation": [
+    0.07088960312535314,
+    0.022613192281771756,
+    0.05596158392964998,
+    0.029242697290241093
+  ],
+  "rmse": 0.06017044802180563,
+  "note": "Deviation between EXACT statevector expectation values and empirical (shot-based) expectation values from the executed circuit. This reflects sampling noise and, for real hardware, physical device noise -- it is NOT a measure of clinical/predictive performance."
+}

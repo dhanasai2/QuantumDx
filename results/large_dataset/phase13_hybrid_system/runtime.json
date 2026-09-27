@@ -1,0 +1,8 @@
+{
+  "split_seconds": 0.13359400001354516,
+  "preprocessing_seconds": 3.8219305999809876,
+  "oof_xgb_seconds": 10.949879399966449,
+  "final_xgb_fit_seconds": 2.6463461000239477,
+  "dev_experiment_seconds": 1784.5498854999896,
+  "quantum_full_batch_forward_seconds": 634.1183194000041
+}

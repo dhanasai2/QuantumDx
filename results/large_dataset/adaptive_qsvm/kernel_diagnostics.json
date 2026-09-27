@@ -1,0 +1,41 @@
+{
+  "timing": {
+    "n_train": 20000,
+    "n_test": 200,
+    "train_statevectors_seconds": 19.986996599996928,
+    "test_statevectors_seconds": 0.19240050000371411,
+    "K_train_train_assembly_seconds": 6.846034399990458,
+    "K_test_train_assembly_seconds": 0.0777393999742344,
+    "cv_tuning_seconds": 1919.544653400022,
+    "final_inference_seconds": 0.04796439997153357,
+    "total_qsvm_wall_seconds": 1946.695788699959,
+    "K_train_train_shape": [
+      20000,
+      20000
+    ],
+    "K_train_train_dtype": "float32",
+    "K_train_train_memory_mb": 1600.0,
+    "kernel_block_size": 2000,
+    "process_rss_mb": {
+      "before_kernel_assembly": 244.719616,
+      "after_train_train_kernel": 1849.212928,
+      "after_cv_tuning": 1685.676032
+    }
+  },
+  "diagnostics": {
+    "shape": [
+      20000,
+      20000
+    ],
+    "min_value": 3.360750011616176e-10,
+    "max_value": 1.0,
+    "mean_value": 0.1101265698671341,
+    "is_square": true,
+    "is_symmetric": true,
+    "diagonal_mean": 1.0,
+    "diagonal_max_abs_deviation_from_one": 0.0,
+    "offdiag_mean": 0.11008293181657791,
+    "offdiag_std": 0.14329330623149872,
+    "within_valid_fidelity_range": true
+  }
+}

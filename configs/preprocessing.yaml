@@ -1,0 +1,22 @@
+# Central configuration for the Phase 2 preprocessing pipeline.
+# Every field here maps 1:1 to src/preprocessing/config.py::PreprocessingConfig.
+# Changing an experiment should mean editing THIS file, not the pipeline code.
+
+random_seed: 42
+
+test_size: 0.20
+stratify: true
+
+numeric_impute_strategy: median
+categorical_impute_strategy: most_frequent
+
+scaler: standard          # standard | minmax | robust
+
+feature_selection_method: mutual_info   # mutual_info | f_classif
+feature_selection_k: 10
+
+pca_n_components: 4        # quantum-ready dimensionality; configurable 2-6
+quantum_range_low: 0.0
+quantum_range_high: 3.141592653589793   # pi
+
+feature_set: full          # full | screening (screening drops ca, thal)

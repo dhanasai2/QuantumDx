@@ -1,0 +1,94 @@
+{
+  "logistic_regression": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "oldpeak",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_3.0",
+      "cp_4.0",
+      "restecg_2.0"
+    ],
+    "coefficients": {
+      "chol": 0.2966669147851482,
+      "thalach": -0.493155651637268,
+      "oldpeak": 0.5028481379612018,
+      "slope": 0.16888846760442733,
+      "sex": 1.5509991000382268,
+      "exang": 0.5787659055668846,
+      "cp_2.0": 0.08083100021110565,
+      "cp_3.0": -0.15130535908373632,
+      "cp_4.0": 1.4527014940428,
+      "restecg_2.0": 0.465193897660672
+    }
+  },
+  "rbf_svm": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "oldpeak",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_3.0",
+      "cp_4.0",
+      "restecg_2.0"
+    ]
+  },
+  "random_forest": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "oldpeak",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_3.0",
+      "cp_4.0",
+      "restecg_2.0"
+    ],
+    "feature_importances": {
+      "chol": 0.047799047192573794,
+      "thalach": 0.17452138788486496,
+      "oldpeak": 0.18090079078502724,
+      "slope": 0.09143938181837168,
+      "sex": 0.0685310404222432,
+      "exang": 0.12702735244280652,
+      "cp_2.0": 0.01599907811896574,
+      "cp_3.0": 0.026023542886537233,
+      "cp_4.0": 0.2492159299434798,
+      "restecg_2.0": 0.018542448505129747
+    }
+  },
+  "xgboost": {
+    "selected_feature_names": [
+      "chol",
+      "thalach",
+      "oldpeak",
+      "slope",
+      "sex",
+      "exang",
+      "cp_2.0",
+      "cp_3.0",
+      "cp_4.0",
+      "restecg_2.0"
+    ],
+    "feature_importances": {
+      "chol": 0.05519777163863182,
+      "thalach": 0.07418432831764221,
+      "oldpeak": 0.12874440848827362,
+      "slope": 0.11545991152524948,
+      "sex": 0.10396992415189743,
+      "exang": 0.13913299143314362,
+      "cp_2.0": 0.0,
+      "cp_3.0": 0.0,
+      "cp_4.0": 0.3291168808937073,
+      "restecg_2.0": 0.054193757474422455
+    }
+  }
+}

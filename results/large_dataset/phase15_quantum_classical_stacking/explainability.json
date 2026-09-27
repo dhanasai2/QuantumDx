@@ -1,0 +1,86 @@
+{
+  "clinical_feature_contribution": {
+    "source": "reused from Phase 13's explainability.json -- IDENTICAL XGBoost architecture (same frozen hyperparameters, same feature groups, same full training pool via build_full_scale_split) already fit and persisted there; not retrained here.",
+    "xgboost_feature_importances": {
+      "age_years": 0.07514771819114685,
+      "height": 0.024772338569164276,
+      "weight": 0.5563942790031433,
+      "ap_hi": 0.0623662993311882,
+      "ap_lo": 0.1444726139307022,
+      "cholesterol": 0.028101475909352303,
+      "gluc": 0.016756024211645126,
+      "gender_male": 0.03129539638757706,
+      "smoke": 0.023340141400694847,
+      "alco": 0.0373537577688694
+    },
+    "shap_mean_abs_contribution_test_set": {
+      "age_years": 0.2990971505641937,
+      "height": 0.10135799646377563,
+      "weight": 0.8545635938644409,
+      "ap_hi": 0.10673470795154572,
+      "ap_lo": 0.23507681488990784,
+      "cholesterol": 0.04557052627205849,
+      "gluc": 0.024869311600923538,
+      "gender_male": 0.02538522519171238,
+      "smoke": 0.018619226291775703,
+      "alco": 0.0654682070016861,
+      "active": 0.020679660141468048
+    }
+  },
+  "quantum_model_contribution": {
+    "note": "Technically accurate, non-clinical description of the quantum model's role -- no clinical meaning is claimed for any quantum parameter or expectation value.",
+    "quantum_circuit_config": {
+      "n_qubits": 6,
+      "n_layers": 1,
+      "seed": 42,
+      "n_circuit_params": 12,
+      "n_readout_params": 7,
+      "n_trainable_params": 19,
+      "input_features": [
+        "pca_0",
+        "pca_1",
+        "pca_2",
+        "pca_3",
+        "xgb_oof_proba",
+        "xgb_margin"
+      ],
+      "encoding": "RY(x_i) angle encoding",
+      "trainable_rotation": "RY(theta_i) per qubit",
+      "trainable_entanglement": "RZZ(theta_ij), circular connectivity",
+      "readout": "trainable linear combination of <Z_i> -> ONE aggregate quantum refinement score",
+      "estimator": "StatevectorEstimator(default_precision=0.0) + EstimatorQNN(default_precision=0.0) -- EXACT, no shots"
+    },
+    "control_circuit_config": {
+      "input_dim": 6,
+      "n_features": 6,
+      "seed": 42,
+      "n_trainable_params": 13,
+      "family": "Random Fourier Features: cos(W.x + b + phi) -> trainable linear readout -> 1 aggregate score"
+    },
+    "meta_learner_full_oof_refit_coefficients_quantum_stack": {
+      "p_xgb": 4.7510619969255234,
+      "p_quantum": 0.09935223725136355,
+      "intercept": -2.412803510869259
+    },
+    "meta_learner_full_oof_refit_coefficients_control_stack": {
+      "p_xgb": 4.747205063454024,
+      "p_control": 0.04659427064954739,
+      "intercept": -2.3782504037210206
+    },
+    "meta_learner_weight_interpretation": "A near-zero or negative coefficient on p_quantum means the meta-learner did not find the quantum prediction useful once p_xgb was already available. This coefficient is descriptive only -- it is NOT the acceptance criterion (Section 8's nested-CV comparison is).",
+    "prediction_complementarity_summary": {
+      "pearson_corr_p_xgb_vs_p_quantum": 0.4195944963272481,
+      "pearson_p_value": 0.0,
+      "spearman_corr_p_xgb_vs_p_quantum": 0.41990891991362544,
+      "spearman_p_value": 0.0,
+      "pearson_corr_p_xgb_vs_p_control": 0.5962988025287403,
+      "prediction_disagreement_rate_at_0.5": 0.43678816344292554,
+      "pearson_corr_residual_vs_p_quantum": 0.0015295320715742224,
+      "pearson_corr_residual_vs_p_control": 0.0005697916427510978,
+      "partial_corr_p_quantum_vs_y_given_p_xgb": 0.0023662742545553683,
+      "partial_corr_p_control_vs_y_given_p_xgb": 0.0018044741893563179,
+      "interpretation": "High correlation between p_xgb and p_quantum/p_control would mean the auxiliary predictor is mostly re-deriving XGBoost's own decision, leaving little room for a meta-learner to gain anything. A partial correlation with y (after removing what p_xgb already explains) that is close to the control's own partial correlation would mean quantum is not doing anything a generic nonlinear auxiliary predictor could not also do. Correlation alone is NOT evidence of usefulness -- Section 8's CV comparison (whether the meta-learner can actually exploit it) is the acceptance test; this analysis is diagnostic context for interpreting that result."
+    }
+  },
+  "test_set_explanation_available": false
+}

@@ -1,0 +1,38 @@
+{
+  "classical_feature_importances": {
+    "age_years": 0.07514771819114685,
+    "height": 0.024772338569164276,
+    "weight": 0.5563942790031433,
+    "ap_hi": 0.0623662993311882,
+    "ap_lo": 0.1444726139307022,
+    "cholesterol": 0.028101475909352303,
+    "gluc": 0.016756024211645126,
+    "gender_male": 0.03129539638757706,
+    "smoke": 0.023340141400694847,
+    "alco": 0.0373537577688694
+  },
+  "hybrid_feature_importances": {
+    "age_years": 0.5763907432556152,
+    "height": 0.04004737734794617,
+    "weight": 0.024748805910348892,
+    "ap_hi": 0.021681291982531548,
+    "ap_lo": 0.09827658534049988,
+    "cholesterol": 0.01701011136174202,
+    "gluc": 0.012520493939518929,
+    "gender_male": 0.03455158323049545,
+    "smoke": 0.015077502466738224,
+    "alco": 0.02861759066581726,
+    "active": 0.0491316057741642,
+    "quantum_expZ_qubit0": 0.08194629102945328
+  },
+  "quantum_observable_names": [
+    "quantum_expZ_qubit0",
+    "quantum_expZ_qubit1",
+    "quantum_expZ_qubit2",
+    "quantum_expZ_qubit3",
+    "quantum_expZZ_qubit0_qubit1",
+    "quantum_expZZ_qubit1_qubit2",
+    "quantum_expZZ_qubit2_qubit3",
+    "quantum_expZZ_qubit3_qubit0"
+  ]
+}

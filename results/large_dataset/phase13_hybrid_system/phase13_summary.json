@@ -1,0 +1,276 @@
+{
+  "n_train_full": 66641,
+  "comparison_set": {
+    "n": 200,
+    "fingerprint": "96eac11a8394b87e",
+    "matches_expected": true
+  },
+  "metrics": {
+    "xgboost_alone": {
+      "accuracy": 0.79,
+      "precision": 0.8064516129032258,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8217821782178217,
+      "f1": 0.7812499999999999,
+      "roc_auc": 0.8566856685668567,
+      "pr_auc": 0.8425609274202546,
+      "tn": 83,
+      "fp": 18,
+      "fn": 24,
+      "tp": 75,
+      "brier_score": 0.15416599810123444
+    },
+    "quantum_hybrid": {
+      "accuracy": 0.79,
+      "precision": 0.8064516129032258,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8217821782178217,
+      "f1": 0.7812499999999999,
+      "roc_auc": 0.8564856485648565,
+      "pr_auc": 0.8408395303439571,
+      "tn": 83,
+      "fp": 18,
+      "fn": 24,
+      "tp": 75,
+      "brier_score": 0.15418873692866375
+    },
+    "rff_control_hybrid": {
+      "accuracy": 0.79,
+      "precision": 0.8064516129032258,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8217821782178217,
+      "f1": 0.7812499999999999,
+      "roc_auc": 0.8564856485648565,
+      "pr_auc": 0.8404965245955429,
+      "tn": 83,
+      "fp": 18,
+      "fn": 24,
+      "tp": 75,
+      "brier_score": 0.15461666098252627
+    },
+    "noop_control_hybrid": {
+      "accuracy": 0.79,
+      "precision": 0.8064516129032258,
+      "sensitivity": 0.7575757575757576,
+      "recall": 0.7575757575757576,
+      "specificity": 0.8217821782178217,
+      "f1": 0.7812499999999999,
+      "roc_auc": 0.8574857485748575,
+      "pr_auc": 0.8445628168904674,
+      "tn": 83,
+      "fp": 18,
+      "fn": 24,
+      "tp": 75,
+      "brier_score": 0.15412647882745156
+    }
+  },
+  "reproducibility": {
+    "quantum": {
+      "per_seed_cv_mse": {
+        "42": 0.1840570995480488,
+        "123": 0.1838295846247918,
+        "2024": 0.18379526125156218,
+        "7": 0.1851428376243552,
+        "99": 0.18417768926277164
+      },
+      "mean": 0.18420049446230594,
+      "std": 0.0004921139860390276,
+      "min": 0.18379526125156218,
+      "max": 0.1851428376243552
+    },
+    "rff_control": {
+      "per_seed_cv_mse": {
+        "42": 0.18550535257212877,
+        "123": 0.18650240776344174,
+        "2024": 0.18597198619037678,
+        "7": 0.18437609100325303,
+        "99": 0.19260578432001654
+      },
+      "mean": 0.18699232436984337,
+      "std": 0.0028930192895852843,
+      "min": 0.18437609100325303,
+      "max": 0.19260578432001654
+    },
+    "noop_control": {
+      "per_seed_cv_mse": {
+        "42": 0.19132746184666782,
+        "123": 0.18670088083175565,
+        "2024": 0.20895495992205138,
+        "7": 0.1966725813988173,
+        "99": 0.2936762222419313
+      },
+      "mean": 0.21546642124824467,
+      "std": 0.039805844276447996,
+      "min": 0.18670088083175565,
+      "max": 0.2936762222419313
+    }
+  },
+  "statistics": {
+    "quantum_hybrid_vs_xgboost_alone": {
+      "a": "quantum_hybrid",
+      "b": "xgboost_alone",
+      "delong": {
+        "auc_a": 0.8564856485648565,
+        "auc_b": 0.8566856685668568,
+        "delta": -0.00020002000200025627,
+        "var_delta": 2.416687394939023e-07,
+        "ci_low": -0.0011635346676981283,
+        "ci_high": 0.0007634946636976157,
+        "z": -0.40687704511916667,
+        "p_value": 0.6840982962471391
+      },
+      "bootstrap_roc_auc": {
+        "metric": "roc_auc",
+        "observed_delta": -0.00020002000200014525,
+        "ci_low": -0.0014006023082310886,
+        "ci_high": 0.0010004001600639801,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.799,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "bootstrap_pr_auc": {
+        "metric": "pr_auc",
+        "observed_delta": -0.0017213970762974817,
+        "ci_low": -0.006431280018254942,
+        "ci_high": 0.0014490452580753815,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.4,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "mcnemar": {
+        "contingency": {
+          "both_correct": 158,
+          "a_correct_b_wrong": 0,
+          "a_wrong_b_correct": 0,
+          "both_wrong": 42
+        },
+        "n_discordant": 0,
+        "test": "exact binomial McNemar",
+        "p_value": 1.0
+      },
+      "delong_p_holm": 1.0,
+      "delong_significant_holm": false
+    },
+    "quantum_hybrid_vs_rff_control": {
+      "a": "quantum_hybrid",
+      "b": "rff_control_hybrid",
+      "delong": {
+        "auc_a": 0.8564856485648565,
+        "auc_b": 0.8564856485648565,
+        "delta": 0.0,
+        "var_delta": 2.0609060381491465e-06,
+        "ci_low": -0.002813696088576345,
+        "ci_high": 0.002813696088576345,
+        "z": 0.0,
+        "p_value": 1.0
+      },
+      "bootstrap_roc_auc": {
+        "metric": "roc_auc",
+        "observed_delta": 0.0,
+        "ci_low": -0.003703397911886708,
+        "ci_high": 0.0029186795491142918,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.919,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "bootstrap_pr_auc": {
+        "metric": "pr_auc",
+        "observed_delta": 0.0003430057484141713,
+        "ci_low": -0.009405714385177446,
+        "ci_high": 0.009439749747821066,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.881,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "mcnemar": {
+        "contingency": {
+          "both_correct": 158,
+          "a_correct_b_wrong": 0,
+          "a_wrong_b_correct": 0,
+          "both_wrong": 42
+        },
+        "n_discordant": 0,
+        "test": "exact binomial McNemar",
+        "p_value": 1.0
+      },
+      "delong_p_holm": 1.0,
+      "delong_significant_holm": false
+    },
+    "quantum_hybrid_vs_noop_control": {
+      "a": "quantum_hybrid",
+      "b": "noop_control_hybrid",
+      "delong": {
+        "auc_a": 0.8564856485648565,
+        "auc_b": 0.8574857485748575,
+        "delta": -0.0010001000100009483,
+        "var_delta": 1.070891718656531e-06,
+        "ci_low": -0.0030283471445093206,
+        "ci_high": 0.001028147124507424,
+        "z": -0.9664305533532188,
+        "p_value": 0.3338287816489083
+      },
+      "bootstrap_roc_auc": {
+        "metric": "roc_auc",
+        "observed_delta": -0.0010001000100009483,
+        "ci_low": -0.003435184154890311,
+        "ci_high": 0.0011010101900203572,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.391,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "bootstrap_pr_auc": {
+        "metric": "pr_auc",
+        "observed_delta": -0.0037232865465103293,
+        "ci_low": -0.01129189206887753,
+        "ci_high": 0.0014551507148915783,
+        "ci_includes_zero": true,
+        "bootstrap_p_value": 0.221,
+        "n_resamples_used": 2000,
+        "seed": 42
+      },
+      "mcnemar": {
+        "contingency": {
+          "both_correct": 158,
+          "a_correct_b_wrong": 0,
+          "a_wrong_b_correct": 0,
+          "both_wrong": 42
+        },
+        "n_discordant": 0,
+        "test": "exact binomial McNemar",
+        "p_value": 1.0
+      },
+      "delong_p_holm": 1.0,
+      "delong_significant_holm": false
+    }
+  },
+  "runtime": {
+    "split_seconds": 0.13359400001354516,
+    "preprocessing_seconds": 3.8219305999809876,
+    "oof_xgb_seconds": 10.949879399966449,
+    "final_xgb_fit_seconds": 2.6463461000239477,
+    "dev_experiment_seconds": 1784.5498854999896,
+    "quantum_full_batch_forward_seconds": 634.1183194000041
+  },
+  "decision": {
+    "outcome": "NO_IMPROVEMENT",
+    "outcome_text": "Hybrid quantum-classical architecture implemented and evaluated, with the classical backbone providing the primary predictive signal and the quantum module evaluated as a refinement component; no statistically supported improvement over the backbone or the matched control was demonstrated.",
+    "beats_xgboost_backbone": false,
+    "beats_matched_control": false,
+    "delta_vs_xgboost": -0.00020002000200025627,
+    "delta_vs_rff_control": 0.0
+  },
+  "prediction_interface_self_check": {
+    "example_patient_id": 59314,
+    "interface_predicted_risk": 0.3823,
+    "batch_pipeline_predicted_risk": 0.3823,
+    "agrees_with_batch_pipeline": true
+  }
+}

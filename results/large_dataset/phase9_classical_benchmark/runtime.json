@@ -1,0 +1,10 @@
+{
+  "split_seconds": 0.20425840001553297,
+  "classical_total_seconds": 479.04488189995755,
+  "classical_per_model_seconds": {
+    "logistic_regression": 5.584624100010842,
+    "rbf_svm": 72.97759600001154,
+    "random_forest": 323.1572635000339,
+    "xgboost": 36.0150821999996
+  }
+}

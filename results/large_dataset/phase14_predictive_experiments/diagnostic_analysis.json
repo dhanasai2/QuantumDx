@@ -1,0 +1,103 @@
+{
+  "confidence_by_outcome": {
+    "TP": {
+      "n": 75,
+      "mean_proba": 0.7869382194666666,
+      "std_proba": 0.10712617903428813
+    },
+    "TN": {
+      "n": 83,
+      "mean_proba": 0.24657530544578313,
+      "std_proba": 0.11903522296758122
+    },
+    "FP": {
+      "n": 18,
+      "mean_proba": 0.7223017072222222,
+      "std_proba": 0.1304888629712906
+    },
+    "FN": {
+      "n": 24,
+      "mean_proba": 0.3408358633333333,
+      "std_proba": 0.09575468727788572
+    }
+  },
+  "calibration_curve": [
+    {
+      "mean_predicted": 0.10829251608,
+      "actual_fraction": 0.04
+    },
+    {
+      "mean_predicted": 0.2140264652,
+      "actual_fraction": 0.12
+    },
+    {
+      "mean_predicted": 0.2898012623999999,
+      "actual_fraction": 0.36
+    },
+    {
+      "mean_predicted": 0.40115088200000004,
+      "actual_fraction": 0.28
+    },
+    {
+      "mean_predicted": 0.5416152468,
+      "actual_fraction": 0.64
+    },
+    {
+      "mean_predicted": 0.758155212,
+      "actual_fraction": 0.76
+    },
+    {
+      "mean_predicted": 0.8379116876,
+      "actual_fraction": 0.88
+    },
+    {
+      "mean_predicted": 0.8757510584000001,
+      "actual_fraction": 0.88
+    }
+  ],
+  "threshold_analysis": {
+    "near_threshold_n": 34,
+    "near_threshold_error_rate": 0.38235294117647056,
+    "far_from_threshold_n": 93,
+    "far_from_threshold_error_rate": 0.10752688172043011
+  },
+  "feature_profile_by_outcome": {
+    "FN": {
+      "age_years": 53.65,
+      "height": 167.083,
+      "weight": 76.125,
+      "ap_hi": 117.083,
+      "ap_lo": 77.917,
+      "cholesterol": 1.125,
+      "gluc": 1.125
+    },
+    "FP": {
+      "age_years": 56.102,
+      "height": 165.778,
+      "weight": 76.5,
+      "ap_hi": 133.222,
+      "ap_lo": 85.556,
+      "cholesterol": 1.611,
+      "gluc": 1.556
+    },
+    "TN": {
+      "age_years": 49.015,
+      "height": 164.795,
+      "weight": 69.301,
+      "ap_hi": 115.482,
+      "ap_lo": 76.361,
+      "cholesterol": 1.12,
+      "gluc": 1.145
+    },
+    "TP": {
+      "age_years": 54.921,
+      "height": 164.533,
+      "weight": 78.42,
+      "ap_hi": 141.627,
+      "ap_lo": 88.08,
+      "cholesterol": 1.693,
+      "gluc": 1.36
+    }
+  },
+  "interpretation": "FN patients' mean risk-factor profile (BP, cholesterol) resembles the TN (healthy-predicted) group, and FP patients' profile resembles the TP (disease-predicted) group -- i.e. most residual errors are patients whose measured risk factors do not match their actual outcome. This is consistent with irreducible noise from unmeasured factors (genetics, family history, diagnostic variability) rather than a fixable representation gap, tempering (not eliminating) the likelihood that Stages 2-4 find a large improvement. Calibration is reasonably good already (no large systematic bias); errors concentrate near the decision threshold (38% error rate) far more than away from it (11% error rate), consistent with genuine class overlap rather than a systematically miscalibrated or under-fit model."
+}

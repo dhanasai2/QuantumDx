@@ -1,0 +1,13 @@
+{
+  "pearson_corr_p_xgb_vs_p_quantum": 0.4195944963272481,
+  "pearson_p_value": 0.0,
+  "spearman_corr_p_xgb_vs_p_quantum": 0.41990891991362544,
+  "spearman_p_value": 0.0,
+  "pearson_corr_p_xgb_vs_p_control": 0.5962988025287403,
+  "prediction_disagreement_rate_at_0.5": 0.43678816344292554,
+  "pearson_corr_residual_vs_p_quantum": 0.0015295320715742224,
+  "pearson_corr_residual_vs_p_control": 0.0005697916427510978,
+  "partial_corr_p_quantum_vs_y_given_p_xgb": 0.0023662742545553683,
+  "partial_corr_p_control_vs_y_given_p_xgb": 0.0018044741893563179,
+  "interpretation": "High correlation between p_xgb and p_quantum/p_control would mean the auxiliary predictor is mostly re-deriving XGBoost's own decision, leaving little room for a meta-learner to gain anything. A partial correlation with y (after removing what p_xgb already explains) that is close to the control's own partial correlation would mean quantum is not doing anything a generic nonlinear auxiliary predictor could not also do. Correlation alone is NOT evidence of usefulness -- Section 8's CV comparison (whether the meta-learner can actually exploit it) is the acceptance test; this analysis is diagnostic context for interpreting that result."
+}

@@ -1,0 +1,33 @@
+{
+  "feature_report": {
+    "n_qubits": 4,
+    "feature_names": [
+      "pca_0",
+      "pca_1",
+      "pca_2",
+      "pca_3",
+      "quantum_expZ_qubit0",
+      "quantum_expZ_qubit1",
+      "quantum_expZ_qubit2",
+      "quantum_expZ_qubit3"
+    ],
+    "description": "Each quantum_expZ_qubit{i} feature is the EXACT expectation value of the Pauli-Z observable on qubit i, after that qubit's PCA-encoded input has passed through the trainable ansatz and linear entangling layer. It is not claimed to represent any specific clinical or physical quantity beyond this literal definition -- it is a learned, entangled nonlinear transform of the 4 PCA features, in [-1, 1]."
+  },
+  "logistic_regression_coefficients": {
+    "pca_0": 0.14584740422812353,
+    "pca_1": 0.31011853905579,
+    "pca_2": -0.7616894811509579,
+    "pca_3": 0.537053644295288,
+    "quantum_expZ_qubit0": -2.2505541388439445,
+    "quantum_expZ_qubit1": -0.845532096615532,
+    "quantum_expZ_qubit2": 0.9170166765565425,
+    "quantum_expZ_qubit3": 2.090726515361818
+  },
+  "intercept": -1.3209474351501385,
+  "selected_quantum_weights_theta": [
+    0.5937248174886446,
+    -0.36605079894552517,
+    1.4387624105758972,
+    -0.09032612084794747
+  ]
+}

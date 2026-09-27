@@ -1,0 +1,866 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.21)  27 SEP 2026 11:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**QUANTUMDX_COMPLETE_PROJECT_REPORT.tex
+(./QUANTUMDX_COMPLETE_PROJECT_REPORT.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-08-13>
+(c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen157
+)) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen158
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count286
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count287
+\leftroot@=\count288
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count289
+\DOTSCASE@=\count290
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen159
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count291
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count292
+\dotsspace@=\muskip17
+\c@parentequation=\count293
+\dspbrk@lvl=\count294
+\tag@help=\toks22
+\row@=\count295
+\column@=\count296
+\maxfields@=\count297
+\andhelp@=\toks23
+\eqnshift@=\dimen160
+\alignsep@=\dimen161
+\tagshift@=\dimen162
+\tagwidth@=\dimen163
+\totwidth@=\dimen164
+\lineht@=\dimen165
+\@envbody=\toks24
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen166
+\lightrulewidth=\dimen167
+\cmidrulewidth=\dimen168
+\belowrulesep=\dimen169
+\belowbottomsep=\dimen170
+\aboverulesep=\dimen171
+\abovetopsep=\dimen172
+\cmidrulesep=\dimen173
+\cmidrulekern=\dimen174
+\defaultaddspace=\dimen175
+\@cmidla=\count298
+\@cmidlb=\count299
+\@aboverulesep=\dimen176
+\@belowrulesep=\dimen177
+\@thisruleclass=\count300
+\@lastruleclass=\count301
+\@thisrulewidth=\dimen178
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count302
+\LTcapwidth=\dimen179
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@gbox=\box59
+\LT@cols=\count303
+\LT@rows=\count304
+\c@LT@tables=\count305
+\c@LT@chunks=\count306
+\LT@p@ftn=\toks26
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen180
+\ar@mcellbox=\box60
+\extrarowheight=\dimen181
+\NC@list=\toks27
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box61
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen182
+\TX@old@table=\dimen183
+\TX@old@col=\dimen184
+\TX@target=\dimen185
+\TX@delta=\dimen186
+\TX@cols=\count307
+\TX@ftn=\toks28
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip60
+\RaggedLeftLeftskip=\skip61
+\RaggedRightLeftskip=\skip62
+\CenteringRightskip=\skip63
+\RaggedLeftRightskip=\skip64
+\RaggedRightRightskip=\skip65
+\CenteringParfillskip=\skip66
+\RaggedLeftParfillskip=\skip67
+\RaggedRightParfillskip=\skip68
+\JustifyingParfillskip=\skip69
+\CenteringParindent=\skip70
+\RaggedLeftParindent=\skip71
+\RaggedRightParindent=\skip72
+\JustifyingParindent=\skip73
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip74
+\enit@outerparindent=\dimen187
+\enit@toks=\toks29
+\enit@inbox=\box62
+\enit@count@id=\count308
+\enitdp@description=\count309
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count310
+\lst@gtempboxa=\box63
+\lst@token=\toks30
+\lst@length=\count311
+\lst@currlwidth=\dimen188
+\lst@column=\count312
+\lst@pos=\count313
+\lst@lostspace=\dimen189
+\lst@width=\dimen190
+\lst@newlines=\count314
+\lst@lineno=\count315
+\lst@maxwidth=\dimen191
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count316
+\lst@skipnumbers=\count317
+\lst@framebox=\box64
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count318
+)) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box65
+\beforetitleunit=\skip75
+\aftertitleunit=\skip76
+\ttl@plus=\dimen192
+\ttl@minus=\dimen193
+\ttl@toksa=\toks31
+\titlewidth=\dimen194
+\titlewidthlast=\dimen195
+\titlewidthfirst=\dimen196
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip77
+\f@nch@offset@elh=\skip78
+\f@nch@offset@erh=\skip79
+\f@nch@offset@olh=\skip80
+\f@nch@offset@orh=\skip81
+\f@nch@offset@elf=\skip82
+\f@nch@offset@erf=\skip83
+\f@nch@offset@olf=\skip84
+\f@nch@offset@orf=\skip85
+\f@nch@height=\skip86
+\f@nch@footalignment=\skip87
+\f@nch@widthL=\skip88
+\f@nch@widthC=\skip89
+\f@nch@widthR=\skip90
+\@temptokenb=\toks32
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen197
+\Gin@req@width=\dimen198
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count319
+\float@exts=\toks33
+\float@box=\box66
+\@float@everytoks=\toks34
+\@floatcapt=\box67
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count320
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen199
+\Hy@linkcounter=\count321
+\Hy@pagecounter=\count322
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count323
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4066.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4066.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count324
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen256
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count325
+\Field@Width=\dimen257
+\Fld@charsize=\dimen258
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count326
+\c@Item=\count327
+\c@Hfootnote=\count328
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count329
+\c@bookmark@seq@number=\count330
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip91
+) (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count331
+) (./QUANTUMDX_COMPLETE_PROJECT_REPORT.aux)
+\openout1 = `QUANTUMDX_COMPLETE_PROJECT_REPORT.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(62.59596pt, 472.31595pt, 62.59596pt)
+* v-part:(T,H,B)=(62.59596pt, 719.85492pt, 62.59596pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=472.31595pt
+* \textheight=719.85492pt
+* \oddsidemargin=-9.67403pt
+* \evensidemargin=-9.67403pt
+* \topmargin=-49.17403pt
+* \headheight=14.5pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/Users/sures/Downloads/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\c@lstlisting=\count332
+Package hyperref Info: Link coloring OFF on input line 87.
+ (./QUANTUMDX_COMPLETE_PROJECT_REPORT.out) (./QUANTUMDX_COMPLETE_PROJECT_REPORT.out)
+\@outlinefile=\write3
+\openout3 = `QUANTUMDX_COMPLETE_PROJECT_REPORT.out'.
+
+ (./QUANTUMDX_COMPLETE_PROJECT_REPORT.toc
+
+[1
+
+{c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+[2])
+\tf@toc=\write4
+\openout4 = `QUANTUMDX_COMPLETE_PROJECT_REPORT.toc'.
+
+
+
+[3]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 123.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 123.
+
+
+[4]
+
+[5]
+<../../results/classical/figures/experiment1_full_classical_roc.png, id=316, 433.62pt x 433.62pt>
+File: ../../results/classical/figures/experiment1_full_classical_roc.png Graphic file (type png)
+<use ../../results/classical/figures/experiment1_full_classical_roc.png>
+Package pdftex.def Info: ../../results/classical/figures/experiment1_full_classical_roc.png  used on input line 227.
+(pdftex.def)             Requested size: 292.83357pt x 292.84628pt.
+
+
+[6]
+Overfull \hbox (23.3265pt too wide) in paragraph at lines 234--234
+\T1/cmtt/m/n/10 src/quantum/{config,data_contract,feature_maps,backends,kernel,sanity_experiment}.py  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+[]\T1/cmr/m/n/10.95 Infrastructure only: no QSVM trained yet. De-ci-sion: core Qiskit only, no
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 236--237
+\T1/cmtt/m/n/10 qiskit-aer\T1/cmr/m/n/10.95 /\T1/cmtt/m/n/10 qiskit-machine-learning \T1/cmr/m/n/10.95 at this point (numpy 2.0 com-pat-i-bil-ity risk) --- ex-act
+ []
+
+
+
+[7 <../../results/classical/figures/experiment1_full_classical_roc.png>]
+<../../results/quantum/phase5/figures/qsvm_roc.png, id=347, 433.62pt x 433.62pt>
+File: ../../results/quantum/phase5/figures/qsvm_roc.png Graphic file (type png)
+<use ../../results/quantum/phase5/figures/qsvm_roc.png>
+Package pdftex.def Info: ../../results/quantum/phase5/figures/qsvm_roc.png  used on input line 272.
+(pdftex.def)             Requested size: 259.7752pt x 259.79025pt.
+
+Underfull \hbox (badness 2573) in paragraph at lines 281--282
+\T1/cmr/m/n/10.95 Phases 1--5 val-i-dated the en-tire ar-chi-tec-ture end to end, but at n=303 --- too small
+ []
+
+
+Underfull \hbox (badness 3281) in paragraph at lines 281--282
+\T1/cmr/m/n/10.95 to trust as a re-al-is-tic bench-mark. From Phase 6 on-ward, ev-ery ex-per-i-ment moved
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 281--282
+\T1/cmr/m/n/10.95 to a much larger, in-de-pen-dent dataset: the Kag-gle \T1/cmr/bx/n/10.95 ``Car-dio-vas-cu-lar Dis-ease dataset''
+ []
+
+
+
+[8 <../../results/quantum/phase5/figures/qsvm_roc.png>]
+
+[9]
+<../../results/large_dataset/statistical_robustness/forest_plot_delta_auc.png, id=360, 578.16pt x 505.89pt>
+File: ../../results/large_dataset/statistical_robustness/forest_plot_delta_auc.png Graphic file (type png)
+<use ../../results/large_dataset/statistical_robustness/forest_plot_delta_auc.png>
+Package pdftex.def Info: ../../results/large_dataset/statistical_robustness/forest_plot_delta_auc.png  used on input line 339.
+(pdftex.def)             Requested size: 292.83357pt x 256.22505pt.
+
+
+[10 <../../results/large_dataset/statistical_robustness/forest_plot_delta_auc.png>]
+<../../results/large_dataset/adaptive_robustness/delta_roc_auc_across_seeds.png, id=367, 505.89pt x 361.35pt>
+File: ../../results/large_dataset/adaptive_robustness/delta_roc_auc_across_seeds.png Graphic file (type png)
+<use ../../results/large_dataset/adaptive_robustness/delta_roc_auc_across_seeds.png>
+Package pdftex.def Info: ../../results/large_dataset/adaptive_robustness/delta_roc_auc_across_seeds.png  used on input line 403.
+(pdftex.def)             Requested size: 283.39244pt x 202.4263pt.
+
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
+[]\T1/cmr/m/n/10.95 A fun-da-men-tally dif-fer-ent mech-a-nism: a \T1/cmr/m/it/10.95 train-able \T1/cmr/m/n/10.95 cir-cuit as the clas-si-fier it-self
+ []
+
+
+
+[12 <../../results/large_dataset/adaptive_robustness/delta_roc_auc_across_seeds.png>]
+<../../results/large_dataset/phase9_classical_benchmark/roc_curves.png, id=378, 578.16pt x 505.89pt>
+File: ../../results/large_dataset/phase9_classical_benchmark/roc_curves.png Graphic file (type png)
+<use ../../results/large_dataset/phase9_classical_benchmark/roc_curves.png>
+Package pdftex.def Info: ../../results/large_dataset/phase9_classical_benchmark/roc_curves.png  used on input line 479.
+(pdftex.def)             Requested size: 292.83357pt x 256.22505pt.
+
+
+[13 <../../results/large_dataset/phase9_classical_benchmark/roc_curves.png>]
+<../../results/large_dataset/phase10_hybrid_qml/roc_curves.png, id=386, 578.16pt x 505.89pt>
+File: ../../results/large_dataset/phase10_hybrid_qml/roc_curves.png Graphic file (type png)
+<use ../../results/large_dataset/phase10_hybrid_qml/roc_curves.png>
+Package pdftex.def Info: ../../results/large_dataset/phase10_hybrid_qml/roc_curves.png  used on input line 513.
+(pdftex.def)             Requested size: 292.83357pt x 256.22505pt.
+
+
+[14 <../../results/large_dataset/phase10_hybrid_qml/roc_curves.png>]
+<../../results/large_dataset/phase11_full_scale/roc_curves.png, id=397, 650.43pt x 578.16pt>
+File: ../../results/large_dataset/phase11_full_scale/roc_curves.png Graphic file (type png)
+<use ../../results/large_dataset/phase11_full_scale/roc_curves.png>
+Package pdftex.def Info: ../../results/large_dataset/phase11_full_scale/roc_curves.png  used on input line 542.
+(pdftex.def)             Requested size: 292.83357pt x 260.30193pt.
+
+
+[15 <../../results/large_dataset/phase11_full_scale/roc_curves.png>]
+<../../results/large_dataset/phase12_quantum_representation/roc_curves.png, id=404, 650.43pt x 578.16pt>
+File: ../../results/large_dataset/phase12_quantum_representation/roc_curves.png Graphic file (type png)
+<use ../../results/large_dataset/phase12_quantum_representation/roc_curves.png>
+Package pdftex.def Info: ../../results/large_dataset/phase12_quantum_representation/roc_curves.png  used on input line 569.
+(pdftex.def)             Requested size: 292.83357pt x 260.30193pt.
+
+
+[16 <../../results/large_dataset/phase12_quantum_representation/roc_curves.png>]
+<../../results/large_dataset/phase13_hybrid_system/roc_curves.png, id=411, 578.16pt x 505.89pt>
+File: ../../results/large_dataset/phase13_hybrid_system/roc_curves.png Graphic file (type png)
+<use ../../results/large_dataset/phase13_hybrid_system/roc_curves.png>
+Package pdftex.def Info: ../../results/large_dataset/phase13_hybrid_system/roc_curves.png  used on input line 596.
+(pdftex.def)             Requested size: 292.83357pt x 256.22505pt.
+
+Underfull \hbox (badness 2205) in paragraph at lines 601--601
+|[]\T1/cmr/bx/n/12 Phase 14 --- Two Tracks: Prod-uct Build (paused) and Predictive-
+ []
+
+
+Overfull \hbox (124.19604pt too wide) in paragraph at lines 614--624
+ [] 
+ []
+
+
+
+[17 <../../results/large_dataset/phase13_hybrid_system/roc_curves.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+\T1/cmr/m/n/10.95 The full hybrid-serving pipeline (\T1/cmtt/m/n/10 src/large_dataset/phase14_hybrid_product.py\T1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 7203) in paragraph at lines 629--630
+\T1/cmtt/m/n/10 src/quantum/phase14/inference.py\T1/cmr/m/n/10.95 ) was fully im-ple-mented and trained once: clas-si-cal
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 629--630
+\T1/cmr/m/n/10.95 XG-Boost head, a frozen reuse of Phase 12's already-selected quan-tum em-bed-ding (not
+ []
+
+
+Underfull \hbox (badness 7362) in paragraph at lines 629--630
+\T1/cmr/m/n/10.95 re-optimized), a FastAPI back-end (\T1/cmtt/m/n/10 backend/app/\T1/cmr/m/n/10.95 ), and a scaf-folded Next.js fron-tend
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 629--630
+\T1/cmr/m/n/10.95 (\T1/cmtt/m/n/10 frontend/\T1/cmr/m/n/10.95 , de-pen-den-cies not fully in-stalled). Real, per-sisted model ar-ti-facts ex-ist in
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 629--630
+\T1/cmtt/m/n/10 models/phase14/{preprocessing,classical,quantum,fusion}/\T1/cmr/m/n/10.95 . This track re-sumes once the
+ []
+
+<../../results/large_dataset/phase15_quantum_classical_stacking/roc_curves_cv.png, id=418, 578.16pt x 505.89pt>
+File: ../../results/large_dataset/phase15_quantum_classical_stacking/roc_curves_cv.png Graphic file (type png)
+<use ../../results/large_dataset/phase15_quantum_classical_stacking/roc_curves_cv.png>
+Package pdftex.def Info: ../../results/large_dataset/phase15_quantum_classical_stacking/roc_curves_cv.png  used on input line 653.
+(pdftex.def)             Requested size: 292.83357pt x 256.22505pt.
+
+
+[18]
+
+[19 <../../results/large_dataset/phase15_quantum_classical_stacking/roc_curves_cv.png>]
+Overfull \hbox (8.6529pt too wide) in paragraph at lines 674--689
+ [] 
+ []
+
+<../../results/phase16_ibm_hardware/ideal_vs_hardware_expectation_values.png, id=430, 578.16pt x 433.62pt>
+File: ../../results/phase16_ibm_hardware/ideal_vs_hardware_expectation_values.png Graphic file (type png)
+<use ../../results/phase16_ibm_hardware/ideal_vs_hardware_expectation_values.png>
+Package pdftex.def Info: ../../results/phase16_ibm_hardware/ideal_vs_hardware_expectation_values.png  used on input line 691.
+(pdftex.def)             Requested size: 283.39244pt x 212.54182pt.
+<../../results/phase16_ibm_hardware/deviation_distribution.png, id=431, 505.89pt x 361.35pt>
+File: ../../results/phase16_ibm_hardware/deviation_distribution.png Graphic file (type png)
+<use ../../results/phase16_ibm_hardware/deviation_distribution.png>
+Package pdftex.def Info: ../../results/phase16_ibm_hardware/deviation_distribution.png  used on input line 693.
+(pdftex.def)             Requested size: 259.7752pt x 185.55421pt.
+
+
+[20 <../../results/phase16_ibm_hardware/ideal_vs_hardware_expectation_values.png>]
+Overfull \hbox (297.87321pt too wide) in alignment at lines 702--706
+ [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 707--707
+[]|\T1/cmr/m/n/10.95 Fidelity-kernel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|\T1/cmr/m/n/10.95 Stage A
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|\T1/cmr/m/n/10.95 Fidelity-kernel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--709
+[]|\T1/cmr/m/n/10.95 Stage B
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--709
+[]|\T1/cmr/m/n/10.95 Fidelity-kernel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--710
+[]|\T1/cmr/m/n/10.95 Stage C
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--710
+[]|\T1/cmr/m/n/10.95 Fidelity-kernel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--711
+[]|\T1/cmr/m/n/10.95 Stage D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 711--711
+[]|\T1/cmr/m/n/10.95 Fidelity-kernel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--712
+[]|\T1/cmr/m/n/10.95 Adaptive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 712--712
+\T1/cmr/m/n/10.95 (n=20,000,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--713
+[]|\T1/cmr/m/n/10.95 Phase 7 (5
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 714--714
+[]|\T1/cmr/m/n/10.95 Phase 8A
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+[]|\T1/cmr/m/n/10.95 Phase 8B
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--716
+[]|\T1/cmr/m/n/10.95 Phase 9
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--717
+[]|\T1/cmr/m/n/10.95 Phase 10
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 718--718
+[]|\T1/cmr/m/n/10.95 Phase 11
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--719
+[]|\T1/cmr/m/n/10.95 Phase 12
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--720
+[]|\T1/cmr/m/n/10.95 Phase 13
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--721
+[]|\T1/cmr/m/n/10.95 Phase 15
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--721
+\T1/cmr/m/n/10.95 (n=66,641,
+ []
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 724--724
+[]\T1/cmr/m/n/10.95 Table 1: Ev-ery quantum-vs-classical (or quantum-vs-
+ []
+
+
+Overfull \hbox (297.87321pt too wide) in alignment at lines 706--725
+ [] [] [] [] [] 
+ []
+
+[21 <../../results/phase16_ibm_hardware/deviation_distribution.png>]
+Overfull \hbox (8.82845pt too wide) in paragraph at lines 745--745
+[]|[]\T1/cmr/bx/n/10 COMPLETE[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\T1/cmr/m/n/10 ing high-dimensional biomed-i-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[]|\T1/cmr/bx/n/10 Not
+ []
+
+
+Overfull \hbox (8.82845pt too wide) in paragraph at lines 745--745
+[]|[]\T1/cmr/bx/n/10 COMPLETE[]| 
+ []
+
+
+Overfull \hbox (11.60555pt too wide) in paragraph at lines 745--745
+[]|[]\T1/cmr/bx/n/10 COMPLETE[]\T1/cmr/m/n/10 ,
+ []
+
+
+
+[22]
+
+[23]
+Underfull \hbox (badness 3428) in paragraph at lines 801--801
+[]|\T1/cmr/m/n/10.95 pandas / scikit-learn /
+ []
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 801--801
+[]|\T1/cmr/m/n/10.95 qiskit-machine-learning /
+ []
+
+
+
+[24]
+
+[25]
+Underfull \hbox (badness 5388) in paragraph at lines 878--879
+[]\T1/cmr/bx/n/10.95 Master Slide-by-Slide Pitch Script (\T1/cmtt/m/n/10 quantumdx_sih_final_presentation_script.md\T1/cmr/bx/n/10.95 ):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+\T1/cmr/m/n/10.95 For-mat-ted specif-i-cally for the of-fi-cial 6-slide pre-sen-ta-tion deck
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 878--879
+\T1/cmr/m/n/10.95 (\T1/cmtt/m/n/10 ppt/SIH2026_SIH26139_QuantumDx.pdf\T1/cmr/m/n/10.95 ). It frames the project around sci-en-tific in-tegrity,
+ []
+
+
+
+[26]
+
+[27]
+
+[28] (./QUANTUMDX_COMPLETE_PROJECT_REPORT.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-08-13>
+ ***********
+Package rerunfilecheck Info: File `QUANTUMDX_COMPLETE_PROJECT_REPORT.out' has not changed.
+(rerunfilecheck)             Checksum: BA4BFF4840246A02E01A5EA6B8F047E5;15781.
+ ) 
+Here is how much of TeX's memory you used:
+ 13449 strings out of 469719
+ 211063 string characters out of 5477783
+ 900260 words of memory out of 5000000
+ 41534 multiletter control sequences out of 15000+600000
+ 641049 words of font info for 72 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 69i,12n,79p,1396b,1976s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/Users/sures/Downloads/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk><c:/Users/sures/Downloads/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/sures/Downloads/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/sures/Downloads/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/sures/Downloads/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/sures/Downloads/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on QUANTUMDX_COMPLETE_PROJECT_REPORT.pdf (28 pages, 1089112 bytes).
+PDF statistics:
+ 1228 PDF objects out of 1440 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 477 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,104 @@
+{
+  "test_metrics": {
+    "accuracy": 0.6721311475409836,
+    "precision": 0.6176470588235294,
+    "sensitivity": 0.75,
+    "recall": 0.75,
+    "specificity": 0.6060606060606061,
+    "f1": 0.6774193548387097,
+    "roc_auc": 0.7797619047619048,
+    "pr_auc": 0.6839192971871696,
+    "tn": 20,
+    "fp": 13,
+    "fn": 7,
+    "tp": 21
+  },
+  "test_bootstrap_95ci": {
+    "roc_auc": {
+      "point_estimate": 0.7797619047619048,
+      "ci_low": 0.6611092623112464,
+      "ci_high": 0.8879581590783556,
+      "n_resamples": 1000
+    },
+    "pr_auc": {
+      "point_estimate": 0.6839192971871696,
+      "ci_low": 0.526829904865058,
+      "ci_high": 0.8750442572702616,
+      "n_resamples": 1000
+    },
+    "sensitivity": {
+      "point_estimate": 0.75,
+      "ci_low": 0.59375,
+      "ci_high": 0.9090909090909091,
+      "n_resamples": 1000
+    },
+    "specificity": {
+      "point_estimate": 0.6060606060606061,
+      "ci_low": 0.43739583333333343,
+      "ci_high": 0.7741935483870968,
+      "n_resamples": 1000
+    },
+    "accuracy": {
+      "point_estimate": 0.6721311475409836,
+      "ci_low": 0.5573770491803278,
+      "ci_high": 0.7868852459016393,
+      "n_resamples": 1000
+    }
+  },
+  "cv_summary": {
+    "roc_auc": {
+      "mean": 0.6945035640687814,
+      "std": 0.03138757191192559,
+      "ci_low": 0.6555307460347117,
+      "ci_high": 0.7334763821028512,
+      "n_folds": 5
+    },
+    "average_precision": {
+      "mean": 0.6652023267741194,
+      "std": 0.029724864178817464,
+      "ci_low": 0.628294033071785,
+      "ci_high": 0.7021106204764538,
+      "n_folds": 5
+    },
+    "accuracy": {
+      "mean": 0.5413265306122448,
+      "std": 0.007230391724313341,
+      "ci_low": 0.5323488135152544,
+      "ci_high": 0.5503042477092351,
+      "n_folds": 5
+    },
+    "recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_folds": 5
+    },
+    "precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_folds": 5
+    },
+    "specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n_folds": 5
+    },
+    "f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_folds": 5
+    }
+  },
+  "best_params": {
+    "C": 0.01
+  },
+  "fit_time_seconds": 0.0031601905822753905,
+  "inference_time_ms_per_record": 0.0053672129517329525
+}

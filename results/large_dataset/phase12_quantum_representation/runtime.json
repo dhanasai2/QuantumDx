@@ -1,0 +1,6 @@
+{
+  "split_seconds": 0.14426499989349395,
+  "dev_experiment_seconds": 10350.937633199967,
+  "preprocessing_and_pca_seconds": 4.533654100028798,
+  "quantum_full_batch_forward_seconds": 964.3137289999286
+}

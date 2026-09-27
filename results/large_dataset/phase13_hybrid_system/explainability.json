@@ -1,0 +1,43 @@
+{
+  "xgboost_feature_importances": {
+    "age_years": 0.07514771819114685,
+    "height": 0.024772338569164276,
+    "weight": 0.5563942790031433,
+    "ap_hi": 0.0623662993311882,
+    "ap_lo": 0.1444726139307022,
+    "cholesterol": 0.028101475909352303,
+    "gluc": 0.016756024211645126,
+    "gender_male": 0.03129539638757706,
+    "smoke": 0.023340141400694847,
+    "alco": 0.0373537577688694
+  },
+  "quantum_refinement_input_features": [
+    "pca_0",
+    "pca_1",
+    "pca_2",
+    "pca_3",
+    "xgb_oof_proba",
+    "xgb_margin"
+  ],
+  "quantum_refinement_note": "The quantum module outputs ONE aggregate refinement score per patient -- a learned linear combination of Pauli-Z expectation values after a trainable circuit. No individual expectation value is assigned clinical meaning.",
+  "fusion_lr_coefficients": {
+    "p_xgb": 4.784671699650333,
+    "refinement_score": -0.2555777197163781,
+    "margin": -0.18073185210272588,
+    "intercept": -2.3347746187884373
+  },
+  "shap_available": true,
+  "shap_mean_abs_contribution_test_set": {
+    "age_years": 0.2990971505641937,
+    "height": 0.10135799646377563,
+    "weight": 0.8545635938644409,
+    "ap_hi": 0.10673470795154572,
+    "ap_lo": 0.23507681488990784,
+    "cholesterol": 0.04557052627205849,
+    "gluc": 0.024869311600923538,
+    "gender_male": 0.02538522519171238,
+    "smoke": 0.018619226291775703,
+    "alco": 0.0654682070016861,
+    "active": 0.020679660141468048
+  }
+}

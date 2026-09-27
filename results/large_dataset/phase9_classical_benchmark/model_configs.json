@@ -1,0 +1,46 @@
+{
+  "logistic_regression": {
+    "best_params": {
+      "C": 0.1
+    },
+    "kind": "classical"
+  },
+  "rbf_svm": {
+    "best_params": {
+      "C": 10.0,
+      "gamma": 0.01
+    },
+    "kind": "classical"
+  },
+  "random_forest": {
+    "best_params": {
+      "max_depth": 5,
+      "max_features": "sqrt",
+      "min_samples_split": 5,
+      "n_estimators": 300
+    },
+    "kind": "classical"
+  },
+  "xgboost": {
+    "best_params": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 100,
+      "subsample": 0.8
+    },
+    "kind": "classical"
+  },
+  "baseline": {
+    "best_params": {},
+    "kind": "quantum"
+  },
+  "mi_adaptive": {
+    "best_params": {},
+    "kind": "quantum"
+  },
+  "label_aware": {
+    "best_params": {},
+    "kind": "quantum"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model_version": "phase14_hybrid_v1",
+  "feature_columns": [
+    "age_years",
+    "height",
+    "weight",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc",
+    "gender_male",
+    "smoke",
+    "alco",
+    "active"
+  ],
+  "n_train_full": 66641,
+  "comparison_set_fingerprint": "96eac11a8394b87e",
+  "decision_threshold": 0.5
+}

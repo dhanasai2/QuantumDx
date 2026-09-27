@@ -1,0 +1,5 @@
+Model,Feature space,roc_auc_mean,roc_auc_std,average_precision_mean,average_precision_std,accuracy_mean,accuracy_std,recall_mean,recall_std,specificity_mean,specificity_std,precision_mean,precision_std,f1_mean,f1_std
+Logistic Regression,classical,0.9019,0.013,0.8999,0.0175,0.8263,0.0439,0.747,0.0546,0.8923,0.0877,0.8674,0.1002,0.7987,0.0416
+RBF-Kernel SVM,classical,0.9055,0.0189,0.9061,0.024,0.8471,0.0185,0.747,0.078,0.9308,0.0421,0.9083,0.053,0.8159,0.0334
+Random Forest,classical,0.8894,0.0193,0.8975,0.0222,0.8224,0.0232,0.7289,0.0671,0.9003,0.0702,0.871,0.0715,0.7895,0.0286
+XGBoost,classical,0.8871,0.0216,0.8926,0.0211,0.793,0.0545,0.7375,0.0772,0.8387,0.0882,0.8047,0.0949,0.7659,0.0567

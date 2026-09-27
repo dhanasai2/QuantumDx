@@ -1,0 +1,44 @@
+{
+  "timing": {
+    "n_train": 20000,
+    "n_test": 200,
+    "preprocessing_and_pca_seconds": 1.2125503999996,
+    "train_statevectors_seconds": 37.26903869997477,
+    "test_statevectors_seconds": 0.3203209000057541,
+    "K_train_train_assembly_seconds": 9.219348500017077,
+    "K_test_train_assembly_seconds": 0.10630829998990521,
+    "total_kernel_seconds": 46.91501639998751,
+    "cv_tuning_seconds": 1734.0069876000052,
+    "final_inference_seconds": 0.08800119999796152,
+    "qsvm_total_wall_seconds": 1781.0100051999907,
+    "K_train_train_shape": [
+      20000,
+      20000
+    ],
+    "K_train_train_dtype": "float32",
+    "K_train_train_memory_mb": 1600.0,
+    "kernel_block_size": 2000,
+    "memory_optimization": "blockwise assembly + float32 storage (see kernel.py docstring); verified numerically equivalent to the float64 reference before use (tests/test_quantum.py::test_blockwise_kernel_*)",
+    "process_rss_mb": {
+      "before_kernel_assembly": 254.394368,
+      "after_train_train_kernel": 1857.429504,
+      "after_cv_tuning": 1666.228224
+    }
+  },
+  "diagnostics": {
+    "shape": [
+      20000,
+      20000
+    ],
+    "min_value": 4.421448623892488e-11,
+    "max_value": 1.0,
+    "mean_value": 0.13081271946430206,
+    "is_square": true,
+    "is_symmetric": true,
+    "diagonal_mean": 1.0,
+    "diagonal_max_abs_deviation_from_one": 0.0,
+    "offdiag_mean": 0.13076959550380707,
+    "offdiag_std": 0.1612604260444641,
+    "within_valid_fidelity_range": true
+  }
+}
