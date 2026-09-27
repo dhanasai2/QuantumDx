@@ -1,8 +1,7 @@
-# QuantumDx 🫀⚛️
+# QuantumDx 
 
 <div align="center">
 
-![SIH 2026](https://img.shields.io/badge/SIH%202026-Grand%20Finale-blue?style=for-the-badge&logo=shield)
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16.3-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Qiskit](https://img.shields.io/badge/Qiskit-2.2-6929C4?style=for-the-badge&logo=qiskit&logoColor=white)
@@ -12,14 +11,11 @@
 
 ### **Hybrid Quantum-Classical Cardiovascular Risk Stratification & Clinical Telemetry Terminal**
 
-**Smart India Hackathon 2026 — Problem Statement SIH26139**  
-**Team Name:** Quantum Bodha (Team ID: `149574`)
-
 ---
 
 </div>
 
-## 📌 Executive Summary
+##  Executive Summary
 
 **QuantumDx** is an open, leakage-audited, hardware-validated **hybrid quantum-classical diagnostic platform** engineered for early cardiovascular disease (CVD) risk detection. 
 
@@ -31,19 +27,19 @@ Cardiovascular disease is the **#1 global cause of mortality**, claiming **17.9 
 
 ---
 
-## 🌟 Key System Innovations
+##  Key System Innovations
 
-* 🛡️ **Zero-Leakage Data Firewall:** Imputation, Z-score scaling, and Adaptive PCA are strictly fit *inside cross-validation training folds*, eliminating optimistic evaluation bias.
-* ⚛️ **IBM QPU Hardware Execution:** Verified on physical 156-qubit **`ibm_marrakesh`** processor (IBM Quantum Job ID: `dag54f8mhr3c73e4m300`).
-* 🔒 **Quantum OOD Hilbert Safety Guard:** Evaluates quantum state fidelity ($\mathcal{F} = |\langle \psi_{\text{test}} | \psi_{\text{ref}} \rangle|^2 = 0.984$) to verify test samples remain inside the 95% Hilbert manifold boundary.
-* 🫀 **Cardio-Renal-Metabolic (CRM) Tri-Organ Panel:** Evaluates Cardiovascular Risk %, Diabetic Cardiomyopathy Index %, and Vascular Stiffness Index (mmHg).
-* 🏥 **FHIR / HL7 EHR Integration:** Directly ingests standardized HL7 FHIR JSON `Patient` and `Observation` Bundle payloads.
-* 📑 **Institutional Clinical Diagnostic PDF Exporter:** Generates printable, multi-page hospital diagnostic reports with standard 11-biomarker reference range tables, TreeSHAP attributions, Class I/IIa guidelines, and digital MD attestations.
-* 🔊 **Live ECG Audio-Visual Telemetry:** Real-time Web Audio API heartbeat pulse sonification matched to patient heart rates and systolic pressure deltas.
+*  **Zero-Leakage Data Firewall:** Imputation, Z-score scaling, and Adaptive PCA are strictly fit *inside cross-validation training folds*, eliminating optimistic evaluation bias.
+*  **IBM QPU Hardware Execution:** Verified on physical 156-qubit **`ibm_marrakesh`** processor (IBM Quantum Job ID: `dag54f8mhr3c73e4m300`).
+*  **Quantum OOD Hilbert Safety Guard:** Evaluates quantum state fidelity ($\mathcal{F} = |\langle \psi_{\text{test}} | \psi_{\text{ref}} \rangle|^2 = 0.984$) to verify test samples remain inside the 95% Hilbert manifold boundary.
+*  **Cardio-Renal-Metabolic (CRM) Tri-Organ Panel:** Evaluates Cardiovascular Risk %, Diabetic Cardiomyopathy Index %, and Vascular Stiffness Index (mmHg).
+*  **FHIR / HL7 EHR Integration:** Directly ingests standardized HL7 FHIR JSON `Patient` and `Observation` Bundle payloads.
+*  **Institutional Clinical Diagnostic PDF Exporter:** Generates printable, multi-page hospital diagnostic reports with standard 11-biomarker reference range tables, TreeSHAP attributions, Class I/IIa guidelines, and digital MD attestations.
+*  **Live ECG Audio-Visual Telemetry:** Real-time Web Audio API heartbeat pulse sonification matched to patient heart rates and systolic pressure deltas.
 
 ---
 
-## 🏗️ End-to-End System Architecture
+##  End-to-End System Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────────┐
@@ -83,7 +79,7 @@ Cardiovascular disease is the **#1 global cause of mortality**, claiming **17.9 
 
 ---
 
-## 📊 Experimental Results & Benchmarks
+##  Experimental Results & Benchmarks
 
 Tested on **13,329 unseen test patients** (drawn from 66,641 full-scale dataset) across 20 research phases:
 
@@ -97,24 +93,24 @@ Tested on **13,329 unseen test patients** (drawn from 66,641 full-scale dataset)
 
 ---
 
-## 🖥️ Web Dashboard Overview
+##  Web Dashboard Overview
 
 The platform features an 8-tab production Next.js terminal:
 
 | Tab | Functionality |
 | :--- | :--- |
-| 🏠 **Home** | Interactive telemetry hero showcase with live profile tabs (Healthy, Moderate, Elevated), Web Audio ECG pulse test, and 6 architectural pillars. |
-| 🎯 **Prediction** | Single-patient risk terminal with model tournament selector, dynamic threshold slider ($T$), counterfactual simulator, and **Clinical PDF Exporter**. |
-| 📊 **Dataset** | CSV file uploader with automated schema validation, missing data imputation, and batch inference. |
-| 💡 **Explainability** | TreeSHAP feature attribution charts and patient-level biomarker contribution breakdowns. |
-| 🏆 **Benchmarks** | Performance metric comparisons across classical, QSVM, VQC, and hybrid architectures. |
-| 🔬 **Quantum Lab** | Interactive 4-qubit circuit visualizer with Bloch sphere state vectors and expectation value readouts. |
-| ⚡ **IBM Hardware** | Execution proofs and noise telemetry from physical QPU jobs on `ibm_marrakesh`. |
-| 📚 **Research** | Comprehensive chronological timeline of all 20 research development phases. |
+|  **Home** | Interactive telemetry hero showcase with live profile tabs (Healthy, Moderate, Elevated), Web Audio ECG pulse test, and 6 architectural pillars. |
+|  **Prediction** | Single-patient risk terminal with model tournament selector, dynamic threshold slider ($T$), counterfactual simulator, and **Clinical PDF Exporter**. |
+|  **Dataset** | CSV file uploader with automated schema validation, missing data imputation, and batch inference. |
+|  **Explainability** | TreeSHAP feature attribution charts and patient-level biomarker contribution breakdowns. |
+|  **Benchmarks** | Performance metric comparisons across classical, QSVM, VQC, and hybrid architectures. |
+|  **Quantum Lab** | Interactive 4-qubit circuit visualizer with Bloch sphere state vectors and expectation value readouts. |
+|  **IBM Hardware** | Execution proofs and noise telemetry from physical QPU jobs on `ibm_marrakesh`. |
+|  **Research** | Comprehensive chronological timeline of all 20 research development phases. |
 
 ---
 
-## 🔌 REST API Reference (FastAPI Backend)
+##  REST API Reference (FastAPI Backend)
 
 The FastAPI backend server runs locally on `http://localhost:8000`:
 
@@ -131,7 +127,7 @@ The FastAPI backend server runs locally on `http://localhost:8000`:
 
 ---
 
-## ⚙️ Quick Start Guide
+##  Quick Start Guide
 
 ### Prerequisites
 * **Python 3.11+**
@@ -176,7 +172,7 @@ pytest tests/
 
 ---
 
-## 📚 Academic References
+##  Academic References
 
 1. **XGBoost:** Chen, T., & Guestrin, C. (2016). *XGBoost: A Scalable Tree Boosting System*. KDD 2016.
 2. **Quantum Kernels:** Havlíček, V., et al. (2019). *Supervised learning with quantum-enhanced feature spaces*. *Nature*, 567(7747), 209-212.
@@ -185,6 +181,6 @@ pytest tests/
 
 ---
 
-## 📜 License & Medical Disclaimer
+##  License & Medical Disclaimer
 
 This repository is shared as a research prototype and decision-support terminal developed for the **Smart India Hackathon 2026 (SIH26139)**. It is **not** a certified medical diagnostic device and must not be used as a primary diagnostic tool in clinical practice.
